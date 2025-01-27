@@ -1,0 +1,25 @@
+{
+  "name": "games-finder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nino-mau/games-finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nino-mau/games-finder/issues"
+  },
+  "homepage": "https://github.com/nino-mau/games-finder#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "5.3",
+    "jquery": "^3.7.1"
+  }
+}
