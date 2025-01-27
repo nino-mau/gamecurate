@@ -1,0 +1,26 @@
+:root {
+    --deep-orange: #FF5A09;
+    --light-orange: #ec7f37;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+/** COLORS */
+
+
+
+
+/** ---- NAVBAR ---- */
+
+.custom-navbar {
+    background-color: var(--deep-orange);
+}
