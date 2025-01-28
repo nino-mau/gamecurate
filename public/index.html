@@ -5,11 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title></title>
         <meta name="GamesFinder" content="Your site description." />
+        
+        <!---- Frameworks ---->
+        <!-- Bootstrap -->
         <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+        
+        <!---- Scripts and Stylesheets ---->
         <link rel="stylesheet" href="assets/css/main.css" media="all">
         <script src="assets/js/scripts.js" async defer></script>
         
-        <!-- Social Meta Tags -->
+        <!---- Social Meta Tags ---->
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="" />
@@ -17,17 +25,17 @@
         <meta property="og:url" content="" />
         <meta property="og:image" content="images/hom-banner-compressed.jpg" />
         
-        <!-- Twitter Meta Tags -->
+        <!---- Twitter Meta Tags ---->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="" />
         <meta name="twitter:description" content="" />
         <meta name="twitter:image" content="images/hom-banner-compressed.jpg" />
         
-        <!-- Favicons -->
+        <!---- Favicons ---->
         <link rel="icon" href="images/icon/cropped-favicon-32x32.png" sizes="32x32" />
         <link rel="apple-touch-icon" href="images/icon/cropped-favicon-180x180.png" />
         
-        <!-- Search Engine Optimization -->
+        <!---- Search Engine Optimization ---->
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="" />
     </head>
@@ -35,22 +43,49 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please upgrade your browser for a better experience.</p>
         <![endif]-->
-        <div class="custom-navbar container-fluid">
-            <ul class="nav justify-content-center">
+        <!-- <nav class="custom-navbar navbar-expand-lg container-fluid">
+            <a class="navbar-brand">
+                <ion-icon class="custom-navbar__nav-brand" name="game-controller-outline"></ion-icon>
+                 Test
+            </a>
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="custom-navbar__nav-link nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="custom-navbar__nav-link nav-link" href="#">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="custom-navbar__nav-link nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="custom-navbar__nav-link nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg justify-content-center custom-navbar">  
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <ion-icon class="custom-navbar__nav-brand" name="game-controller-outline"></ion-icon>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link active" aria-disabled="true">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link active" aria-disabled="true">Contact</a>
                 </li>
             </ul>
-        </div>
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+      </nav>
         <p class="text-light">test</p>
     </body>
 </html>
