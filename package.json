@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nino-mau/games-finder#readme",
   "description": "",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "5.3",
     "jquery": "^3.7.1"
   }

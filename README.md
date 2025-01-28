@@ -1,0 +1,39 @@
+
+PROJECT STRUCTURE:
+
+📁 games-finder
+    📁 node_modules
+        ─ .package-lock.json
+        📁 @popperjs
+        📁 bootstrap
+        📁 jquery
+    📁 public
+        📁 assets
+            📁 css
+                ─ custom-bootstrap.css
+                ─ custom-bootstrap.css.map
+                ─ fonts.css
+                ─ main.css
+            📁 fonts
+                ─ Inter.ttc
+                ─ InterVariable-Italic.ttf
+                ─ InterVariable.ttf
+            📁 img
+            📁 js
+                ─ scripts.js
+            📁 scss
+        ─ index.html
+    📁 scss
+        ─ custom.scss
+    📁 src
+        📁 includes
+            ─ footer.php
+            ─ header.php
+        📁 php
+        📁 views
+            ─ auth.php
+    ─ .gitignore
+    ─ package-lock.json
+    ─ package.json
+    ─ README.md
+```

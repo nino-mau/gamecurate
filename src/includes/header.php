@@ -5,17 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title></title>
         <meta name="GamesFinder" content="Your site description." />
-        
-        <!---- Frameworks ---->
-        <!-- Bootstrap -->
-        <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Ionicons -->
+
+        <!---- Bootstrap and Popper.js ---->
+        <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!---- Ionicons ---->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
         
         <!---- Scripts and Stylesheets ---->
-        <link rel="stylesheet" href="assets/css/main.css" media="all">
-        <script src="assets/js/scripts.js" async defer></script>
+        <link rel="stylesheet" href="../../public/assets/css/main.css" media="all">
+        <script src="../../public/assets/js/scripts.js" async defer></script>
         
         <!---- Social Meta Tags ---->
         <meta property="og:locale" content="en_US" />
@@ -66,5 +68,3 @@
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form> -->
       </nav>
-    </body>
-</html>
