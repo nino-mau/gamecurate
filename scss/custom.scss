@@ -1,0 +1,28 @@
+// Change theme-color-variables
+$primary:       #772953 !default;
+$secondary:     #aea79f !default;
+$success:       #38b44a !default;
+$info:          #17a2b9 !default;
+$warning:       #efb73e !default;
+$danger:        #df382c !default;
+$dark:          #222222 !default;
+
+// Change size variables
+$spacer: 1rem; // Default is 1rem
+$spacers: (
+  0: 0,
+  1: $spacer * .25,    // 0.25rem
+  2: $spacer * .5,     // 0.5rem
+  3: $spacer,          // 1rem
+  4: $spacer * 1.5,    // 1.5rem
+  5: $spacer * 3,      // 3rem
+  6: $spacer * 4,      // 4rem  (custom)
+  7: $spacer * 5,      // 5rem  (custom)
+  8: $spacer * 6.25,   // 6.25rem (custom)
+  9: $spacer * 7,   // 7rem (custom)
+);
+
+
+// Change default bootstrap color scheme
+@import "../node_modules/bootstrap/scss/bootstrap"; 
+
