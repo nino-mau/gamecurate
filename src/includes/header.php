@@ -7,17 +7,16 @@
         <meta name="GamesFinder" content="Your site description." />
 
         <!---- Bootstrap and Popper.js ---->
-        <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/games-finder/node_modules/@popperjs/core/dist/umd/popper.min.js" defer></script>
+        <script src="/games-finder/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
 
         <!---- Ionicons ---->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
         
         <!---- Scripts and Stylesheets ---->
-        <link rel="stylesheet" href="../../public/assets/css/main.css" media="all">
-        <script src="../../public/assets/js/scripts.js" async defer></script>
+        <link rel="stylesheet" href="/games-finder/public/assets/css/main.css" media="all">
+        <script src="/games-finder/public/assets/js/scripts.js" async defer></script>
         
         <!---- Social Meta Tags ---->
         <meta property="og:locale" content="en_US" />

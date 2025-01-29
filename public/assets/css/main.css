@@ -18,13 +18,13 @@ body {
 }
 
 
-/** COLORS */
-
-
-
-
 /** ---- NAVBAR ---- */
-
 .custom-navbar__icons {
     font-size: 3rem;
+}
+
+/** ---- REGISTRATION FORM ---- */
+.registration-form {
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
