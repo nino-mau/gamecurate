@@ -43,24 +43,24 @@
     <body class="bg-dark">
         <nav class="navbar navbar-expand-lg justify-content-center bg-primary custom-navbar">  
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <ion-icon class="custom-navbar__icons" name="game-controller-outline"></ion-icon>
+                <ion-icon class="custom-navbar__icons text-secondary" name="game-controller-outline"></ion-icon>
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-secondary" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Games</a>
+                    <a class="nav-link text-secondary" href="#">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-disabled="true">About</a>
+                    <a class="nav-link active text-secondary" aria-disabled="true">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-disabled="true">Contact</a>
+                    <a class="nav-link active text-secondary" aria-disabled="true">Contact</a>
                 </li>
             </ul>
             <a class="navbar-brand d-flex align-items-center ms-lg-9 me-0" href="#">
-                <ion-icon class="custom-navbar__icons" name="person-circle-outline"></ion-icon>
+                <ion-icon class="custom-navbar__icons text-secondary" name="person-circle-outline"></ion-icon>
             </a>
             <!-- <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

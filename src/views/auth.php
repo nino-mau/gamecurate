@@ -1,42 +1,82 @@
 <?php 
 include "../includes/header.php";
 $pageName = "Authentication";
+
+// Start session and get the form errors array
+session_start();
+$errors = $_SESSION['errors'] ?? [];
+$data = $_SESSION['formData'] ?? [];
+
+// Clear session data after retrieving
+unset($_SESSION['errors'], $_SESSION['formData']);
 ?>
 
-<div class="auth-page-content container d-flex justify-content-center align-items-center">
-    <form class="registration-form rounded-4 bg-secondary mt-9" action="" method="post">
+<div class="auth-page-content container d-flex flex-column justify-content-center align-items-center">
+    <form class="registration-form row rounded-4 bg-secondary shadow mt-9 w-40 p-3" action="/games-finder/src/php/registration-actions.php" method="post">
         <div class="column">
-            <div class="input-group mb-lg-6 mt-lg-6">
+            <div class="input-group mb-lg-4 mt-lg-1">
                 <span class="input-group-text">@</span>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Username</label>
+                    <input  type="text" 
+                            class="form-control <?= isset($errors['username']) ? 'is-invalid' : '' ?>" 
+                            id="registerUsername" 
+                            name="registerUsername"
+                            value="<?= htmlspecialchars($data['username'] ?? '') ?>" 
+                            placeholder="name@example.com">
+                    <label for="registerUsername">Username</label>
+                </div>
+                <?php if(isset($errors['username'])): ?>
+                    <div class="invalid-feedback" style="display: block;"><?= $errors['username'] ?></div>
+                <?php endif; ?>
+            </div>
+            <div class="input-group mb-lg-4">
+                <div class="form-floating">
+                    <input  type="email" 
+                            class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>" 
+                            id="registerEmail" 
+                            name="registerEmail"
+                            value="<?= htmlspecialchars($data['email'] ?? '') ?>"  
+                            placeholder="name@example.com">
+                    <label for="registerEmail">Email</label>
+                    <?php if(isset($errors['email'])): ?>
+                        <div class="invalid-feedback"><?= $errors['email'] ?></div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="input-group mb-lg-4">
+                <div class="form-floating">
+                    <input  type="password" 
+                            class="form-control <?= isset($errors['pwd']) ? 'is-invalid' : '' ?>" 
+                            id="registerPassword" 
+                            name="registerPassword" 
+                            value="<?= htmlspecialchars($data['pwd'] ?? '') ?>" 
+                            placeholder="Password">
+                    <label for="registerPassword">Password</label>
+                    <?php if(isset($errors['pwd'])): ?>
+                        <div class="invalid-feedback"><?= $errors['pwd'] ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="input-group mb-lg-6">
-                <span class="input-group-text">Ex: lastname@gmail.com</span>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
-                    <label for="floatingInputEmail">Email</label>
+                    <input  type="password" 
+                            class="form-control <?= isset($errors['confirmPwd']) ? 'is-invalid' : '' ?>" 
+                            id="registerConfirmPassword" 
+                            name="registerConfirmPassword"
+                            value="<?= htmlspecialchars($data['confirmPwd'] ?? '') ?>"  
+                            placeholder="Confirm Password">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <?php if(isset($errors['confirmPwd'])): ?>
+                        <div class="invalid-feedback"><?= $errors['confirmPwd'] ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
-            <div class="input-group mb-lg-6">
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                </div>
-            </div>
-            <div class="input-group mb-lg-6">
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
-                    <label for="floatingConfirmPassword">Confirm Password</label>
-                </div>
-            </div>
-            <div class="mb-lg-6 ">
-                <button type="submit" class="btn btn-primary ">Register</button>
+            <div class="mb-lg-1 d-grid ">
+                <button type="submit" class="btn btn-primary btn-lg">Register</button>
             </div>
         </div>
     </form>
+    <div class="text-center row mt-4"><p class="text-secondary">Already have an account ?  <a href="#">Sign in</a></p></div>
 </div>
 
 <?php 

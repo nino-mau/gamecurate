@@ -1,6 +1,6 @@
 // Change theme-color-variables
 $primary:       #772953 !default;
-$secondary:     #aea79f !default;
+$secondary:     #f8f9fa !default;
 $success:       #38b44a !default;
 $info:          #17a2b9 !default;
 $warning:       #efb73e !default;
@@ -21,6 +21,13 @@ $spacers: (
   8: $spacer * 6.25,   // 6.25rem (custom)
   9: $spacer * 7,   // 7rem (custom)
 );
+
+// Custom width utilities
+@each $i in 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 {
+    .w-#{$i} {
+        width: #{$i}#{'%'} !important;
+    }
+}
 
 
 // Change default bootstrap color scheme
