@@ -1,9 +1,7 @@
 <?php 
 include "../includes/header.php";
-$pageName = "Authentication";
+$pageName = "register";
 
-// Start session and get the form errors array
-session_start();
 $errors = $_SESSION['errors'] ?? [];
 $data = $_SESSION['formData'] ?? [];
 
@@ -11,7 +9,7 @@ $data = $_SESSION['formData'] ?? [];
 unset($_SESSION['errors'], $_SESSION['formData']);
 ?>
 
-<div class="auth-page-content container d-flex flex-column justify-content-center align-items-center">
+<div class="register-page-content container d-flex flex-column justify-content-center align-items-center">
     <form class="registration-form row rounded-4 bg-secondary shadow mt-9 w-40 p-3" action="/games-finder/src/php/registration-actions.php" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
@@ -76,7 +74,7 @@ unset($_SESSION['errors'], $_SESSION['formData']);
             </div>
         </div>
     </form>
-    <div class="text-center row mt-4"><p class="text-secondary">Already have an account ?  <a href="#">Sign in</a></p></div>
+    <div class="text-center row mt-4"><p class="text-secondary">Already have an account ?  <a href="/games-finder/src/views/login.php">Log in</a></p></div>
 </div>
 
 <?php 

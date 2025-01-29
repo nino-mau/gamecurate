@@ -1,6 +1,6 @@
 <?php 
 include "../includes/header.php";
-$pageName = "Authentication-success";
+$pageName = "register-success";
 ?>
 
 <div class="card-container d-flex justify-content-center">

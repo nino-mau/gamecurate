@@ -10,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'pwd' => trim($_POST['registerPassword']) ?? '',
         'confirmPwd' => trim($_POST['registerConfirmPassword']) ?? ''
     ];
-   
-    echo "<p>$confirmPwd</p>";
     
     registerUser($formData);
 }

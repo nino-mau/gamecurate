@@ -1,7 +1,8 @@
 <?php
 
+
 // To connect to db
-function getDatabaseConnection() {
+function getDatabaseConnection(){
     $host = 'localhost';
     $dbname = 'games-finder-db';
     $user = 'games-finder';
@@ -16,7 +17,9 @@ function getDatabaseConnection() {
     }
 }
 
-function registerUser($userData) {
+
+// Add registred users to db and handle form verif
+function registerUser($userData){
     
     $username = $userData['username'];
     $email = $userData['email'];
@@ -36,21 +39,53 @@ function registerUser($userData) {
                 ':email' => $email,
                 ':password' => password_hash($pwd, PASSWORD_DEFAULT),
             ]);
-            header('Location: /games-finder/src/views/auth-success.php');
+            header('Location: /games-finder/src/views/register-success.php');
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }
     } else {
-        // Pass errors and form content back to auth page
+        // Pass errors and form content back to register page
         session_start();
         $_SESSION['errors'] = $errors;
         $_SESSION['formData'] = $userData;
-        header('Location: /games-finder/src/views/auth.php');
+        header('Location: /games-finder/src/views/register.php');
         exit;
     }
 }
 
-function validateRegisterForm($username, $email, $pwd, $cpwd) {
+
+// Handle logings 
+function loginUser($userData){
+    
+    $username = $userData['username'];
+    $pwd = $userData['pwd'];
+
+    try {
+        $dbh = getDatabaseConnection();
+
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->execute([':username' => $username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($pwd, $user['password'])) {
+            session_start();
+            $_SESSION['username'] = $user['username'];
+            header('Location: /games-finder/public/index.html');
+        } else {
+            session_start();
+            $_SESSION['error'] = 'The email address or password was incorrect';
+            $_SESSION['loginData'] = $userData;
+            header('Location: /games-finder/src/views/login.php');
+            exit;
+        }
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage(); 
+    }
+}
+
+
+// Handle form validation
+function validateRegisterForm($username, $email, $pwd, $cpwd){
     $errors = [];
 
     // Username validation
@@ -75,9 +110,15 @@ function validateRegisterForm($username, $email, $pwd, $cpwd) {
     if ($cpwd !== $pwd) {
         $errors['confirmPwd'] = 'Does not match the password';
     } 
-
     return $errors;
 }
+
+
+
+
+
+
+
 
 
 

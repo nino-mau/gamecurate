@@ -1,3 +1,10 @@
+<?php
+// Start session and get username
+session_start();
+$username = $_SESSION['username'] ?? '';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
     <head>
@@ -11,8 +18,11 @@
         <script src="/games-finder/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
 
         <!---- Ionicons ---->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!---- Phosphor Icons ---->
+        <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
         
         <!---- Scripts and Stylesheets ---->
         <link rel="stylesheet" href="/games-finder/public/assets/css/main.css" media="all">
@@ -60,7 +70,13 @@
                 </li>
             </ul>
             <a class="navbar-brand d-flex align-items-center ms-lg-9 me-0" href="#">
-                <ion-icon class="custom-navbar__icons text-secondary" name="person-circle-outline"></ion-icon>
+                <?php if(isset($username)): ?>
+                    <!-- <ion-icon class="custom-navbar__icons text-secondary" name="person-outline"></ion-icon> -->
+                    <i class="custom-navbar__icons text-secondary ph ph-user-circle"></i>
+                <?php else: ?>
+                    <!-- <ion-icon class="custom-navbar__icons text-secondary" name="person-circle-outline"></ion-icon> -->
+                    <i class="custom-navbar__icons text-secondary ph-fill ph-user-circle"></i>
+                <?php endif; ?>
             </a>
             <!-- <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
