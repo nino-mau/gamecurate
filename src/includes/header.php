@@ -1,7 +1,7 @@
 <?php
 // Start session and get username
 session_start();
-$username = $_SESSION['username'] ?? '';
+$username = $_SESSION['username'];
 ?>
 
 

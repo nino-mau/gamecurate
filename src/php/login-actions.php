@@ -9,7 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'pwd' => trim($_POST['loginPassword']) ?? ''
     ];
 
-    loginUser($formData);
+    if ($formData) {
+        loginUser($formData);
+    } else {
+        header('Location: /games-finder/src/views/login.php');
+    }
 }
 
 

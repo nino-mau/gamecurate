@@ -1,6 +1,5 @@
 <?php
 
-
 // To connect to db
 function getDatabaseConnection(){
     $host = 'localhost';
@@ -16,7 +15,6 @@ function getDatabaseConnection(){
         throw new Exception('Connection failed: ' . $e->getMessage());
     }
 }
-
 
 // Add registred users to db and handle form verif
 function registerUser($userData){
@@ -53,7 +51,6 @@ function registerUser($userData){
     }
 }
 
-
 // Handle logings 
 function loginUser($userData){
     
@@ -70,7 +67,7 @@ function loginUser($userData){
         if ($user && password_verify($pwd, $user['password'])) {
             session_start();
             $_SESSION['username'] = $user['username'];
-            header('Location: /games-finder/public/index.html');
+            header('Location: /games-finder/public/index.php');
         } else {
             session_start();
             $_SESSION['error'] = 'The email address or password was incorrect';
@@ -82,7 +79,6 @@ function loginUser($userData){
         echo "Error: " . $e->getMessage(); 
     }
 }
-
 
 // Handle form validation
 function validateRegisterForm($username, $email, $pwd, $cpwd){

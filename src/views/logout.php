@@ -8,6 +8,8 @@ $_SESSION = [];
 session_destroy();
 
 // Redirect to login page
-header('Location: /games-finder/public/index.html');
+// header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/games-finder/public/index.php");
+header("Location: login.php");
 exit;
-?>
+
+
