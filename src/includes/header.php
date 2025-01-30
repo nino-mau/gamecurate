@@ -71,16 +71,13 @@ $username = $_SESSION['username'] ?? '';
                     <a class="nav-link active text-secondary" aria-disabled="true">Contact</a>
                 </li>
             </ul>
-            <a tabindex="0" class="navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
-            <!-- <a class="navbar-brand d-flex align-items-center ms-lg-9 me-0" href="#"> -->
-                <?php if(empty($username)): ?>
-                    <i class="custom-navbar__icons text-secondary ph ph-user-circle"></i>
-                <?php else: ?>
-                    <i class="custom-navbar__icons text-secondary ph-fill ph-user-circle"></i>
-                <?php endif; ?>
+        <?php if(empty($username)): ?>
+            <a tabindex="0" class="user-menu user-menu--loggedout navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover">
+                <i class="icons text-secondary ph ph-user-circle"></i>
             </a>
-            <!-- <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+        <?php else: ?>
+            <a tabindex="0" class="user-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover">
+                <i class="icons text-secondary ph-fill ph-user-circle"></i>
+                </a>       
+        <?php endif; ?>
         </nav>

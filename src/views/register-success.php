@@ -9,7 +9,7 @@ $pageName = "register-success";
             <ion-icon class="registration-success-card__check-icon text-success" name="checkmark-circle-outline"></ion-icon>
             <h1 class="card-title">Welcome !</h1>
             <p class="card-text mt-3">Congratulations, your account has been succesfully created</p>
-            <a href="/games-finder/public/index.html" class="btn btn-primary mt-4">Continue</a>
+            <a href="/games-finder/public/index.php" class="btn btn-primary mt-4">Continue</a>
         </div>
     </div>
 </div>
