@@ -1,9 +1,8 @@
 <?php
 // Start session and get username
 session_start();
-$username = $_SESSION['username'];
+$username = $_SESSION['username'] ?? '';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
@@ -12,6 +11,9 @@ $username = $_SESSION['username'];
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title></title>
         <meta name="GamesFinder" content="Your site description." />
+
+        <!---- JQuery ---->
+        <script src="/games-finder/node_modules/jquery/dist/jquery.min.js"></script>
 
         <!---- Bootstrap and Popper.js ---->
         <script src="/games-finder/node_modules/@popperjs/core/dist/umd/popper.min.js" defer></script>
@@ -69,12 +71,11 @@ $username = $_SESSION['username'];
                     <a class="nav-link active text-secondary" aria-disabled="true">Contact</a>
                 </li>
             </ul>
-            <a class="navbar-brand d-flex align-items-center ms-lg-9 me-0" href="#">
-                <?php if(isset($username)): ?>
-                    <!-- <ion-icon class="custom-navbar__icons text-secondary" name="person-outline"></ion-icon> -->
+            <a tabindex="0" class="navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
+            <!-- <a class="navbar-brand d-flex align-items-center ms-lg-9 me-0" href="#"> -->
+                <?php if(empty($username)): ?>
                     <i class="custom-navbar__icons text-secondary ph ph-user-circle"></i>
                 <?php else: ?>
-                    <!-- <ion-icon class="custom-navbar__icons text-secondary" name="person-circle-outline"></ion-icon> -->
                     <i class="custom-navbar__icons text-secondary ph-fill ph-user-circle"></i>
                 <?php endif; ?>
             </a>
@@ -82,4 +83,4 @@ $username = $_SESSION['username'];
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form> -->
-      </nav>
+        </nav>
