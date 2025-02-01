@@ -1,7 +1,16 @@
 <?php
-// Start session and get username
+require_once $ROOT.'/games-finder/src/php/db-functions.php';
+
+// Start session
 session_start();
+
 $username = $_SESSION['username'] ?? '';
+$token = $_COOKIE['remember'] ?? '';
+
+// Handle cookie auto-login
+if (!$username AND $token) {
+    autoCookieLogin($token);
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +54,8 @@ $username = $_SESSION['username'] ?? '';
         <meta name="twitter:image" content="images/hom-banner-compressed.jpg" />
         
         <!---- Favicons ---->
-        <link rel="icon" href="images/icon/cropped-favicon-32x32.png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="images/icon/cropped-favicon-180x180.png" />
+        <link rel="icon" href="/games-finder/public/assets/img/icons/main-icon-white.svg" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/games-finder/public/assets/img/icons/main-icon.svg" />
         
         <!---- Search Engine Optimization ---->
         <meta name="robots" content="index, follow" />
@@ -55,7 +64,8 @@ $username = $_SESSION['username'] ?? '';
     <body class="bg-dark">
         <nav class="navbar navbar-expand-lg justify-content-center bg-primary custom-navbar">  
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <ion-icon class="custom-navbar__icons text-secondary" name="game-controller-outline"></ion-icon>
+                <!-- <ion-icon class="custom-navbar__icons text-secondary" name="game-controller-outline"></ion-icon> -->
+                <img class="custom-navbar__icons" src="/games-finder/public/assets/img/icons/main-icon-white.svg">
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -78,6 +88,6 @@ $username = $_SESSION['username'] ?? '';
         <?php else: ?>
             <a tabindex="0" class="user-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover">
                 <i class="icons text-secondary ph-fill ph-user-circle"></i>
-                </a>       
+            </a>       
         <?php endif; ?>
         </nav>

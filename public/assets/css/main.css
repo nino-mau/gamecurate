@@ -3,7 +3,6 @@
 
 :root {
     --deep-orange: #FF5A09;
-    --light-orange: #ec7f37;
 }
 
 html {
@@ -26,16 +25,16 @@ body {
 
 /** ---- NAVBAR ---- */
 .custom-navbar__icons {
-    font-size: 3rem;
+    font-size: 3rem !important;
 }
 
 .user-menu {
     > .icons {
         font-size: 3.5rem;
-        transition: all 0.5s ease-in-out;
+        transition: all .2s ease-in-out;
     }
     > .icons:hover {
-        transform: scale(1.2);
+        /* transform: scale(1.2); */
     }
 }
 .account-btn__popoverBody {

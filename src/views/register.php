@@ -1,5 +1,6 @@
 <?php 
-include "../includes/header.php";
+include $ROOT.'/games-finder/src/includes/header.php';
+
 $pageName = "register";
 
 $errors = $_SESSION['errors'] ?? [];
@@ -78,7 +79,7 @@ unset($_SESSION['errors'], $_SESSION['formData']);
 </div>
 
 <?php 
-include "../includes/footer.php";
+include $ROOT.'/games-finder/src/includes/footer.php';
 ?>
 
 

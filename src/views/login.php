@@ -1,5 +1,6 @@
 <?php 
-include "../includes/header.php";
+include $ROOT.'/games-finder/src/includes/header.php';
+
 $pageName = "login";
 
 $error = $_SESSION['error'] ?? [];
@@ -27,7 +28,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                     <div class="invalid-feedback" style="display: block;"><?= $errors['username'] ?></div>
                 <?php endif; ?>
             </div>
-            <div class="input-group mb-lg-6">
+            <div class="input-group mb-lg-4">
                 <div class="form-floating">
                     <input  type="password" 
                             class="form-control <?= isset($errors['pwd']) ? 'is-invalid' : '' ?>" 
@@ -38,6 +39,10 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                     <label for="loginPassword">Password</label>
                 </div>
             </div>
+            <div class="form-check mb-lg-5">
+                <input class="form-check-input" type="checkbox" name="remember" value="remember" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+            </div>
             <div class="mb-lg-1 d-grid ">
                 <button type="submit" class="btn btn-primary btn-lg">Login</button>
             </div>
@@ -47,5 +52,5 @@ unset($_SESSION['error'], $_SESSION['loginData']);
 </div>
 
 <?php 
-include "../includes/footer.php";
+include $ROOT.'/games-finder/src/includes/footer.php';
 ?>

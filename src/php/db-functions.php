@@ -1,6 +1,6 @@
 <?php
 
-// To connect to db
+// To use to connect to db
 function getDatabaseConnection(){
     $host = 'localhost';
     $dbname = 'games-finder-db';
@@ -38,12 +38,12 @@ function registerUser($userData){
                 ':password' => password_hash($pwd, PASSWORD_DEFAULT),
             ]);
             header('Location: /games-finder/src/views/register-success.php');
+            exit;
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }
     } else {
         // Pass errors and form content back to register page
-        session_start();
         $_SESSION['errors'] = $errors;
         $_SESSION['formData'] = $userData;
         header('Location: /games-finder/src/views/register.php');
@@ -56,6 +56,7 @@ function loginUser($userData){
     
     $username = $userData['username'];
     $pwd = $userData['pwd'];
+    $remember = $userData['remember'];
 
     try {
         $dbh = getDatabaseConnection();
@@ -65,11 +66,12 @@ function loginUser($userData){
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($pwd, $user['password'])) {
-            session_start();
             $_SESSION['username'] = $user['username'];
+            setRememberCoockie($remember, $username);
+            session_regenerate_id(true);
             header('Location: /games-finder/public/index.php');
+            exit;
         } else {
-            session_start();
             $_SESSION['error'] = 'The email address or password was incorrect';
             $_SESSION['loginData'] = $userData;
             header('Location: /games-finder/src/views/login.php');
@@ -80,7 +82,28 @@ function loginUser($userData){
     }
 }
 
-// Handle form validation
+// Handle automatic logins with token stored in cookie
+function autoCookieLogin($token) {
+    try {
+        $dbh = getDatabaseConnection();
+        
+        $stmt = $dbh->prepare("SELECT username FROM users WHERE remember_token = :token");
+        $stmt->execute([
+            ':token' => $token
+        ]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            $_SESSION['username'] = $user['username'];
+            header('Location: /games-finder/public/index.php');
+            exit;
+        }
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+// Handle form validation with visual feedback
 function validateRegisterForm($username, $email, $pwd, $cpwd){
     $errors = [];
 
@@ -107,6 +130,29 @@ function validateRegisterForm($username, $email, $pwd, $cpwd){
         $errors['confirmPwd'] = 'Does not match the password';
     } 
     return $errors;
+}
+
+// Handle creating 'remember me' cookies
+function setRememberCoockie($remember, $username) {
+    if ($remember) {
+        $token = bin2hex(random_bytes(32));
+        $expire = time() + (86400 * 30); // 30 days
+
+        // Store token in db
+        try {
+            $dbh = getDatabaseConnection();
+            $stmt = $dbh->prepare("UPDATE users SET remember_token = :token WHERE username = :username");
+            $stmt->execute([
+                ':username' => $username,
+                ':token' => $token
+            ]);
+            // Set remember cookie
+            setcookie('remember', $token, $expire, '/');
+
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();  
+        }
+    }
 }
 
 

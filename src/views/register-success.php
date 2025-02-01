@@ -1,5 +1,5 @@
 <?php 
-include "../includes/header.php";
+include $ROOT.'/games-finder/src/includes/header.php';
 $pageName = "register-success";
 ?>
 
@@ -15,5 +15,5 @@ $pageName = "register-success";
 </div>
 
 <?php 
-include "../includes/footer.php";
+include $ROOT.'/games-finder/src/includes/footer.php';
 ?>

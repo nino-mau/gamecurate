@@ -2,5 +2,5 @@
 </html>
 
 <?php 
-unset($_SESSION['username']);
+// $_SESSION['username'] = '';
 ?>
