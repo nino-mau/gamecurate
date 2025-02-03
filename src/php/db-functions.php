@@ -1,11 +1,12 @@
 <?php
 
 // To use to connect to db
-function getDatabaseConnection(){
+function getDatabaseConnection(){ 
     $host = 'localhost';
     $dbname = 'games-finder-db';
-    $user = 'games-finder';
-    $password = 'D3c4p3%6P=U';
+    $user = 'nino';
+    // $password = 'D3c4p3%6P=U'; 
+    $password = 'ddQqJ-9uCyFhGBo';
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
@@ -17,7 +18,7 @@ function getDatabaseConnection(){
 }
 
 // Add registred users to db and handle form verif
-function registerUser($userData){
+function registerUser($userData){ 
     
     $username = $userData['username'];
     $email = $userData['email'];

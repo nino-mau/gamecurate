@@ -19,22 +19,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
-?>
-
-<p>test</p>
-<?php 
-$test = $_POST['remember'] ?? '';
-
-if ($test) {
-    echo 'test is true';
-} else if (! $test) {
-    echo "test isn't true";
-} else {
-    echo "test isn't false or true";
-}
-
-$test2 = $_POST['loginUsername'];
-echo $test;
-echo $test2;
-?>
