@@ -1,5 +1,7 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
+const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -10,4 +12,5 @@ export default [
     },
   },
   pluginJs.configs.recommended,
+  eslintPluginPrettierRecommended,
 ];
