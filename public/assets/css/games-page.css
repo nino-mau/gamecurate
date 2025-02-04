@@ -1,0 +1,20 @@
+.games-grid-containers {
+    margin-top: 10rem;
+    color: white;
+
+    > .game-img {
+        margin-bottom: 1rem;
+    }
+    > .game-titles {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+
+.game-grid-sub-containers {
+    color: white;
+    > .game-price {
+    }
+    > .game-review {
+    }
+}

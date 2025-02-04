@@ -1,5 +1,6 @@
 @import url(custom-bootstrap.css);
 @import url(fonts.css);
+@import url(games-page.css);
 
 :root {
     --deep-orange: #ff5a09;
