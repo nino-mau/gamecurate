@@ -10,22 +10,24 @@ $data = $_SESSION['loginData'] ?? [];
 unset($_SESSION['error'], $_SESSION['loginData']);
 ?>
 
-<div class="login-page-content container d-flex flex-column justify-content-center align-items-center">
+<main class="login-page-content container d-flex flex-column justify-content-center align-items-center">
     <form class="login-form row rounded-4 bg-secondary shadow mt-9 w-40 p-3" action="/games-finder/src/php/login-actions.php" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
-                <span class="input-group-text">@</span>
+                <span class="input-group-text" aria-hidden="true">@</span>
                 <div class="form-floating">
                     <input  type="text" 
                             class="form-control <?= isset($errors['username']) ? 'is-invalid' : '' ?>" 
                             id="loginUsername" 
                             name="loginUsername"
                             value="<?= htmlspecialchars($data['username'] ?? '') ?>" 
-                            placeholder="name@example.com">
+                            placeholder="name@example.com"
+                            autocomplete="username"
+                            required>
                     <label for="loginUsername">Username</label>
                 </div>
                 <?php if(isset($errors['username'])): ?>
-                    <div class="invalid-feedback" style="display: block;"><?= $errors['username'] ?></div>
+                    <div class="invalid-feedback" style="display: block;"><p aria-invalid="true"><?= $errors['username'] ?></p></div>
                 <?php endif; ?>
             </div>
             <div class="input-group mb-lg-4">
@@ -35,9 +37,14 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                             id="loginPassword" 
                             name="loginPassword" 
                             value="<?= htmlspecialchars($data['pwd'] ?? '') ?>" 
-                            placeholder="Password">
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            required>
                     <label for="loginPassword">Password</label>
                 </div>
+                <?php if(isset($errors['username'])): ?>
+                    <div class="invalid-feedback" style="display: block;"><p aria-invalid="true"><?= $errors['username'] ?></p></div>
+                <?php endif; ?>
             </div>
             <div class="form-check mb-lg-5">
                 <input class="form-check-input" type="checkbox" name="remember" value="remember" id="flexCheckDefault">
@@ -49,7 +56,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
         </div>
     </form>
     <div class="text-center row mt-4"><p class="text-secondary">Don't have an account ?  <a href="/games-finder/src/views/register.php">Sign in</a></p></div>
-</div>
+</main>
 
 <?php 
 include $ROOT.'/games-finder/src/includes/footer.php';
