@@ -2,7 +2,7 @@
 @import url(fonts.css);
 
 :root {
-    --deep-orange: #FF5A09;
+    --deep-orange: #ff5a09;
 }
 
 html {
@@ -16,12 +16,12 @@ body {
     font-family: Poppins;
 }
 
-
 /** ---- GLOBAL ---- */
 .btn {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 /** ---- NAVBAR ---- */
 .custom-navbar__icons {
@@ -31,13 +31,13 @@ body {
 .user-menu {
     > .icons {
         font-size: 3.5rem;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
     > .icons:hover {
         /* transform: scale(1.2); */
     }
 }
-.account-btn__popoverBody {
+.account-btn__popover {
     width: 125px !important;
 }
 

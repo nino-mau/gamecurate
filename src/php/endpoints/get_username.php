@@ -15,8 +15,7 @@ if ($username) {
         'username' => $_SESSION['username']
     ]);
 } else {
-    http_response_code(401);
-    echo json_encode(['error' => 'Not authenticated']);
+    echo json_encode(['error' => 'No user is loggedin, therefore impossible got get username']);
     exit;
 } 
 

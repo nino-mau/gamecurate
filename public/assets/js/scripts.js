@@ -1,52 +1,40 @@
 /* global bootstrap */
 
+
 /** ---- SERVER REQUESTS ---- */
 
-
 // Using Fetch API
-async function fetchData(url, options = {}) {
+async function fetchData(url) {
     try {
-        const response = await fetch(url, options = {});
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return await response.json();
+        const jsonData = await response.json();
+        return jsonData.username;
     } catch (error) {
         console.error("Fetch error:", error);
         throw error;
     }
 }
 
-let username = fetchData(
-    "http://localhost/games-finder/src/php/endpoints/get_username.php");
-
 /** ---- HTML-DOM RELATED CODE ---- */
 
 document.addEventListener("DOMContentLoaded", function () {
+
     // Implement login/register popover on account menu
     jQuery(function () {
         /** ---- LOGIN/REGISTER POPOVER ---- */
 
         // Custom logged out popover content with buttons
         const popoverLoContent = `
-            <div class="account-btn__popoverBody">
+            <div class="user-menu__popover">
                 <div class="d-flex flex-column gap-3 justify-content-center">
                     <a role="button" class="btn btn-primary" href="/games-finder/src/views/login.php">Login</a>
                     <a role="button" class="btn btn-primary" href="/games-finder/src/views/register.php">Register</a>
                 </div>
             </div>
         `;
-
-        // Custom logged in popover content with buttons
-        const popoverLiContent = `
-            <div class="account-btn__popoverBody--loggedin">
-                <div class="d-flex flex-column gap-3 justify-content-center">
-
-                    <a role="button" class="btn btn-primary" href="/games-finder/src/views/logout.php">Logout</a>
-                </div>
-            </div>
-        `;
-
         // Initialize popovers PROPERLY
         document.querySelectorAll(".user-menu--loggedout").forEach((el) => {
             new bootstrap.Popover(el, {
@@ -58,15 +46,31 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        document.querySelectorAll(".user-menu--loggedin").forEach((el) => {
-            new bootstrap.Popover(el, {
-                content: popoverLiContent,
-                html: true,
-                sanitize: false,
-                placement: "bottom",
-                trigger: "focus",
+        // Initialize the loggedin popover when the username has been received
+        (async () => {
+            const username = await fetchData("http://localhost/games-finder/src/php/endpoints/get_username.php");
+            const cUsername = username.toUpperCase();
+            
+            // Custom logged in popover content with buttons
+            const popoverLiContent = `
+                <div class="user-menu__popover">
+                    <div id="loggedout-popover-body" class="user-menu__popover-body--loggedin d-flex flex-column gap-3 justify-content-center">
+                        <h4 class="text-center fw-bold">${cUsername}</h4>
+                        <a role="button" class="btn btn-primary" href="/games-finder/src/views/profile.php">Profile</a>
+                        <a role="button" class="btn btn-primary" href="/games-finder/src/views/logout.php">Logout</a>
+                    </div>
+                </div>
+            `;
+            document.querySelectorAll(".user-menu--loggedin").forEach((el) => {
+                new bootstrap.Popover(el, {
+                    content: popoverLiContent,
+                    html: true,
+                    sanitize: false,
+                    placement: "bottom",
+                    trigger: "focus",
+                });
             });
-        });
+        })();
     });
 
     /** -- MENU ICONS HOVER -- */
