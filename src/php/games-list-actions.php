@@ -19,22 +19,22 @@ $imagepathArr = [];
 foreach ($gamesList as $dict) {
     foreach ($dict as $key => $item) {
         switch ($key) {
-            case $key === "name":
+            case "name":
                 $nameArr[] = $item;
                 break;
-            case $key === "description":
+            case "description":
                 $descArr[] = $item;
                 break;
-            case $key === "genre":
+            case "genre":
                 $genreArr[] = $item;
                 break;            
-            case $key === "price":
+            case "price":
                 $priceArr[] = $item;
                 break;            
-            case $key === "review":
+            case "review":
                 $reviewArr[] = $item;
                 break;            
-            case $key === "image_path":
+            case "image_path":
                 $imagepathArr[] = $item;
                 break;
         }
@@ -45,5 +45,7 @@ foreach ($gamesList as $dict) {
 $gamesDict = [];
 array_push($gamesDict, $nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr);
 
+print_r($gamesDict);
+
 // Send data to SESSIONS to be used on pages
-$_SESSION['gamesDicy'] = $gamesDict;
+$_SESSION['gamesDict'] = $gamesDict;

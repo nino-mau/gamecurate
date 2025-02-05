@@ -59,10 +59,9 @@ async function fetchData(url) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Implement login/register popover on account menu
-    jQuery(function () {
-        /** ---- LOGIN/REGISTER POPOVER ---- */
 
+    /** -- LOGIN/REGISTER POPOVER -- */
+    jQuery(function () {
         // Custom logged out popover content with buttons
         const popoverLoContent = `
             <div class="user-menu__popover">
@@ -109,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })();
     });
+
 
     /** -- MENU ICONS HOVER -- */
     const userMenu = document.querySelector(".user-menu");
