@@ -169,7 +169,21 @@ function setRememberCoockie($remember, $username) {
     }
 }
 
-
+// Convert db table to json and store it in file
+function dbTableToJson($dbTable, $jsonFile) {
+    try {
+        $table = getDbTable($dbTable);
+        $r = file_put_contents($jsonFile, json_encode($table, JSON_PRETTY_PRINT));
+        if (! $r) {
+            echo '<p>Failed to write Json file !</p>';
+            exit;
+        } else {
+            echo '<p>Succesfuly exported table to Json file !</p>';
+        }
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage(); 
+    }
+}
 
 
 

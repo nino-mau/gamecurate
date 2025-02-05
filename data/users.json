@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "username": "root",
+        "email": "root@gmail.com",
+        "password": "$2y$10$lB1TpPdtQNw4Oq4oyjjD6uab9h.Nl7DOgshHYb92U2vueQUm\/NAMi",
+        "remember_token": null
+    },
+    {
+        "id": 2,
+        "username": "test",
+        "email": "test@gmail.com",
+        "password": "$2y$10$VpKEU7FLJYZMp0C57\/xKj.N.XOSU92JKHQNyu44F\/sjUdd87gSSla",
+        "remember_token": null
+    }
+]
