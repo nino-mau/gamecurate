@@ -1,9 +1,17 @@
 .games-grid-containers {
     margin-top: 10rem;
+    margin-left: 2.5rem;
+    width: 380px;
+    padding: 0;
     color: white;
 
     > .game-img {
-        margin-bottom: 1rem;
+        margin-bottom: 0.9rem;
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+    }
+    > .game-img:hover {
+        transform: scale(1.1);
     }
     > .game-titles {
         font-weight: bold;
@@ -14,7 +22,33 @@
 .game-grid-sub-containers {
     color: white;
     > .game-price {
+        padding-right: 6.4rem;
+        font-weight: 500;
+        font-size: 1.26rem;
+    }
+    > .game-genre {
+        font-size: 1rem;
+        font-style: italic;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
     }
     > .game-review {
+        font-weight: 500;
+        font-size: 1.26rem;
+        > .review-icon {
+            font-size: 1.26rem;
+            color: gold;
+        }
+        > .game-review-cl--green {
+            color: #13bd00;
+        }
+        > .game-review-cl--lightgreen {
+            color: #94cf0b;
+        }
+        > .game-review-cl--orange {
+            color: #fdda01;
+        }
+        > .game-review-cl--red {
+            color: red;
+        }
     }
 }
