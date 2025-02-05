@@ -1,9 +1,46 @@
 /* global bootstrap */
 
 
+/** ---- DYNAMIC PAGES TITLES ---- */
+
+function handleDynamicPageTitling() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+
+    let title = "";
+
+    switch (page) {
+        case "index.php":
+            title = "Home - Games Finder";
+            break;    
+        case "login.php":
+            title = "Logging - Games Finder";
+            break;    
+        case "register.php":
+            title = "Resiter - Games Finder";
+            break;    
+        case "register-success.php":
+            title = "Succesfuly Registration - Games Finder";
+            break;
+        case "profile.php":
+            title = "Account Profile - Games Finder";
+        case "games-list.php":
+            title = "Games List - Games Finder";
+        default:
+            title = "Games Finder"
+            break;
+    }
+
+    document.title = title;
+}
+
+handleDynamicPageTitling();
+
+
+
 /** ---- SERVER REQUESTS ---- */
 
-// Using Fetch API
+// function using Fetch API to fetch data from specified php endpoint
 async function fetchData(url) {
     try {
         const response = await fetch(url);

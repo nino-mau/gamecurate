@@ -1,8 +1,6 @@
 <?php 
 include $ROOT.'/games-finder/src/includes/header.php';
 
-$pageName = "register";
-
 $errors = $_SESSION['errors'] ?? [];
 $data = $_SESSION['formData'] ?? [];
 

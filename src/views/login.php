@@ -1,8 +1,6 @@
 <?php 
 include $ROOT.'/games-finder/src/includes/header.php';
 
-$pageName = "login";
-
 $error = $_SESSION['error'] ?? [];
 $data = $_SESSION['loginData'] ?? [];
 

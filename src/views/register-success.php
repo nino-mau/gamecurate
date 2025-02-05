@@ -1,6 +1,5 @@
 <?php 
 include $ROOT.'/games-finder/src/includes/header.php';
-$pageName = "register-success";
 
 // Start session
 session_start();

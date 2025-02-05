@@ -1,7 +1,5 @@
 <?php
 include $ROOT.'/games-finder/src/includes/header.php';
-
-$pageName = "profile";
 ?>
 
 
