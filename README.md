@@ -2,35 +2,27 @@
 PROJECT STRUCTURE:
 
 📁 games-finder
-    📁 .vscode
-        ─ games-finder-snippets.code-snippets
-        ─ settings.json
     📁 node_modules
-        ─ ...    
+        ─ .package-lock.json
+        📁 @popperjs
+        📁 bootstrap
+        📁 jquery
     📁 public
         📁 assets
             📁 css
                 ─ custom-bootstrap.css
                 ─ custom-bootstrap.css.map
                 ─ fonts.css
-                ─ games-page.css
                 ─ main.css
             📁 fonts
-                📁 Inter
-                📁 Poppins
+                ─ Inter.ttc
+                ─ InterVariable-Italic.ttf
+                ─ InterVariable.ttf
             📁 img
-                ─ example.jpeg
-                📁 games
-                    ─ animal-crossing-new-horizons.jpeg
-                    ─ control.jpeg
-                    ─ ...
-                📁 icons
-                    ─ main-icon-white.svg
-                    ─ main-icon.svg
             📁 js
                 ─ scripts.js
             📁 scss
-        ─ index.php
+        ─ index.html
     📁 scss
         ─ custom.scss
     📁 src
@@ -38,24 +30,9 @@ PROJECT STRUCTURE:
             ─ footer.php
             ─ header.php
         📁 php
-            ─ db-functions.php
-            📁 endpoints
-                ─ get_username.php
-            ─ games-list-actions.php
-            ─ globals.php
-            ─ login-actions.php
-            ─ registration-actions.php
         📁 views
-            ─ games-list.php
-            ─ login.php
-            ─ logout.php
-            ─ profile.php
-            ─ register-success.php
-            ─ register.php
+            ─ auth.php
     ─ .gitignore
-    ─ .prettierrc.json
-    ─ eslint.config.mjs
-    ─ games-table.json
     ─ package-lock.json
     ─ package.json
     ─ README.md
