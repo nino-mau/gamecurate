@@ -1,73 +1,19 @@
-PROJECT STRUCTURE:
 
-📁 games-finder
-    📁 .vscode
-        ─ games-finder-snippets.code-snippets
-        ─ settings.json
-    📁 node_modules
-        📁 .bin 
-        📁 @eslint
-        📁 @eslint-community
-        📁 @humanwhocodes
-        📁 @popperjs
-        📁 @sinclair
-        📁 @types
-        📁 @typescript-eslint
-        📁 @ungap
-        📁 ...
-    📁 public
-        📁 assets
-            📁 css
-                ─ custom-bootstrap.css
-                ─ custom-bootstrap.css.map
-                ─ fonts.css
-                ─ games-page.css
-                ─ main.css
-            📁 fonts
-                📁 Inter
-                    ─ Inter-Italic.woff
-                    ─ ...
-                📁 Poppins
-                    ─ Poppins-Black.woff
-                    ─ ...
-            📁 img
-                ─ example.jpeg
-                📁 games
-                    ─ animal-crossing-new-horizons.jpeg
-                    ─ ...
-                📁 icons
-                    ─ main-icon-white.svg
-                    ─ main-icon.svg
-            📁 js
-                ─ scripts.js
-            📁 scss
-        ─ index.php
-    📁 scss
-        ─ custom.scss
-    📁 src
-        📁 includes
-            ─ footer.php
-            ─ header.php
-        📁 php
-            ─ db-functions.php
-            📁 endpoints
-                ─ get_username.php
-            ─ games-list-actions.php
-            ─ globals.php
-            ─ login-actions.php
-            ─ registration-actions.php
-        📁 views
-            ─ games-list.php
-            ─ login.php
-            ─ logout.php
-            ─ profile.php
-            ─ register-success.php
-            ─ register.php
-    ─ .gitignore
-    ─ .prettierrc.json
-    ─ eslint.config.mjs
-    ─ games-table.json
-    ─ package-lock.json
-    ─ package.json
-    ─ README.md
+
+Installed Node Modules:
+
+   @eslint/js@9.19.0
+   @popperjs/core@2.11.8
+   bootstrap@5.3.3
+   eslint-config-jquery@3.0.2
+   eslint@9.19.0
+   globals@15.14.0
+   jquery@3.7.1
+   prettier-eslint@16.3.0
+   prettier@3.4.2
+
+Other dependencies:
+
+   @phosphor-icons
+   ionicons@7.1.0
 ```
