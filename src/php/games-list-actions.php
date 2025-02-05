@@ -1,6 +1,10 @@
 <?php 
 require_once 'db-functions.php';
 
+// Start session
+session_start();
+
+
 $gamesList = getDbTable('games');
 
 // Create empty array to store table columns
@@ -40,3 +44,6 @@ foreach ($gamesList as $dict) {
 // Put these arrays back in a dictionnary
 $gamesDict = [];
 array_push($gamesDict, $nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr);
+
+// Send data to SESSIONS to be used on pages
+$_SESSION['gamesDicy'] = $gamesDict;
