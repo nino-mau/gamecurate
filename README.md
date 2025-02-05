@@ -1,28 +1,47 @@
-
 PROJECT STRUCTURE:
 
 📁 games-finder
+    📁 .vscode
+        ─ games-finder-snippets.code-snippets
+        ─ settings.json
     📁 node_modules
-        ─ .package-lock.json
+        📁 .bin 
+        📁 @eslint
+        📁 @eslint-community
+        📁 @humanwhocodes
         📁 @popperjs
-        📁 bootstrap
-        📁 jquery
+        📁 @sinclair
+        📁 @types
+        📁 @typescript-eslint
+        📁 @ungap
+        📁 ...
     📁 public
         📁 assets
             📁 css
                 ─ custom-bootstrap.css
                 ─ custom-bootstrap.css.map
                 ─ fonts.css
+                ─ games-page.css
                 ─ main.css
             📁 fonts
-                ─ Inter.ttc
-                ─ InterVariable-Italic.ttf
-                ─ InterVariable.ttf
+                📁 Inter
+                    ─ Inter-Italic.woff
+                    ─ ...
+                📁 Poppins
+                    ─ Poppins-Black.woff
+                    ─ ...
             📁 img
+                ─ example.jpeg
+                📁 games
+                    ─ animal-crossing-new-horizons.jpeg
+                    ─ ...
+                📁 icons
+                    ─ main-icon-white.svg
+                    ─ main-icon.svg
             📁 js
                 ─ scripts.js
             📁 scss
-        ─ index.html
+        ─ index.php
     📁 scss
         ─ custom.scss
     📁 src
@@ -30,9 +49,24 @@ PROJECT STRUCTURE:
             ─ footer.php
             ─ header.php
         📁 php
+            ─ db-functions.php
+            📁 endpoints
+                ─ get_username.php
+            ─ games-list-actions.php
+            ─ globals.php
+            ─ login-actions.php
+            ─ registration-actions.php
         📁 views
-            ─ auth.php
+            ─ games-list.php
+            ─ login.php
+            ─ logout.php
+            ─ profile.php
+            ─ register-success.php
+            ─ register.php
     ─ .gitignore
+    ─ .prettierrc.json
+    ─ eslint.config.mjs
+    ─ games-table.json
     ─ package-lock.json
     ─ package.json
     ─ README.md
