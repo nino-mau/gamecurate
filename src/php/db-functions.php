@@ -17,6 +17,19 @@ function getDatabaseConnection(){
     }
 }
 
+// Function used to extract table and return them in form of php object
+function getDbTable($tableName) {
+    try {
+        $dbh = getDatabaseConnection();
+        $stmt = $dbh->prepare("SELECT * FROM $tableName");
+        $stmt->execute();
+        $table = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $table;
+    } catch (Exception $e) {
+        return "Error: " . $e->getMessage();
+    }
+} 
+
 // Add registred users to db and handle form verif
 function registerUser($userData){ 
     
