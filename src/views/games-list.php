@@ -3,12 +3,16 @@ include $ROOT.'/games-finder/src/includes/header.php';
 
 $gamesDict = $_SESSION['gamesDict'];
 
+// For indications only
 $name = $gamesDict[0];
 $desc = $gamesDict[1];
 $genre = $gamesDict[2];
 $price = $gamesDict[3];
 $review = $gamesDict[4];
 $img_path = $gamesDict[5];
+
+$gamesAmount = count($gamesDict[0]);
+
 
 function handleReviewColor($reviewScore) {
     if ($reviewScore >= 90) {
@@ -25,14 +29,49 @@ function handleReviewColor($reviewScore) {
     $res = $reviewHtml . $reviewScore . '/100</span>';
     return $res;
 }
-
-function test() {
-    echo 'test';
-}
-
-$gamesAmount = count($gamesDict[0]);
-
 ?>
+<nav class="games-list-navbar d-flex flex-row justify-content-center">
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/action-icon.svg">
+        <p class="navbar-text">Action</p>        
+    </div>
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/adventure-icon4.svg">
+        <p class="navbar-text">Adventure</p>
+    </div>    
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/horror-icon.svg">
+        <p class="navbar-text">Horror</p>
+    </div>
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/immersive-sim-icon.svg">
+        <p class="navbar-text">Imm-sim</p>        
+    </div>      
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/open-world-icon.svg">
+        <p class="navbar-text">Open-world</p>
+    </div>
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/platformer-icon.svg">
+        <p class="navbar-text">Platformer</p>
+    </div>    
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/racing-icon2.svg">
+        <p class="navbar-text">Racing</p>
+    </div>
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/rpg-icon.svg">
+        <p class="navbar-text">RPG</p>        
+    </div>
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/shooter-icon.svg">
+        <p class="navbar-text">Shooter</p>
+    </div>
+    <div class="navbar-containers">
+        <img class="navbar-icons" src="/games-finder/public/assets/img/icons/simulation-icon.svg">
+        <p class="navbar-text">Simulations</p>
+    </div>    
+</nav> 
 
 <main>
     <div class="games-grid container text-center">
@@ -47,8 +86,8 @@ $gamesAmount = count($gamesDict[0]);
             $reviewHtml3 = handleReviewColor($review[$i3]);
             echo 
             <<<HTML
-                <div class="row row-cols-3">
-                    <div class="games-grid-containers col">
+                <div role="list" class="row row-cols-3">
+                    <div role="listitem" class="games-grid-containers col">
                         <img class="game-img shadow rounded " src="$img_path[$i]">
                         <div class="game-grid-sub-containers d-flex flex-row justify-content-between">
                             <p class="game-review">$reviewHtml1 </p>
@@ -58,7 +97,7 @@ $gamesAmount = count($gamesDict[0]);
                         <!-- <p class="game-titles">$name[$i]</p> -->
                         <!-- <p class="game-genre">$genre[$i]</p> -->
                     </div>
-                    <div class="games-grid-containers col">
+                    <div role="listitem" class="games-grid-containers col">
                         <img class="game-img shadow rounded " src="$img_path[$i2]">
                         <div class="game-grid-sub-containers d-flex flex-row justify-content-between">
                             <p class="game-review">$reviewHtml2 </p>
@@ -70,7 +109,7 @@ $gamesAmount = count($gamesDict[0]);
                     </div>
                     <div class="games-grid-containers col">
                         <img class="game-img shadow rounded " src="$img_path[$i3]">
-                        <div class="game-grid-sub-containers d-flex flex-row justify-content-between">
+                        <div role="listitem" class="game-grid-sub-containers d-flex flex-row justify-content-between">
                             <!-- <div class="col game-price"><p>$price[$i3]$</p></div> -->
                             <p class="game-review">$reviewHtml3 </p>
                             <p class="game-genre">$genre[$i3]</p>
