@@ -1,7 +1,7 @@
 <?php 
 include $ROOT.'/games-finder/src/includes/header.php';
 
-$error = $_SESSION['error'] ?? [];
+$error = $_SESSION['error'] ?? '';
 $data = $_SESSION['loginData'] ?? [];
 
 // Clear session data after retrieving
@@ -15,7 +15,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                 <span class="input-group-text" aria-hidden="true">@</span>
                 <div class="form-floating">
                     <input  type="text" 
-                            class="form-control <?= isset($errors['username']) ? 'is-invalid' : '' ?>" 
+                            class="form-control <?= ($error) ? 'is-invalid' : '' ?>" 
                             id="loginUsername" 
                             name="loginUsername"
                             value="<?= htmlspecialchars($data['username'] ?? '') ?>" 
@@ -24,14 +24,14 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                             required>
                     <label for="loginUsername">Username</label>
                 </div>
-                <?php if(isset($errors['username'])): ?>
-                    <div class="invalid-feedback" style="display: block;"><p aria-invalid="true"><?= $errors['username'] ?></p></div>
+                <?php if($error): ?>
+                    <div class="invalid-feedback" style="display: block;"><p aria-invalid="true" class="m-0"><?= $error ?></p></div>
                 <?php endif; ?>
             </div>
             <div class="input-group mb-lg-4">
                 <div class="form-floating">
                     <input  type="password" 
-                            class="form-control <?= isset($errors['pwd']) ? 'is-invalid' : '' ?>" 
+                            class="form-control <?= ($error) ? 'is-invalid' : '' ?>" 
                             id="loginPassword" 
                             name="loginPassword" 
                             value="<?= htmlspecialchars($data['pwd'] ?? '') ?>" 
@@ -40,8 +40,8 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                             required>
                     <label for="loginPassword">Password</label>
                 </div>
-                <?php if(isset($errors['username'])): ?>
-                    <div class="invalid-feedback" style="display: block;"><p aria-invalid="true"><?= $errors['username'] ?></p></div>
+                <?php if($error): ?>
+                    <div class="invalid-feedback" style="display: block;"><p aria-invalid="true" class="m-0"><?= $error ?></p></div>
                 <?php endif; ?>
             </div>
             <div class="form-check mb-lg-5">

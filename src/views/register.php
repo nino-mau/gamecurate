@@ -18,7 +18,8 @@ unset($_SESSION['errors'], $_SESSION['formData']);
                             class="form-control <?= isset($errors['username']) ? 'is-invalid' : '' ?>" 
                             id="registerUsername" 
                             name="registerUsername"
-                            value="<?= htmlspecialchars($data['username'] ?? '') ?>" 
+                            value="<?= htmlspecialchars($data['username'] ?? '') ?>"
+                            placeholder="Username"
                             autocomplete="username" 
                             required>
                     <label for="registerUsername">Username</label>

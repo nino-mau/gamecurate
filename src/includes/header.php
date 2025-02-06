@@ -63,30 +63,30 @@ if (!$username AND $token) {
     </head>
     <body class="bg-dark">
         <nav class="navbar navbar-expand-lg justify-content-center bg-primary custom-navbar" role="navigation">  
-            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Link to Home page">
+            <a class="navbar-brand d-flex align-items-center" href="/games-finder/public/index.php" aria-label="Games finder - go to home page">
                 <img class="custom-navbar__icons" src="/games-finder/public/assets/img/icons/main-icon-white.svg" aria-hidden="true">
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary" href="/games-finder/public/index.php" aria-label="Link to Home page">Home</a>
+                    <a class="nav-link active text-secondary" href="/games-finder/public/index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="/games-finder/src/views/games-list.php" aria-label="Link to the Games page that list video games">Games</a>
+                    <a class="nav-link text-secondary" href="/games-finder/src/views/games-list.php">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary" aria-label="Link to About page">About</a>
+                    <a class="nav-link active text-secondary">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary" aria-label="Link to Contact page">Contact</a>
+                    <a class="nav-link active text-secondary">Contact</a>
                 </li>
             </ul>
         <?php if(empty($username)): ?>
             <a tabindex="0" class="user-menu user-menu--loggedout navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
-                <i class="icons text-secondary ph ph-user-circle" role="img" alt="Logged-out state icon"></i>
+                <i class="icons text-secondary ph ph-user-circle" role="img" aria-label="Logged-out state icon"></i>
             </a>
         <?php else: ?>
             <a tabindex="0" class="user-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu"> 
-                <i class="icons text-secondary ph-fill ph-user-circle" role="img" alt="Logged-in state icon"></i>
+                <i class="icons text-secondary ph-fill ph-user-circle" role="img" aria-label="Logged-in state icon"></i>
             </a>       
         <?php endif; ?>
         </nav>
