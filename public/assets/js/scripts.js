@@ -1,6 +1,5 @@
 /* global bootstrap */
 
-
 /** ---- DYNAMIC PAGES TITLES ---- */
 
 function handleDynamicPageTitling() {
@@ -33,11 +32,11 @@ function handleDynamicPageTitling() {
 
     document.title = title;
 }
-
 handleDynamicPageTitling();
 
 
 /** ---- HANDLE GAMES FILTER BUTTONS ---- */
+
 function gamesFilterBtnListener() {
     const filterButtons = document.querySelectorAll('[data-js-navbar-filter-btns]');
     filterButtons.forEach(button => {
@@ -60,7 +59,7 @@ function gamesFilterBtnListener() {
 
 /** ---- SERVER REQUESTS ---- */
 
-// function using Fetch API to fetch data from specified php endpoint
+// functions using Fetch API to send or get data from specified php endpoint
 async function getData(url) {
     try {
         const response = await fetch(url);
@@ -102,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const popoverLoContent = `
             <div class='user-menu__popover'>
                 <div class='d-flex flex-column gap-3 justify-content-center'>
-                    <a role='button' class='btn btn-primary' href='/games-finder/src/views/login.php'>Login</a>
-                    <a role='button' class='btn btn-primary' href='/games-finder/src/views/register.php'>Register</a>
+                    <a role='button' class='btn btn-light' href='/games-finder/src/views/login.php'>Login</a>
+                    <a role='button' class='btn btn-light' href='/games-finder/src/views/register.php'>Register</a>
                 </div>
             </div>
         `;

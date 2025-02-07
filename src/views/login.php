@@ -9,7 +9,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
 ?>
 
 <main class="login-page-content container d-flex flex-column justify-content-center align-items-center">
-    <form class="login-form row rounded-4 bg-secondary shadow mt-9 w-40 p-3" action="/games-finder/src/php/login-actions.php" method="post">
+    <form class="login-form row rounded-4 bg-light shadow mt-9 w-40 p-3" action="/games-finder/src/php/login-actions.php" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
                 <span class="input-group-text" aria-hidden="true">@</span>
@@ -49,11 +49,11 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                 <label class="form-check-label" for="flexCheckDefault">Remember me</label>
             </div>
             <div class="mb-lg-1 d-grid ">
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <button type="submit" class="btn btn-secondary btn-lg">Login</button>
             </div>
         </div>
     </form>
-    <div class="text-center row mt-4"><p class="text-secondary">Don't have an account ?  <a href="/games-finder/src/views/register.php">Sign in</a></p></div>
+    <div class="text-center row mt-4"><p class="text-light">Don't have an account ?  <a class="text-secondary" href="/games-finder/src/views/register.php">Sign in</a></p></div>
 </main>
 
 <?php 

@@ -68,25 +68,25 @@ if (!$username AND $token) {
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary" href="/games-finder/public/index.php">Home</a>
+                    <a class="nav-link active text-light" href="/games-finder/public/index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="/games-finder/src/views/games-list.php">Games</a>
+                    <a class="nav-link text-light" href="/games-finder/src/views/games-list.php">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary">About</a>
+                    <a class="nav-link active text-light">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary">Contact</a>
+                    <a class="nav-link active text-light">Contact</a>
                 </li>
             </ul>
         <?php if(empty($username)): ?>
             <a tabindex="0" class="user-menu user-menu--loggedout navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
-                <i class="icons text-secondary ph ph-user-circle" role="img" aria-label="Logged-out state icon"></i>
+                <i class="icons text-light ph ph-user-circle" role="img" aria-label="Logged-out state icon"></i>
             </a>
         <?php else: ?>
             <a tabindex="0" class="user-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu"> 
-                <i class="icons text-secondary ph-fill ph-user-circle" role="img" aria-label="Logged-in state icon"></i>
+                <i class="icons text-light ph-fill ph-user-circle" role="img" aria-label="Logged-in state icon"></i>
             </a>       
         <?php endif; ?>
         </nav>

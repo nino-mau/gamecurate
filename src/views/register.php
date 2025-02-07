@@ -9,7 +9,7 @@ unset($_SESSION['errors'], $_SESSION['formData']);
 ?>
 
 <main class="register-page-content container d-flex flex-column justify-content-center align-items-center">
-    <form class="registration-form row rounded-4 bg-secondary shadow mt-9 w-40 p-3" action="/games-finder/src/php/registration-actions.php" method="post">
+    <form class="registration-form row rounded-4 bg-light shadow mt-9 w-40 p-3" action="/games-finder/src/php/registration-actions.php" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
                 <span class="input-group-text" aria-hidden="true">@</span>
@@ -77,11 +77,11 @@ unset($_SESSION['errors'], $_SESSION['formData']);
                 </div>
             </div>
             <div class="mb-lg-1 d-grid ">
-                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                <button type="submit" class="btn btn-secondary btn-lg">Register</button>
             </div>
         </div>
     </form>
-    <div class="text-center row mt-4"><p class="text-secondary">Already have an account ?  <a href="/games-finder/src/views/login.php">Log in</a></p></div>
+    <div class="text-center row mt-4"><p class="text-light">Already have an account ?  <a class="text-secondary" href="/games-finder/src/views/login.php">Log in</a></p></div>
 </main>
 
 <?php 
