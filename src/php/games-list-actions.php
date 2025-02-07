@@ -42,9 +42,9 @@ foreach ($gamesList as $dict) {
 }
 
 // Put these arrays back in a dictionnary
-$gamesDict = [];
-array_push($gamesDict, $nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr);
+$gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr];
 
+// For visual feedback
 print_r($gamesDict);
 
 // Send data to SESSIONS to be used on pages
