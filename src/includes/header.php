@@ -25,6 +25,9 @@ if (!$username and $token) {
     <!---- Stylesheet ---->
     <link rel="stylesheet" href="/games-finder/public/assets/css/main.css" media="all">
 
+    <!---- Hover.css ---->
+    <link rel="stylesheet" href="/games-finder/node_modules/hover.css/css/hover-min.css">
+
     <!---- JQuery ---->
     <script src="/games-finder/node_modules/jquery/dist/jquery.min.js"></script>
 
