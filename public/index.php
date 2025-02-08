@@ -10,6 +10,16 @@ include $ROOT . '/games-finder/src/includes/header.php';
             <span>favorite game !</span>
         </a>
     </h1>
+    <div class="home-video d-flex justify-content-center">
+        <div class="video-wrapper">
+            <video class="video" autoplay muted loop playsinline>
+                <source src="/games-finder/public/assets/video/home-illustration.webm">
+            </video>
+        </div>
+    </div>
+    <div class="home-button d-flex justify-content-center">
+        <button class="btn">Click Me</button>
+    </div>
 </main>
 
 
