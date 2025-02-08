@@ -13,7 +13,7 @@ include $ROOT . '/games-finder/src/includes/header.php';
     <div class="home-video d-flex justify-content-center">
         <div class="video-wrapper">
             <video class="video" autoplay muted loop playsinline>
-                <source src="/games-finder/public/assets/video/home-illustration.webm">
+                <source src="/games-finder/public/assets/video/home-illustration.mp4">
             </video>
         </div>
     </div>
