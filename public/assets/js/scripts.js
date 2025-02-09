@@ -34,16 +34,19 @@ function handleDynamicHeadersElements() {
             title = "Contact - Games Finder";
             linkToHighlight = '[data-js-contact-link]';
             break;
-        case "about.php":
-            title = "About - Games Finder";
-            linkToHighlight = '[data-js-about-link]';
+        case "discover.php":
+            title = "discover - Games Finder";
+            linkToHighlight = '[data-js-discover-link]';
             break;
     }
 
     // Change html title to correspond to current page
     document.title = title;
+
     // Highlight link corresponding to current page
-    document.querySelector(linkToHighlight).style.fontWeight= '700';
+    if (linkToHighlight) {
+        document.querySelector(linkToHighlight).style.fontWeight= '700';
+    }   
 }
 handleDynamicHeadersElements();
 
@@ -133,33 +136,37 @@ document.addEventListener('DOMContentLoaded', function () {
         // Initialize the loggedin popover when the username has been received
         (async () => {
             const username = await getData('http://localhost/games-finder/src/php/endpoints/get_username.php');
-            const cUsername = username.toUpperCase();
+
+            if (username) {
+                const cUsername = username.toUpperCase();
             
-            // Custom logged in popover content with buttons
-            const popoverLiContent = `
-                <div class='user-menu__popover'>
-                    <div id='loggedout-popover-body' class='user-menu__popover-body--loggedin d-flex flex-column gap-3 justify-content-center'>
-                        <h4 class='text-center fw-bold'>${cUsername}</h4>
-                        <a role='button' class='btn btn-primary' href='/games-finder/src/views/profile.php'>Profile</a>
-                        <a role='button' class='btn btn-primary' href='/games-finder/src/views/logout.php'>Logout</a>
+                // Custom logged in popover content with buttons
+                const popoverLiContent = `
+                    <div class='user-menu__popover'>
+                        <div id='loggedout-popover-body' class='user-menu__popover-body--loggedin d-flex flex-column gap-3 justify-content-center'>
+                            <h4 class='text-center fw-bold'>${cUsername}</h4>
+                            <a role='button' class='btn btn-primary' href='/games-finder/src/views/profile.php'>Profile</a>
+                            <a role='button' class='btn btn-primary' href='/games-finder/src/views/logout.php'>Logout</a>
+                        </div>
                     </div>
-                </div>
-            `;
-            document.querySelectorAll('.user-menu--loggedin').forEach((el) => {
-                new bootstrap.Popover(el, {
-                    content: popoverLiContent,
-                    html: true,
-                    sanitize: false,
-                    placement: 'bottom',
-                    trigger: 'focus',
+                `;
+                document.querySelectorAll('.user-menu--loggedin').forEach((el) => {
+                    new bootstrap.Popover(el, {
+                        content: popoverLiContent,
+                        html: true,
+                        sanitize: false,
+                        placement: 'bottom',
+                        trigger: 'focus',
+                    });
                 });
-            });
+            }
+
         })();
     });
 
 
     /** -- MENU ICONS HOVER -- */
-    const userMenu = document.querySelector('.user-menu');
+    const userMenu = document.querySelector('.account-menu');
     // Add null check for userMenu
     if (userMenu) {
         const userMenuIcon = userMenu.querySelector('.icons');

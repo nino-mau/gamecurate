@@ -1,3 +1,39 @@
+/** -- MAIN ELEMENT OF THIS PAGE -- */
+.games-list-main {
+    padding-top: 15vh;
+}
+
+/** -- NAVBAR TO SORT GAMES BY GENRE */
+.games-list-navbar {
+    padding: 1rem;
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    > .navbar-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 6rem;
+        height: 6rem;
+        transition: all 0.2s ease-in-out;
+        border-radius: 5%;
+        > .navbar-text {
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0;
+            margin-top: 0.5rem;
+            color: white;
+            font-weight: 500;
+        }
+        > .navbar-icons {
+            width: 40%;
+            height: 40%;
+        }
+    }
+}
+
+/** -- DIV CONTAINING THE LIST OF GAMES -- */
 .games-grid-containers {
     margin-bottom: 5rem;
     padding: 0;
@@ -9,15 +45,12 @@
         overflow: hidden;
         transition: all 0.2s ease-in-out;
     }
-    > .game-img:hover {
-        transform: scale(1.1);
-    }
     > .game-titles {
         font-weight: bold;
         font-size: 1.3rem;
     }
 }
-
+/** - Div representing a row of 3 games in the list of games - */
 .game-grid-sub-containers {
     color: white;
     > .game-price {
@@ -48,34 +81,6 @@
         }
         > .game-review-cl--red {
             color: red;
-        }
-    }
-}
-
-.games-list-navbar {
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    > .navbar-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 6rem;
-        height: 6rem;
-        transition: all 0.2s ease-in-out;
-        border-radius: 5%;
-        > .navbar-text {
-            font-size: 0.9rem;
-            margin: 0;
-            padding: 0;
-            margin-top: 0.5rem;
-            color: white;
-            font-weight: 500;
-        }
-        > .navbar-icons {
-            width: 40%;
-            height: 40%;
         }
     }
 }

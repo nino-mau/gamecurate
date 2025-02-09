@@ -1,37 +1,28 @@
-.footer-bottom-div {
-    background-color: rgba(0, 0, 0, 0.2);
+/** -- REPRESENT FOOTER ELEMENT -- */
+.footer-main {
+    height: 40vh;
+    bottom: 0px;
 }
 
-.footer-socials {
-    > .icons {
-        text-decoration: none;
-        > .svg {
-            width: 1.5rem;
+/** -- TOP SECTION OF THE FOOTER -- */
+.footer-top-div {
+    height: 5vh;
+    > .footer-socials {
+        > .icons {
+            text-decoration: none;
+            > .svg {
+                width: 1.5rem;
+            }
         }
     }
 }
 
-.footer-site-icon {
-    > .link {
-        > .svg {
-            width: 6rem;
-        }
-        > .svg:hover {
-            animation: heartBeat;
-            animation-duration: 2s;
-        }
-    }
-}
-
+/** -- MIDDLE SECTION OF THE FOOTR -- */
 .footer-middle-div {
-    height: 500px;
-    > .containerDiv {
-        font-size: 1.1rem;
-    }
-}
+    height: 30vh;
 
-.footer-middle-div {
     & .content-div {
+        font-size: 1rem;
         > .title {
             margin-bottom: 0;
         }
@@ -50,7 +41,6 @@
             color: var(--bs-secondary);
         }
         > .txt {
-            font-weight: 400;
             > .svg {
                 display: inline;
                 width: 1.3rem;
@@ -58,4 +48,23 @@
             }
         }
     }
+    & .footer-site-icon {
+        > .link {
+            > .svg {
+                width: 6rem;
+            }
+            > .svg:hover {
+                animation: heartBeat;
+                animation-duration: 2s;
+            }
+        }
+    }
+}
+
+/** -- BOTTOM SECTION OF THE FOOTER -- */
+.footer-bottom-div {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 5vh;
+    z-index: 10000;
+    font-family: 0.8rem;
 }

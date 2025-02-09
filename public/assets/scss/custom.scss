@@ -1,11 +1,4 @@
-// Change theme-color-variables
-// $primary:       #772953 !default;
-// $secondary:     #f8f9fa !default;
-// $success:       #38b44a !default;
-// $info:          #17a2b9 !default;
-// $warning:       #efb73e !default;
-// $danger:        #df382c !default;
-// $dark:          #222222 !default;
+/** -- CUSTOM BOOTSTRAP CSS -- */
 
 // Change theme-color-variables
 $primary:       #2d3250 !default;
@@ -39,7 +32,6 @@ $spacers: (
     }
 }
 
-
-// Change default bootstrap color scheme
+// Import the css files to be changed, this import the main bootstrap css files containing everything
 @import "../node_modules/bootstrap/scss/bootstrap"; 
 

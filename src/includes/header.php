@@ -52,9 +52,6 @@ if (!$username and $token) {
     <!---- Line Awesome ---->
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
-    <!---- Lottie player ---->
-    <script src="/games-finder/node_modules/lottie-web/build/player/lottie.min.js" type="text/javascript"></script>
-
     <!---- Scripts ---->
     <script src="/games-finder/public/assets/js/scripts.js" async defer></script>
 
@@ -94,18 +91,29 @@ if (!$username and $token) {
                 <a class="link active text-light hvr-underline-from-center" href="/games-finder/src/views/games-list.php" data-js-games-link>Games</a>
             </li>
             <li class="list-item">
-                <a class="link active text-light hvr-underline-from-center" data-js-about-link>About</a>
+                <a class="link active text-light hvr-underline-from-center" href="/games-finder/src/views/discover.php" data-js-discover-link>Discover</a>
             </li>
             <li class="list-item">
-                <a class="link active text-light hvr-underline-from-center" data-js-contact-link>Contact</a>
+                <a class="link active text-light hvr-underline-from-center" href="/games-finder/src/views/contact.php" data-js-contact-link>Contact</a>
             </li>
         </ul>
+        <div class="header-navbar__searchBar">
+            <form class="form d-flex flex-row align-items-center justify-content-center">
+                <input type="search"
+                    class="form-control input"
+                    placeholder="Search..."
+                    aria-label="Search">
+                <button class="btn button hvr-grow-rotate" type="submit">
+                    <img src="/games-finder/public/assets/img/icons/search-icon-fa.svg" class="icon hvr-icon">
+                </button>
+            </form>
+        </div>
         <?php if (empty($username)): ?>
-            <a tabindex="0" class="user-menu user-menu--loggedout navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
+            <a tabindex="0" class="account-menu user-menu--loggedout navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
                 <img class="icons" src="/games-finder/public/assets/img/icons/user/UserAvatar.svg" aria-label="Logged-out state icon">
             </a>
         <?php else: ?>
-            <a tabindex="0" class="user-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
+            <a tabindex="0" class="account-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
                 <img class="icons" src="/games-finder/public/assets/img/icons/user/UserAvatarFilled.svg" aria-label="Logged-in state icon">
             </a>
         <?php endif; ?>

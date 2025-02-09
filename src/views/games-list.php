@@ -2,9 +2,9 @@
 require_once $ROOT . '/games-finder/src/includes/header.php';
 ?>
 
-<main>
+<main class="games-list-main">
     <nav>
-        <div class="games-list-navbar d-flex flex-row justify-content-center gap-2">
+        <div class="games-list-navbar d-flex flex-row justify-content-center">
             <div class="navbar-btn hvr-reveal hvr-bounce-in" data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="/games-finder/public/assets/img/icons/games-genre/home-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Home</p>
@@ -87,7 +87,7 @@ require_once $ROOT . '/games-finder/src/includes/header.php';
             echo
             <<<HTML
                 <div role="listitem" class="games-grid-containers col">
-                    <img class="game-img shadow rounded" src="$imgPath[$i]">
+                    <img class="game-img shadow rounded hvr-float" src="$imgPath[$i]">
                     <div class="game-grid-sub-containers d-flex flex-row justify-content-between">
                         <p class="game-review">$reviewHtml </p>
                         <p class="game-genre">$genre[$i]</p>
