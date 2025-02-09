@@ -1,11 +1,11 @@
 <?php
-include $ROOT . '/games-finder/src/includes/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
 ?>
 
 <?php
-include $ROOT . '/games-finder/src/includes/work-in-progress.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/work-in-progress.php';
 ?>
 
 <?php
-include $ROOT . '/games-finder/src/includes/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
 ?>

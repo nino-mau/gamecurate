@@ -1,5 +1,5 @@
 <?php
-require_once $ROOT . '/games-finder/src/includes/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
 ?>
 
 <main class="games-list-main">
@@ -57,7 +57,7 @@ require_once $ROOT . '/games-finder/src/includes/header.php';
     </nav>
     <div class="games-grid container text-center">
         <?php
-        require $ROOT . '/games-finder/src/php/games-list-actions.php';
+        require $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/php/games-list-actions.php';
 
         if ($filteredGamesDict) {
             $name = $filteredGamesDict[0];
@@ -105,5 +105,5 @@ require_once $ROOT . '/games-finder/src/includes/header.php';
 </main>
 
 <?php
-include $ROOT . '/games-finder/src/includes/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
 ?>

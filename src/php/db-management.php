@@ -1,11 +1,11 @@
-<?php 
+<?php
 require_once 'db-functions.php';
 
 
 /** -- STORE TABLEs FROM DB IN JSON FILEs -- */
 
-$gamesJsonFile = $ROOT.'/games-finder/data/games.json';
-$usersJsonFile = $ROOT.'/games-finder/data/users.json';
+$gamesJsonFile = $_SERVER['DOCUMENT_ROOT'] . '/games-finder/data/games.json';
+$usersJsonFile = $_SERVER['DOCUMENT_ROOT'] . '/games-finder/data/users.json';
 
 // Export games table
 dbTableToJson('games', $gamesJsonFile);

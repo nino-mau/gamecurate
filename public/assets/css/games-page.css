@@ -1,6 +1,8 @@
 /** -- MAIN ELEMENT OF THIS PAGE -- */
 .games-list-main {
-    padding-top: 15vh;
+    padding-top: 10vh;
+    flex: 1 0 auto;
+    min-height: 132.5vh;
 }
 
 /** -- NAVBAR TO SORT GAMES BY GENRE */

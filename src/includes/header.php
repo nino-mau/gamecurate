@@ -1,5 +1,5 @@
 <?php
-require_once $ROOT . '/games-finder/src/php/db-functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/php/db-functions.php';
 
 // Start session
 session_start();

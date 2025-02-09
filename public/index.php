@@ -1,5 +1,5 @@
 <?php
-include $ROOT . '/games-finder/src/includes/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
 ?>
 
 <main class="home-main">
@@ -23,5 +23,5 @@ include $ROOT . '/games-finder/src/includes/header.php';
 </main>
 
 <?php
-include $ROOT . '/games-finder/src/includes/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
 ?>

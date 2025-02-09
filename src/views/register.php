@@ -1,5 +1,5 @@
 <?php
-include $ROOT . '/games-finder/src/includes/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
 
 $errors = $_SESSION['errors'] ?? [];
 $data = $_SESSION['formData'] ?? [];
@@ -95,5 +95,5 @@ unset($_SESSION['errors'], $_SESSION['formData']);
 </main>
 
 <?php
-include $ROOT . '/games-finder/src/includes/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
 ?>

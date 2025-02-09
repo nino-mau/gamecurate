@@ -1,5 +1,5 @@
 <?php
-include $ROOT . '/games-finder/src/includes/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
 
 // Start session
 session_start();
@@ -19,5 +19,5 @@ $username = $_SESSION['username'] ?? '';
 </main>
 
 <?php
-include $ROOT . '/games-finder/src/includes/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
 ?>
