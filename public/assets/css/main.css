@@ -34,7 +34,7 @@ body {
     height: 5vh;
     > .siteIcon {
         > .svg {
-            width: 2.5rem;
+            width: 2.2rem;
         }
         > .svg:hover {
             animation: rotate-hor-center 0.8s
@@ -95,7 +95,7 @@ body {
     }
     > .account-menu {
         > .icons {
-            width: 2.7rem;
+            width: 2.2rem;
             transition: all 0.2s ease-in-out;
         }
     }
