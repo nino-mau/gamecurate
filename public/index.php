@@ -2,7 +2,7 @@
 include $ROOT . '/games-finder/src/includes/header.php';
 ?>
 
-<main class="text-center">
+<main class="home-main">
     <h1 class="home-title text-light">
         <a class="firstLink text-light animate__animated">Discover</a>
         <span class="middleText animate__animated">your next</span>
@@ -11,7 +11,7 @@ include $ROOT . '/games-finder/src/includes/header.php';
         </a>
     </h1>
     <div class="home-video d-flex justify-content-center">
-        <div class="video-wrapper">
+        <div class="video-wrapper swing-in-top-fwd">
             <video class="video" autoplay muted loop playsinline>
                 <source src="/games-finder/public/assets/video/home-illustration.mp4">
             </video>

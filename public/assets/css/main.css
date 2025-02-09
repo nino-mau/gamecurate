@@ -1,10 +1,10 @@
 @import url(custom-bootstrap.css);
 @import url(fonts.css);
 @import url(games-page.css);
-@import url(games-finder/node_modules/animate.css/animate.min.css);
+@import url(footer.css);
 
 :root {
-    --deep-orange: #ff5a09;
+    font-family: "Poppins" !important;
 }
 html {
     margin: 0;
@@ -16,7 +16,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: Poppins;
+    font-family: "Poppins" !important;
 }
 
 /** -- GLOBAL -- */
@@ -30,23 +30,36 @@ body {
 .header-navbar {
     > .siteIcon {
         margin-right: 2rem;
+        > .svg {
+            width: 3rem;
+        }
         > .svg:hover {
-            animation: heartBeat;
-            animation-duration: 1s;
+            animation: rotate-hor-center 0.8s
+                cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+        }
+    }
+    > .nav {
+        > .list-item {
+            > .link {
+                font-size: 1.15rem;
+                margin-left: 1.5rem;
+                border-bottom: none;
+                text-decoration: none;
+            }
         }
     }
 }
 .user-menu {
     > .icons {
-        font-size: 3.5rem;
+        width: 3.5rem;
         transition: all 0.2s ease-in-out;
     }
 }
-.account-btn__popover {
-    width: 125px !important;
-}
 
 /** -- HOME PAGE -- */
+.home-main {
+    margin-bottom: 7.688rem;
+}
 
 .home-title {
     font-size: 4.5rem;
@@ -54,6 +67,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 5px;
 
     /** Start text effect */
     > .firstLink {
@@ -221,8 +235,8 @@ body {
     animation-duration: 3s;
     > .video-wrapper {
         width: 60rem;
-        border-radius: 7rem;
-        padding: 3px;
+        border-radius: 6rem;
+        padding: 5px;
         background: linear-gradient(
             45deg,
             var(--bs-secondary) 0%,
@@ -237,12 +251,73 @@ body {
         > .video {
             display: block;
             width: 100%;
-            border-radius: 7rem;
+            border-radius: 6rem;
         }
     }
+}
+
+/** -- REGISTER PAGE -- */
+.register-main {
+    margin-bottom: 44vh;
+}
+
+/** -- LOGIN PAGE -- */
+.login-main {
+    margin-bottom: 44vh;
 }
 
 /** -- REGISTRATION SUCCESS PAGE -- */
 .registration-success-card__check-icon {
     font-size: 15rem;
+}
+
+/** -- ANIMISTA CLASSES -- */
+.rotate-center {
+    animation: rotate-center 0.6s ease-in-out both;
+}
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.rotate-hor-center {
+    animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+        both;
+}
+@keyframes rotate-hor-center {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(-360deg);
+    }
+}
+.swing-in-top-fwd {
+    animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+@keyframes swing-in-top-fwd {
+    0% {
+        transform: rotateX(-100deg);
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+.text-shadow-drop-bottom:hover {
+    animation: text-shadow-drop-bottom 0.6s both;
+}
+@keyframes text-shadow-drop-bottom {
+    0% {
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    }
 }

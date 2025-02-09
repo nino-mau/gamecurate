@@ -1,16 +1,18 @@
 /* global bootstrap */
 
-/** ---- DYNAMIC PAGES TITLES ---- */
+/** ---- DYNAMIC PAGES TITLES AND NAVBAR HIGHLIGHT ---- */
 
-function handleDynamicPageTitling() {
+function handleDynamicHeadersElements() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
 
     let title = "";
+    let linkToHighlight = "";
 
     switch (page) {
         case "index.php":
             title = "Home - Games Finder";
+            linkToHighlight = '[data-js-home-link]';
             break;    
         case "login.php":
             title = "Logging - Games Finder";
@@ -23,16 +25,27 @@ function handleDynamicPageTitling() {
             break;
         case "profile.php":
             title = "Account Profile - Games Finder";
+            break;
         case "games-list.php":
             title = "Games List - Games Finder";
-        default:
-            title = "Games Finder"
+            linkToHighlight = '[data-js-games-link]';
+            break;
+        case "contact.php":
+            title = "Contact - Games Finder";
+            linkToHighlight = '[data-js-contact-link]';
+            break;
+        case "about.php":
+            title = "About - Games Finder";
+            linkToHighlight = '[data-js-about-link]';
             break;
     }
 
+    // Change html title to correspond to current page
     document.title = title;
+    // Highlight link corresponding to current page
+    document.querySelector(linkToHighlight).style.fontWeight= '700';
 }
-handleDynamicPageTitling();
+handleDynamicHeadersElements();
 
 
 /** ---- HANDLE GAMES FILTER BUTTONS ---- */
@@ -101,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const popoverLoContent = `
             <div class='user-menu__popover'>
                 <div class='d-flex flex-column gap-3 justify-content-center'>
-                    <a role='button' class='btn btn-light' href='/games-finder/src/views/login.php'>Login</a>
-                    <a role='button' class='btn btn-light' href='/games-finder/src/views/register.php'>Register</a>
+                    <a role='button' class='btn btn-primary' href='/games-finder/src/views/login.php'>Login</a>
+                    <a role='button' class='btn btn-primary' href='/games-finder/src/views/register.php'>Register</a>
                 </div>
             </div>
         `;
