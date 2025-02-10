@@ -12,17 +12,7 @@ Required Node modules:
 ## PROJECT STRUCTURE
 
 📁 games-finder
-    📁 .vscode
-    📁 data
-        ─ games.json
-        ─ localhost.sql
-        ─ users.json
     📁 node_modules
-        📁 bootstrap
-        📁 jquery
-        📁 popperjs
-        📁 animate.css
-        📁 hover.css
     📁 public
         📁 assets
             📁 css
@@ -34,21 +24,10 @@ Required Node modules:
                 ─ games-page.css
                 ─ main.css
                 ─ work-in-progress.css
-            📁 fonts
-                📁 Inter
-                📁 Poppins
-            📁 img
-                📁 games
-                📁 icons
-                    📁 contact
-                    📁 games-genre
-                    📁 socials
-                    📁 user
             📁 js
                 ─ scripts.js
             📁 scss
                 ─ custom.scss
-            📁 video
         ─ index.php
     📁 src
         📁 includes
@@ -56,11 +35,11 @@ Required Node modules:
             ─ header.php
             ─ work-in-progress.php
         📁 php
-            ─ db-functions.php
-            ─ db-management.php
             📁 endpoints
                 ─ get_genre_filter.php
                 ─ get_username.php
+            ─ db-functions.php
+            ─ db-management.php
             ─ games-list-actions.php
             ─ globals.php
             ─ login-actions.php
@@ -74,7 +53,8 @@ Required Node modules:
             ─ profile.php
             ─ register-success.php
             ─ register.php
-    ─ .gitignore
-    ─ package-lock.json
-    ─ package.json
-    ─ README.md
+─ .gitignore
+─ eslint.config.mjs
+─ package-lock.json
+─ package.json
+─ README.md
