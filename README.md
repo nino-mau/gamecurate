@@ -16,45 +16,45 @@ Required Node modules:
     📁 public
         📁 assets
             📁 css
-                ─ custom-bootstrap.css
-                ─ custom-bootstrap.css.map
-                ─ custom-style.css
-                ─ fonts.css
-                ─ footer.css
-                ─ games-page.css
-                ─ main.css
-                ─ work-in-progress.css
+                - custom-bootstrap.css
+                - custom-bootstrap.css.map
+                - custom-style.css
+                - fonts.css
+                - footer.css
+                - games-page.css
+                - main.css
+                - work-in-progress.css
             📁 js
-                ─ scripts.js
+                - scripts.js
             📁 scss
-                ─ custom.scss
-        ─ index.php
+                - custom.scss
+        - index.php
     📁 src
         📁 includes
-            ─ footer.php
-            ─ header.php
-            ─ work-in-progress.php
+            - footer.php
+            - header.php
+            - work-in-progress.php
         📁 php
             📁 endpoints
-                ─ get_genre_filter.php
-                ─ get_username.php
-            ─ db-functions.php
-            ─ db-management.php
-            ─ games-list-actions.php
-            ─ globals.php
-            ─ login-actions.php
-            ─ registration-actions.php
+                - get_genre_filter.php
+                - get_username.php
+            - db-functions.php
+            - db-management.php
+            - games-list-actions.php
+            - globals.php
+            - login-actions.php
+            - registration-actions.php
         📁 views
-            ─ contact.php
-            ─ discover.php
-            ─ games-list.php
-            ─ login.php
-            ─ logout.php
-            ─ profile.php
-            ─ register-success.php
-            ─ register.php
-─ .gitignore
-─ eslint.config.mjs
-─ package-lock.json
-─ package.json
-─ README.md
+            - contact.php
+            - discover.php
+            - games-list.php
+            - login.php
+            - logout.php
+            - profile.php
+            - register-success.php
+            - register.php
+- .gitignore
+- eslint.config.mjs
+- package-lock.json
+- package.json
+- README.md
