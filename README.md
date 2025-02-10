@@ -8,3 +8,73 @@ Required Node modules:
 *   `bootstrap@5.3.3`
 *   `globals@15.14.0`
 *   `jquery@3.7.1`
+
+## PROJECT STRUCTURE
+
+📁 games-finder
+    📁 .vscode
+    📁 data
+        ─ games.json
+        ─ localhost.sql
+        ─ users.json
+    📁 node_modules
+        📁 bootstrap
+        📁 jquery
+        📁 popperjs
+        📁 animate.css
+        📁 hover.css
+    📁 public
+        📁 assets
+            📁 css
+                ─ custom-bootstrap.css
+                ─ custom-bootstrap.css.map
+                ─ custom-style.css
+                ─ fonts.css
+                ─ footer.css
+                ─ games-page.css
+                ─ main.css
+                ─ work-in-progress.css
+            📁 fonts
+                📁 Inter
+                📁 Poppins
+            📁 img
+                📁 games
+                📁 icons
+                    📁 contact
+                    📁 games-genre
+                    📁 socials
+                    📁 user
+            📁 js
+                ─ scripts.js
+            📁 scss
+                ─ custom.scss
+            📁 video
+        ─ index.php
+    📁 src
+        📁 includes
+            ─ footer.php
+            ─ header.php
+            ─ work-in-progress.php
+        📁 php
+            ─ db-functions.php
+            ─ db-management.php
+            📁 endpoints
+                ─ get_genre_filter.php
+                ─ get_username.php
+            ─ games-list-actions.php
+            ─ globals.php
+            ─ login-actions.php
+            ─ registration-actions.php
+        📁 views
+            ─ contact.php
+            ─ discover.php
+            ─ games-list.php
+            ─ login.php
+            ─ logout.php
+            ─ profile.php
+            ─ register-success.php
+            ─ register.php
+    ─ .gitignore
+    ─ package-lock.json
+    ─ package.json
+    ─ README.md
