@@ -2,7 +2,6 @@
 
 Required Node modules:
 
-*   `@eslint/js@9.19.0`
 *   `@popperjs/core@2.11.8`
 *   `animate.css@4.1.1`
 *   `hover.css@2.3.2`
