@@ -3,3 +3,6 @@
 
 # Ignore vendor directory
 /vendor
+
+# Ignore all log files
+*.log
