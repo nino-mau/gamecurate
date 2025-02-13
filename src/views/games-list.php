@@ -59,13 +59,9 @@ require INCLUDES_PATH . '/header.php';
     </nav>
     <div class="games-grid container text-center">
         <?php
-        echo 'test';
-
         require PHP_PATH . '/games-list-actions.php';
 
-        echo 'test2';
-
-        if ($filteredGamesDict) {
+        if (isset($filteredGamesDict) && $filteredGamesDict) {
             $name = $filteredGamesDict[0];
             $genre = $filteredGamesDict[1];
             $review = $filteredGamesDict[2];
