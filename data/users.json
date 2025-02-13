@@ -12,5 +12,33 @@
         "email": "test@gmail.com",
         "password": "$2y$10$VpKEU7FLJYZMp0C57\/xKj.N.XOSU92JKHQNyu44F\/sjUdd87gSSla",
         "remember_token": null
+    },
+    {
+        "id": 3,
+        "username": "azertyazertyazerty",
+        "email": "azerty@gmail.com",
+        "password": "$2y$10$6o3GKEhPVpp8vhYzUDrnUujAf3Ky6Ww9dY9i2p8Xw9OwDfFYLEDGe",
+        "remember_token": null
+    },
+    {
+        "id": 5,
+        "username": "testtesttttest",
+        "email": "test56@gmail.com",
+        "password": "$2y$10$97kDCAy5vZJ2YviSZoVnieM6XH\/nSIb7yU7f48JzQvVZ7xZJ3Q\/Uy",
+        "remember_token": null
+    },
+    {
+        "id": 6,
+        "username": "mytestesttest",
+        "email": "terqsdrfsdf@gmail.com",
+        "password": "$2y$10$16Etq1Edt3\/sVlg0KDQJDebl9sMnv6K2XKLR2ykWDZxLTzdY2XKJu",
+        "remember_token": null
+    },
+    {
+        "id": 7,
+        "username": "qsxvfvxcvxcvxcv",
+        "email": "xcvx@gmail.com",
+        "password": "$2y$10$0jcWbe8UEyIICdSYrRv74eQAfEsa.T7sMK416dlISuWbQierPs6Qm",
+        "remember_token": null
     }
 ]

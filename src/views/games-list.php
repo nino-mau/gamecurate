@@ -1,5 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+require INCLUDES_PATH . '/header.php';
 ?>
 
 <main class="games-list-main">
@@ -57,7 +59,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php'
     </nav>
     <div class="games-grid container text-center">
         <?php
-        require $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/php/games-list-actions.php';
+        echo 'test';
+
+        require PHP_PATH . '/games-list-actions.php';
+
+        echo 'test2';
 
         if ($filteredGamesDict) {
             $name = $filteredGamesDict[0];
@@ -105,5 +111,5 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php'
 </main>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
+include INCLUDES_PATH . '/footer.php';
 ?>

@@ -1,5 +1,7 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+include INCLUDES_PATH . '/header.php';
 
 // Start session
 session_start();
@@ -19,5 +21,5 @@ $username = $_SESSION['username'] ?? '';
 </main>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
+include INCLUDES_PATH . '/footer.php';
 ?>

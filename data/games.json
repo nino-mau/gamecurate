@@ -21,7 +21,7 @@
         "id": 3,
         "name": "God of War",
         "description": "A breathtaking reinvention of the classic series that transforms Kratos from a vengeful Greek god into a troubled father in the Norse realm. The game masterfully weaves intimate character drama with epic mythology, featuring revolutionary one-shot cinematography and visceral combat that never breaks from its emotional core.",
-        "genre": "Action-Adventure",
+        "genre": "Action Adventure",
         "price": "39.99",
         "review": 94,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/god-of-war.jpeg"
@@ -57,7 +57,7 @@
         "id": 7,
         "name": "Resident Evil Village",
         "description": "A haunting continuation of the survival horror series that follows Ethan Winters' desperate search for his daughter in a mysterious European village. The game masterfully blends Gothic horror with action elements, featuring a memorable cast of grotesque villains, tense resource management, and a perfect balance of terror and empowerment.",
-        "genre": "Action-Horror",
+        "genre": "Action Horror",
         "price": "29.99",
         "review": 84,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/resident-evil-village.jpeg"
@@ -93,7 +93,7 @@
         "id": 11,
         "name": "Control",
         "description": "A mind-bending action-adventure set in a shape-shifting government facility known as the Oldest House. Players step into the role of Jesse Faden, the new director of a secret agency, wielding supernatural abilities and transforming weapons while uncovering the mysteries of paranatural phenomena and alternate dimensions.",
-        "genre": "Action-Adventure",
+        "genre": "Action Adventure",
         "price": "39.99",
         "review": 84,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/control.jpeg"
@@ -102,7 +102,7 @@
         "id": 12,
         "name": "Doom Eternal",
         "description": "An adrenaline-fueled sequel that elevates the legendary shooter series with lightning-fast combat and strategic depth. Players become the Doom Slayer, fighting through hordes of demons with an expanded arsenal and newfound mobility, while managing resources in a delicate 'combat dance' that rewards aggression and tactical thinking.",
-        "genre": "Classic-Shooter",
+        "genre": "Shooter",
         "price": "59.99",
         "review": 89,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/doom-eternal.jpeg"
@@ -111,7 +111,7 @@
         "id": 13,
         "name": "Final Fantasy VII Remake",
         "description": "A stunning reimagining of the beloved 1997 classic that expands the city of Midgar into a fully realized world. The game transforms the original's turn-based combat into an innovative action system while deeply developing its iconic characters, telling an intimate story of resistance against corporate power with modern production values.",
-        "genre": "RPG",
+        "genre": "Rpg",
         "price": "59.99",
         "review": 92,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/final-fantasy-vii-remake.jpeg"
@@ -156,13 +156,13 @@
         "id": 18,
         "name": "Dark Souls 3",
         "description": "A brutal and atmospheric action-RPG that challenges players to survive in a dark fantasy realm of fallen kingdoms. As the Ashen One, you'll master precise combat mechanics, face towering bosses, and uncover cryptic lore while exploring interconnected Gothic environments filled with deadly enemies and hidden secrets.",
-        "genre": "Action-Rpg",
+        "genre": "Action Rpg",
         "price": "59.99",
         "review": 90,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/dark-souls-3.jpeg"
     },
     {
-        "id": 20,
+        "id": 19,
         "name": "Hades",
         "description": "A masterfully crafted roguelike that follows Zagreus, son of Hades, in his attempts to escape the Underworld. The game brilliantly weaves Greek mythology with fast-paced combat and innovative storytelling that unfolds across multiple runs, featuring gorgeous art, memorable characters, and an addictive progression system that keeps players coming back for more.",
         "genre": "Roguelike",
@@ -171,7 +171,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/hades.jpeg"
     },
     {
-        "id": 21,
+        "id": 20,
         "name": "Persona 5 Royal",
         "description": "An enhanced version of the acclaimed JRPG that follows a group of high school students who moonlight as phantom thieves in modern-day Tokyo. The game combines stylish turn-based combat with deep social simulation elements, featuring a compelling story about rebellion against corruption, all set to an unforgettable jazz-inspired soundtrack.",
         "genre": "Rpg",
@@ -180,7 +180,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/persona-5-royal.jpeg"
     },
     {
-        "id": 22,
+        "id": 21,
         "name": "Deathloop",
         "description": "An innovative first-person shooter that traps players in a time loop on the mysterious island of Blackreef. The game combines Arkane's signature immersive sim gameplay with a clever puzzle structure, as players piece together information across multiple loops to eliminate eight targets in a single perfect day.",
         "genre": "Immersive-Sim",
@@ -189,7 +189,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/deathloop.jpeg"
     },
     {
-        "id": 23,
+        "id": 22,
         "name": "It Takes Two",
         "description": "A groundbreaking cooperative adventure that follows a divorcing couple transformed into dolls by their daughter's tears. The game constantly introduces new mechanics and gameplay styles across its journey, telling a touching story about love and relationships while requiring two players to work together in innovative ways.",
         "genre": "Co-op",
@@ -198,16 +198,16 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/it-takes-two.jpeg"
     },
     {
-        "id": 24,
+        "id": 23,
         "name": "Ratchet & Clank: Rift Apart",
         "description": "A technically stunning action platformer that showcases the PS5's capabilities through dimensional rifts and instant loading. The game follows the iconic duo and new character Rivet across multiple dimensions, featuring gorgeous visuals, creative weapons, and heartfelt storytelling that welcomes both newcomers and series veterans.",
-        "genre": "Action-Platformer",
+        "genre": "Action Platformer",
         "price": "69.99",
         "review": 88,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/ratchet-and-clank-rift-apart.jpeg"
     },
     {
-        "id": 25,
+        "id": 24,
         "name": "Demon's Souls",
         "description": "A ground-up remake of the seminal action RPG that launched the Souls-like genre. The PS5 exclusive rebuilds the mysterious kingdom of Boletaria with stunning visual fidelity while maintaining the precise combat and haunting atmosphere that made the original a classic.",
         "genre": "Rpg",
@@ -216,7 +216,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/demons-souls.jpeg"
     },
     {
-        "id": 26,
+        "id": 25,
         "name": "Disco Elysium",
         "description": "A revolutionary RPG that reimagines the genre through the lens of a detective story. Players navigate a unique world as an amnesiac detective, with gameplay focused entirely on dialogue and skill checks, featuring unprecedented narrative depth and philosophical complexity in its exploration of politics, identity, and human nature.",
         "genre": "Rpg",
@@ -225,7 +225,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/disco-elysium.jpeg"
     },
     {
-        "id": 27,
+        "id": 26,
         "name": "Returnal",
         "description": "Break the cycle as this award-winning third-person shooter brings bullet hell action to PC. Selene\u2019s roguelike odyssey arrives with a suite of arresting graphical and performance-based enhancements to ensure an unforgettable journey.",
         "genre": "Roguelike",
@@ -234,7 +234,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/returnal.jpeg"
     },
     {
-        "id": 28,
+        "id": 27,
         "name": "Kingdom Come Deliverance 2",
         "description": "A thrilling story-driven action RPG, with a rich open world, set in 15th century Medieval Europe. Experience the ultimate medieval adventure - through the eyes of young Henry - as you embark on a journey of epic proportions. ... ",
         "genre": "Rpg",
@@ -243,7 +243,7 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/kingdom-come-deliverance-2.jpeg"
     },
     {
-        "id": 29,
+        "id": 28,
         "name": "Fallout 76",
         "description": "An ambitious but troubled multiplayer take on the Fallout series that places players in a shared post-apocalyptic West Virginia. Despite offering a vast open world to explore with friends, the game launched with numerous technical issues, sparse NPCs, and controversial design decisions, though subsequent updates have addressed some initial criticisms.",
         "genre": "Rpg",
@@ -252,12 +252,21 @@
         "image_path": "\/games-finder\/public\/assets\/img\/games\/fallout-76.jpeg"
     },
     {
-        "id": 30,
+        "id": 29,
         "name": "Balan Wonderworld",
         "description": "A colorful 3D platformer from the original creators of Sonic the Hedgehog that follows two children through a whimsical theater realm. Despite its promising creative pedigree, the game struggles with repetitive gameplay, confusing design choices, and an overcomplicated costume system that fails to capture the magic of classic platformers.",
         "genre": "Platformer",
         "price": "29.99",
         "review": 44,
         "image_path": "\/games-finder\/public\/assets\/img\/games\/balan-wonderworld.jpeg"
+    },
+    {
+        "id": 30,
+        "name": "Fallout New Vegas",
+        "description": "Welcome to Vegas. New Vegas.\r\nIt\u2019s the kind of town where you dig your own grave prior to being shot in the head and left for dead\u2026and that\u2019s before things really get ugly. It\u2019s a town of dreamers and desperados being torn apart by warring factions vying for complete control of this desert oasis. It\u2019s a place where the right kind of person with the right kind of weaponry can really make a name for themselves, and make more than an enemy or two along the way.",
+        "genre": "Rpg",
+        "price": "9.99",
+        "review": 84,
+        "image_path": "\/games-finder\/public\/assets\/img\/games\/fallout-new-vegas.jpeg"
     }
 ]

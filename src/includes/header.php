@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/php/db-functions.php';
+require LOGS_PATH . '/errors_logging.php';
+require PHP_PATH . '/db-functions.php';
 
 // Start session
 session_start();

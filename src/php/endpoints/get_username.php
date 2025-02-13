@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__ . '/../../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
 
 session_start();
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: http://localhost/games-finder/public/'); 
 header('Access-Control-Allow-Credentials: true');
 
 // Retreive requested variable
@@ -17,9 +18,4 @@ if ($username) {
 } else {
     echo json_encode(['error' => 'No user is loggedin, therefore impossible got get username']);
     exit;
-} 
-
-
-
-
-
+}

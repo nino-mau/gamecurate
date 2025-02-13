@@ -1,5 +1,7 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+include INCLUDES_PATH . '/header.php';
 
 $error = $_SESSION['error'] ?? '';
 $data = $_SESSION['loginData'] ?? [];
@@ -63,5 +65,5 @@ unset($_SESSION['error'], $_SESSION['loginData']);
 </main>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
+include INCLUDES_PATH . '/footer.php';
 ?>
