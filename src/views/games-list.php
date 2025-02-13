@@ -8,7 +8,7 @@ require INCLUDES_PATH . '/header.php';
     <nav>
         <div class="games-list-navbar d-flex flex-row justify-content-center">
             <div class="navbar-btn hvr-reveal hvr-bounce-in" data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="/games-finder/public/assets/img/icons/menu/grid-icon.svg">
+                <img class="navbar-icons" src="/games-finder/public/assets/img/icons/menu/grid-icon3.svg">
                 <p class="navbar-text" data-js-filter-txt>All</p>
             </div>
             <div class="navbar-btn hvr-reveal hvr-bounce-in" data-js-navbar-filter-btns>
