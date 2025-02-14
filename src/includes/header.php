@@ -24,7 +24,7 @@ if (!$username and $token) {
     <meta name="GamesFinder" content="Your site description." />
 
     <!---- Stylesheet ---->
-    <link rel="stylesheet" href="/games-finder/public/assets/css/main.css" media="all">
+    <link rel="stylesheet" href="/assets/css/main.css" media="all">
 
     <!---- Hover.css ---->
     <link rel="stylesheet" href="/games-finder/node_modules/hover.css/css/hover-min.css">
@@ -41,7 +41,7 @@ if (!$username and $token) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!---- Custome stylesheet ---->
-    <link rel="stylesheet" href="/games-finder/public/assets/css/custom-style.css" media="all">
+    <link rel="stylesheet" href="/assets/css/custom-style.css" media="all">
 
     <!---- Ionicons ---->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -54,7 +54,7 @@ if (!$username and $token) {
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
     <!---- Scripts ---->
-    <script src="/games-finder/public/assets/js/scripts.js" async defer></script>
+    <script src="/assets/js/scripts.js" async defer></script>
 
     <!---- Social Meta Tags ---->
     <meta property="og:locale" content="en_US" />
@@ -71,8 +71,8 @@ if (!$username and $token) {
     <meta name="twitter:image" content="images/hom-banner-compressed.jpg" />
 
     <!---- Favicons ---->
-    <link rel="icon" href="/games-finder/public/assets/img/icons/favicon.svg" sizes="32x32" />
-    <link rel="apple-touch-icon" href="/games-finder/public/assets/img/icons/favicon.svg" />
+    <link rel="icon" href="/assets/img/icons/favicon.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/img/icons/favicon.svg" />
 
     <!---- Search Engine Optimization ---->
     <meta name="robots" content="index, follow" />
@@ -81,12 +81,12 @@ if (!$username and $token) {
 
 <body class="bg-dark">
     <nav class="header-navbar navbar navbar-expand-lg justify-content-center bg-primary custom-navbar" role="navigation">
-        <a class="siteIcon d-flex align-items-center" href="/games-finder/public/index.php" aria-label="Games finder - go to home page">
-            <img class="svg" src="/games-finder/public/assets/img/icons/site-icon.svg">
+        <a class="siteIcon d-flex align-items-center" href="/index.php" aria-label="Games finder - go to home page">
+            <img class="svg" src="/assets/img/icons/site-icon.svg">
         </a>
         <ul class="nav">
             <li class="list-item">
-                <a class="link active text-light hvr-underline-from-center" href="/games-finder/public/index.php" data-js-home-link>Home</a>
+                <a class="link active text-light hvr-underline-from-center" href="/index.php" data-js-home-link>Home</a>
             </li>
             <li class="list-item">
                 <a class="link active text-light hvr-underline-from-center" href="/games-finder/src/views/games-list.php" data-js-games-link>Games</a>
@@ -105,17 +105,17 @@ if (!$username and $token) {
                     placeholder="Search..."
                     aria-label="Search">
                 <button class="btn button hvr-grow-rotate" type="submit">
-                    <img src="/games-finder/public/assets/img/icons/search-icon-fa.svg" class="icon hvr-icon">
+                    <img src="/assets/img/icons/search-icon-fa.svg" class="icon hvr-icon">
                 </button>
             </form>
         </div>
         <?php if (empty($username)): ?>
             <a tabindex="0" class="account-menu user-menu--loggedout navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
-                <img class="icons" src="/games-finder/public/assets/img/icons/user/UserAvatar.svg" aria-label="Logged-out state icon">
+                <img class="icons" src="/assets/img/icons/user/UserAvatar.svg" aria-label="Logged-out state icon">
             </a>
         <?php else: ?>
             <a tabindex="0" class="account-menu user-menu--loggedin navbar-brand d-flex align-items-center ms-lg-9 me-0" data-bs-toggle="popover" role="button" aria-haspopup="true" aria-label="Open authentification menu">
-                <img class="icons" src="/games-finder/public/assets/img/icons/user/UserAvatarFilled.svg" aria-label="Logged-in state icon">
+                <img class="icons" src="/assets/img/icons/user/UserAvatarFilled.svg" aria-label="Logged-in state icon">
             </a>
         <?php endif; ?>
     </nav>
