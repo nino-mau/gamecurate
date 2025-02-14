@@ -60,7 +60,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
         </div>
     </form>
     <div class="text-center row mt-4 animate__animated animate__fadeInUp anime__duration-2s">
-        <p class="text-light">Don't have an account ? <a class="text-secondary" href="/games-finder/src/views/register.php">Sign in</a></p>
+        <p class="text-light">Don't have an account ? <a class="text-secondary" href="/Register">Sign in</a></p>
     </div>
 </main>
 

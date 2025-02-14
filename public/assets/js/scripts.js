@@ -1,5 +1,8 @@
 /* global bootstrap */
 
+/** -- Global variables -- */
+const API_URL = 'http://gamecurate.local/api/'
+
 /** ---- DYNAMIC PAGES TITLES AND NAVBAR HIGHLIGHT ---- */
 
 function handleDynamicHeadersElements() {
@@ -10,31 +13,31 @@ function handleDynamicHeadersElements() {
     let linkToHighlight = "";
 
     switch (page) {
-        case "index.php":
+        case "Index":
             title = "Home - Games Finder";
             linkToHighlight = '[data-js-home-link]';
             break;    
-        case "login.php":
+        case "Login":
             title = "Logging - Games Finder";
             break;    
-        case "register.php":
+        case "Register":
             title = "Resiter - Games Finder";
             break;    
-        case "register-success.php":
+        case "Register-success.php":
             title = "Succesfuly Registration - Games Finder";
             break;
-        case "profile.php":
+        case "Profile":
             title = "Account Profile - Games Finder";
             break;
-        case "games-list.php":
+        case "Games-list":
             title = "Games List - Games Finder";
             linkToHighlight = '[data-js-games-link]';
             break;
-        case "contact.php":
+        case "Contact":
             title = "Contact - Games Finder";
             linkToHighlight = '[data-js-contact-link]';
             break;
-        case "discover.php":
+        case "Discover":
             title = "discover - Games Finder";
             linkToHighlight = '[data-js-discover-link]';
             break;
@@ -62,7 +65,7 @@ function gamesFilterBtnListener() {
             const cleanedVal = filterVal.toLowerCase();
 
             try {
-                await postData('http://localhost/games-finder/src/php/endpoints/get_genre_filter.php', cleanedVal);
+                await postData(API_URL+'get_genre_filter.php', cleanedVal);
                 // Reload the page after delay when btn is clicked so that php updates the game list
                 window.location.href = window.location.pathname;
             } catch (error) {
@@ -117,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const popoverLoContent = `
             <div class='user-menu__popover'>
                 <div class='d-flex flex-column gap-3 justify-content-center'>
-                    <a role='button' class='btn btn-primary' href='/games-finder/src/views/login.php'>Login</a>
-                    <a role='button' class='btn btn-primary' href='/games-finder/src/views/register.php'>Register</a>
+                    <a role='button' class='btn btn-primary' href='Login'>Login</a>
+                    <a role='button' class='btn btn-primary' href='Register'>Register</a>
                 </div>
             </div>
         `;
@@ -135,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Initialize the loggedin popover when the username has been received
         (async () => {
-            const username = await getData('http://localhost/games-finder/src/php/endpoints/get_username.php');
+            const username = await getData(API_URL+'get_username.php');
 
             if (username) {
                 const cUsername = username.toUpperCase();
@@ -145,8 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class='user-menu__popover'>
                         <div id='loggedout-popover-body' class='user-menu__popover-body--loggedin d-flex flex-column gap-3 justify-content-center'>
                             <h4 class='text-center fw-bold'>${cUsername}</h4>
-                            <a role='button' class='btn btn-primary' href='/games-finder/src/views/profile.php'>Profile</a>
-                            <a role='button' class='btn btn-primary' href='/games-finder/src/views/logout.php'>Logout</a>
+                            <a role='button' class='btn btn-primary' href='Profile'>Profile</a>
+                            <a role='button' class='btn btn-primary' href='Logout'>Logout</a>
                         </div>
                     </div>
                 `;

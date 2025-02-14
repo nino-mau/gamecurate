@@ -91,7 +91,7 @@ unset($_SESSION['errors'], $_SESSION['formData']);
         </div>
     </form>
     <div class="text-center row mt-4 animate__animated animate__fadeInUp anime__duration-2s">
-        <p class="text-light">Already have an account ? <a class="text-secondary" href="/games-finder/src/views/login.php">Log in</a></p>
+        <p class="text-light">Already have an account ? <a class="text-secondary" href="/Login">Log in</a></p>
     </div>
 </main>
 

@@ -3,7 +3,6 @@ require_once __DIR__ . '/db-functions.php';
 
 
 /** -- Functions -- */
-
 function _genreMatchesFilter($genreString, $filter)
 {
     $cleanedGenre = strtolower(trim($genreString));
@@ -15,7 +14,6 @@ function _genreMatchesFilter($genreString, $filter)
         return ($cleanedGenre === $filter);
     }
 }
-
 function filterByGenres($filter, $gamesDict)
 {
     $name = $gamesDict[0];
@@ -38,7 +36,6 @@ function filterByGenres($filter, $gamesDict)
 
     return $filteredGamesDict;
 }
-
 // Handle dynamically changing the color of review text to match the score.
 function handleReviewColor($reviewScore)
 {
@@ -97,8 +94,14 @@ foreach ($gamesList as $dict) {
 // Put these arrays back in a dictionnary
 $gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr];
 
-if ($_SESSION['gamesListGenreFilter'] !== 'all' and $_SESSION['gamesListGenreFilter']) {
-    $filteredGamesDict = filterByGenres($_SESSION['gamesListGenreFilter'], $gamesDict);
+// Get the gamesFilter value from session
+$gamesListFilterValue = $_SESSION['gamesListGenreFilter'] ?? '';
+// $gamesListFilterValue = 'adventure';
+
+echo $gamesListFilterValue;
+
+if ($gamesListFilterValue !== 'all' and $gamesListFilterValue) {
+    $filteredGamesDict = filterByGenres($gamesListFilterValue, $gamesDict);
     // Remove from sessions since filter are to be executed after btn press
-    $_SESSION['gamesListGenreFilter'] = '';
+    $gamesListFilterValue = '';
 }

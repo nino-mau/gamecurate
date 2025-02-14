@@ -1,27 +1,45 @@
 <?php
 require_once __DIR__ . '/../conf/bootstrap.php';
 require LOGS_PATH . '/errors_logging.php';
-include INCLUDES_PATH . '/header.php';
-
 
 /** --- HANDLE ROUTING --- */
+
 $request_uri = $_SERVER['REQUEST_URI'];
 $path = parse_url($request_uri, PHP_URL_PATH);
+$path = rtrim($path, '/');
+$path = strtolower($path);
+
+/** - Handle API requests - */
+
+if (strpos($path, '/api/') === 0) {
+    // Remove /api/ part from URL to get endpoint file name
+    $endpoint = str_replace('/api/', '', $path);
+    // Build the backend file path (adjust directory as needed)
+    $endpointFile = __DIR__ . '/../src/php/endpoints/' . $endpoint;
+    if (file_exists($endpointFile)) {
+        require $endpointFile;
+    } else {
+        http_response_code(404);
+        echo json_encode(['error' => 'API endpoint not found']);
+    }
+    exit;
+}
+
+/** - Handle page requests - */
 
 switch ($path) {
-    case '/':
-    case '/index.php':
-        // Home page (you might have content directly in index.php or include a home view)
-        require VIEWS_PATH . '/index_view.php'; // Assuming you have a home view
+    case '': // Root URL
+    case '/index':
+        require VIEWS_PATH . '/home.php';
         break;
-    case '/gamesList':
+    case '/games-list':
         require VIEWS_PATH . '/games-list.php';
         break;
     case '/login':
         require VIEWS_PATH . '/login.php';
         break;
     case '/logout':
-        require VIEWS_PATH . '/login.php';
+        require VIEWS_PATH . '/logout.php';
         break;
     case '/register':
         require VIEWS_PATH . '/register.php';
@@ -29,7 +47,7 @@ switch ($path) {
     case '/profile':
         require VIEWS_PATH . '/profile.php';
         break;
-    case '/registerSuccess':
+    case '/register-success':
         require VIEWS_PATH . '/register-success.php';
         break;
     case '/discover':
@@ -40,32 +58,6 @@ switch ($path) {
         break;
     default:
         http_response_code(404);
-        echo "404 Not Found";
-        break;
+        require __DIR__ . '/../src/includes/404.php';
+        exit;
 }
-
-?>
-
-<main class="home-main">
-    <h1 class="home-title text-light">
-        <a class="firstLink text-light animate__animated" href="/gamesList">Discover</a>
-        <span class="middleText animate__animated">your next</span>
-        <a class="secondLink text-light animate__animated" href="/discover" data-replace="favorite game !">
-            <span>favorite game !</span>
-        </a>
-    </h1>
-    <div class="home-video d-flex justify-content-center">
-        <div class="video-wrapper swing-in-top-fwd">
-            <video class="video" autoplay muted loop playsinline>
-                <source src="/assets/video/home-illustration.mp4">
-            </video>
-        </div>
-    </div>
-    <div class="home-button d-flex justify-content-center">
-        <a href="/discover" class="btn">Discover</a>
-    </div>
-</main>
-
-<?php
-include INCLUDES_PATH . '/footer.php';
-?>

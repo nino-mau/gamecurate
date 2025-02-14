@@ -11,7 +11,7 @@ define('VIEWS_PATH', ROOT_PATH . '/src/views');
 define('DATA_PATH', ROOT_PATH . '/data');
 
 // Define HTTPS path constants
-define('BASE_URL', 'http://localhost/games-finder');
+define('BASE_URL', 'http://gamecurate.local');
 
 // Enable errors displa
 error_reporting(E_ALL);

@@ -15,7 +15,7 @@ $username = $_SESSION['username'] ?? '';
             <ion-icon class="successIcon text-success" name="checkmark-circle-outline" aria-hidden="true"></ion-icon>
             <h1 class="title"><?= "Welcome $username !" ?></h1>
             <p class="text mt-3">Congratulations, your account has been succesfully created</p>
-            <a href="/games-finder/public/index.php" class="btn btn-primary mt-4" aria-label="Link to home page">Home</a>
+            <a href="Index" class="btn btn-primary mt-4" aria-label="Link to home page">Home</a>
         </div>
     </div>
 </main>
