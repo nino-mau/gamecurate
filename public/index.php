@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../conf/bootstrap.php';
 require LOGS_PATH . '/errors_logging.php';
 
-/** --- HANDLE ROUTING --- */
+/** -- HANDLE ROUTING -- */
 
 $request_uri = $_SERVER['REQUEST_URI'];
 $path = parse_url($request_uri, PHP_URL_PATH);
@@ -25,6 +25,23 @@ if (strpos($path, '/api/') === 0) {
     exit;
 }
 
+/** - Handle POST requests */
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    switch ($path) {
+        case '/login-actions':
+            require PHP_PATH . '/login-actions.php';
+            exit;
+        case '/register-actions':
+            require PHP_PATH . '/registration-actions.php';
+            exit;
+        default:
+            http_response_code(404);
+            require VIEWS_PATH . '/404.php';
+            exit;
+    }
+}
+
 /** - Handle page requests - */
 
 switch ($path) {
@@ -37,6 +54,9 @@ switch ($path) {
         break;
     case '/login':
         require VIEWS_PATH . '/login.php';
+        break;
+    case '/login-success':
+        require VIEWS_PATH . '/index.php';
         break;
     case '/logout':
         require VIEWS_PATH . '/logout.php';
@@ -58,6 +78,6 @@ switch ($path) {
         break;
     default:
         http_response_code(404);
-        require __DIR__ . '/../src/includes/404.php';
+        require VIEWS_PATH . '/404.php';
         exit;
 }
