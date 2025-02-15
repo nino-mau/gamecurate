@@ -1,71 +1,71 @@
 /* global bootstrap */
 
 /** -- Global variables -- */
-const API_URL = 'http://gamecurate.local/api/'
 
-/** ---- DYNAMIC PAGES TITLES AND NAVBAR HIGHLIGHT ---- */
+const API_URL = "http://gamecurate.local/api/";
 
+
+/** -- Functions -- */
+
+// Handle dynamic page titling
 function handleDynamicHeadersElements() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
 
-    let title = "";
-    let linkToHighlight = "";
+    const pageSettings = {
+        Index: {
+            title: "Home - GameCurate",
+            linkToHighlight: "[data-js-home-link]",
+        },
+        Login: { title: "Logging - GameCurate" },
+        Register: { title: "Resiter - GameCurate" },
+        "Register-success.php": {
+            title: "Succesfuly Registration - GameCurate",
+        },
+        Profile: { title: "Account Profile - GameCurate" },
+        "Games-list": {
+            title: "Games List - GameCurate",
+            linkToHighlight: "[data-js-games-link]",
+        },
+        Contact: {
+            title: "Contact - GameCurate",
+            linkToHighlight: "[data-js-contact-link]",
+        },
+        Discover: {
+            title: "discover - GameCurate",
+            linkToHighlight: "[data-js-discover-link]",
+        },
+    };
 
-    switch (page) {
-        case "Index":
-            title = "Home - Games Finder";
-            linkToHighlight = '[data-js-home-link]';
-            break;    
-        case "Login":
-            title = "Logging - Games Finder";
-            break;    
-        case "Register":
-            title = "Resiter - Games Finder";
-            break;    
-        case "Register-success.php":
-            title = "Succesfuly Registration - Games Finder";
-            break;
-        case "Profile":
-            title = "Account Profile - Games Finder";
-            break;
-        case "Games-list":
-            title = "Games List - Games Finder";
-            linkToHighlight = '[data-js-games-link]';
-            break;
-        case "Contact":
-            title = "Contact - Games Finder";
-            linkToHighlight = '[data-js-contact-link]';
-            break;
-        case "Discover":
-            title = "discover - Games Finder";
-            linkToHighlight = '[data-js-discover-link]';
-            break;
+    const settings = pageSettings[page] || {
+        title: "Home - GameCurate",
+        linkToHighlight: "[data-js-home-link]",
+    };
+
+    document.title = settings.title;
+
+    if (settings.linkToHighlight) {
+        const linkElement = document.querySelector(settings.linkToHighlight);
+        if (linkElement) {
+            linkElement.style.fontWeight = "700";
+        }
     }
-
-    // Change html title to correspond to current page
-    document.title = title;
-
-    // Highlight link corresponding to current page
-    if (linkToHighlight) {
-        document.querySelector(linkToHighlight).style.fontWeight= '700';
-    }   
 }
-handleDynamicHeadersElements();
 
-
-/** ---- HANDLE GAMES FILTER BUTTONS ---- */
-
+// Handle relaying infos from games filter buttons
 function gamesFilterBtnListener() {
-    const filterButtons = document.querySelectorAll('[data-js-navbar-filter-btns]');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', async () => {
-
-            const filterVal = button.querySelector('[data-js-filter-txt]').textContent;
+    const filterButtons = document.querySelectorAll(
+        "[data-js-navbar-filter-btns]",
+    );
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+            const filterVal = button.querySelector(
+                "[data-js-filter-txt]",
+            ).textContent;
             const cleanedVal = filterVal.toLowerCase();
 
             try {
-                await postData(API_URL+'get_genre_filter.php', cleanedVal);
+                await postData(API_URL + "get_genre_filter.php", cleanedVal);
                 // Reload the page after delay when btn is clicked so that php updates the game list
                 window.location.href = window.location.pathname;
             } catch (error) {
@@ -75,8 +75,16 @@ function gamesFilterBtnListener() {
     });
 }
 
+// Used to trigger login success modal
+function triggerModal(event) {
+    let e = new Event(event);
+    document.dispatchEvent(e);
+}
 
-/** ---- SERVER REQUESTS ---- */
+handleDynamicHeadersElements();
+
+
+/** -- SERVER REQUESTS -- */
 
 // functions using Fetch API to send or get data from specified php endpoint
 async function getData(url) {
@@ -86,7 +94,8 @@ async function getData(url) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const jsonData = await response.json();
-        return jsonData.username;
+        console.log('Debug:',jsonData); //Debug
+        return jsonData;
     } catch (error) {
         console.error("Fetch error:", error);
         throw error;
@@ -96,113 +105,52 @@ async function getData(url) {
 async function postData(url, data) {
     try {
         let response = await fetch(url, {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json', 
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(data), 
+            body: JSON.stringify(data),
         });
-        let result = await response.json(); 
-        console.log("Response from PHP:", result); 
+        let result = await response.json();
+        console.log("Response from PHP:", result);
     } catch (error) {
         console.error("Error:", error);
     }
 }
 
 
-/** ---- HTML-DOM RELATED CODE ---- */
+/** -- HTML-DOM RELATED CODE -- */
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    /** -- LOGIN/REGISTER POPOVER -- */
-    jQuery(function () {
-        // Custom logged out popover content with buttons
-        const popoverLoContent = `
-            <div class='user-menu__popover'>
-                <div class='d-flex flex-column gap-3 justify-content-center'>
-                    <a role='button' class='btn btn-primary' href='Login'>Login</a>
-                    <a role='button' class='btn btn-primary' href='Register'>Register</a>
-                </div>
-            </div>
-        `;
-        // Initialize popovers PROPERLY
-        document.querySelectorAll('.user-menu--loggedout').forEach((el) => {
-            new bootstrap.Popover(el, {
-                content: popoverLoContent,
-                html: true,
-                sanitize: false,
-                placement: 'bottom',
-                trigger: 'focus',
-            });
-        });
-
-        // Initialize the loggedin popover when the username has been received
-        (async () => {
-            const username = await getData(API_URL+'get_username.php');
-
-            if (username) {
-                const cUsername = username.toUpperCase();
-            
-                // Custom logged in popover content with buttons
-                const popoverLiContent = `
-                    <div class='user-menu__popover'>
-                        <div id='loggedout-popover-body' class='user-menu__popover-body--loggedin d-flex flex-column gap-3 justify-content-center'>
-                            <h4 class='text-center fw-bold'>${cUsername}</h4>
-                            <a role='button' class='btn btn-primary' href='Profile'>Profile</a>
-                            <a role='button' class='btn btn-primary' href='Logout'>Logout</a>
-                        </div>
-                    </div>
-                `;
-                document.querySelectorAll('.user-menu--loggedin').forEach((el) => {
-                    new bootstrap.Popover(el, {
-                        content: popoverLiContent,
-                        html: true,
-                        sanitize: false,
-                        placement: 'bottom',
-                        trigger: 'focus',
-                    });
-                });
-            }
-
-        })();
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // Trigger modal on specific event
+    document.addEventListener("openLoginSuccessModal", () => {
+        var myModal = new bootstrap.Modal(
+            document.querySelector('[data-js-login-success-modal]'),
+        );
+        myModal.show();
     });
 
+    // Display username in account menu
+    (async () => {
+        const userData = await getData(API_URL + "get_username.php");
+        if (userData.username) {
+            // Show username in account menu
+            const cUsername = userData.username.toUpperCase();
+            const accountMenuTitle = document.querySelector(
+                "[data-js-account-menu-title]",
+            );
+            accountMenuTitle.textContent = cUsername + " :";
 
-    /** -- MENU ICONS HOVER -- */
-    const userMenu = document.querySelector('.account-menu');
-    // Add null check for userMenu
-    if (userMenu) {
-        const userMenuIcon = userMenu.querySelector('.icons');
-        let isPopoverActive = false;
-
-        // Apply hover style on mouseover
-        userMenuIcon.addEventListener('mouseover', () => {
-            if (!isPopoverActive) {
-                userMenuIcon.style.transform = "scale(1.2)";
+            if (userData.firstLogin) {
+                // Trigger login success modal and show username
+                var myModal = new bootstrap.Modal(
+                    document.querySelector('[data-js-login-success-modal]'),
+                );
+                myModal.show();
+                document.querySelector('[data-js-login-success-modal-text]').textContent = 'Welcome '+cUsername+' ! You succesfuly logged in to your account.'; 
             }
-        });
-
-        // Remove hover style on mouseout
-        userMenuIcon.addEventListener('mouseout', () => {
-            if (!isPopoverActive) {
-                userMenuIcon.style.transform = "";
-            }
-        });
-
-        // Handle popover events
-        userMenu.addEventListener('shown.bs.popover', () => {
-            isPopoverActive = true;
-            userMenuIcon.style.transform = "scale(1.2)";
-        });
-
-        userMenu.addEventListener('hidden.bs.popover', () => {
-            isPopoverActive = false;
-            if (!userMenu.matches(':hover')) {
-                userMenuIcon.style.transform = "";
-            }
-        });
-    }
-
-    /** -- FILTER BTN LISTENER -- */
+        }  
+    })();
     gamesFilterBtnListener();
 });
