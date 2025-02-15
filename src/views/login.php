@@ -11,7 +11,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
 ?>
 
 <main class="login-main container d-flex flex-column justify-content-center align-items-center">
-    <form class="loginForm row bg-light mt-9 w-40 p-3" action="/games-finder/src/php/login-actions.php" method="post">
+    <form class="loginForm row bg-light mt-9 w-40 p-3" action="/Login-actions" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
                 <span class="input-group-text" aria-hidden="true">@</span>

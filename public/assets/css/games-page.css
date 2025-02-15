@@ -36,10 +36,17 @@
     }
 }
 
-/** -- DIV CONTAINING THE LIST OF GAMES -- */
+/** -- DIV CONTAINING THE ENTIRE LIST -- */
+.games-grid {
+    > .games-grid-row {
+        width: 55%;
+    }
+}
+
+/** -- Div containing one game (img, text review) -- */
 .games-grid-containers {
     margin-bottom: 5rem;
-    padding: 0;
+    padding: 1.5rem;
     color: white;
     > .game-img {
         position: relative;
@@ -53,7 +60,7 @@
         font-size: 1.3rem;
     }
 }
-/** - Div representing a row of 3 games in the list of games - */
+/** - Div containing text and review - */
 .game-grid-sub-containers {
     color: white;
     > .game-price {

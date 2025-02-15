@@ -96,9 +96,6 @@ $gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathAr
 
 // Get the gamesFilter value from session
 $gamesListFilterValue = $_SESSION['gamesListGenreFilter'] ?? '';
-// $gamesListFilterValue = 'adventure';
-
-echo $gamesListFilterValue;
 
 if ($gamesListFilterValue !== 'all' and $gamesListFilterValue) {
     $filteredGamesDict = filterByGenres($gamesListFilterValue, $gamesDict);

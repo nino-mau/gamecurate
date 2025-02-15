@@ -58,7 +58,7 @@
         </div>
     </section>
     <div class="footer-bottom-div p-3 d-flex align-items-center justify-content-center">
-        <p class="m-0">© 2024 Copyright: GamesFinder.com</p>
+        <p class="m-0">© 2024 Copyright: GameCurate.org</p>
     </div>
 </footer>
 </body>

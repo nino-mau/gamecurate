@@ -56,7 +56,7 @@ function registerUser($userData)
                 ':email' => $email,
                 ':password' => password_hash($pwd, PASSWORD_DEFAULT),
             ]);
-            header('Location: ' . BASE_URL . '/src/views/register-success.php');
+            header('Location: ' . BASE_URL . '/Register-success');
             exit;
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
@@ -65,7 +65,7 @@ function registerUser($userData)
         // Pass errors and form content back to register page
         $_SESSION['errors'] = $errors;
         $_SESSION['formData'] = $userData;
-        header('Location: ' . BASE_URL . '/src/views/register.php');
+        header('Location: ' . BASE_URL . '/Register');
         exit;
     }
 }
@@ -87,14 +87,15 @@ function loginUser($userData)
 
         if ($user && password_verify($pwd, $user['password'])) {
             $_SESSION['username'] = $user['username'];
+            $_SESSION['firstLogin'] = true;
             setRememberCoockie($remember, $username);
             session_regenerate_id(true);
-            header('Location: ' . BASE_URL . '/public/index.php');
+            header('Location: ' . BASE_URL . '/Index');
             exit;
         } else {
             $_SESSION['error'] = 'The email address or password was incorrect';
             $_SESSION['loginData'] = $userData;
-            header('Location: ' . BASE_URL . '/src/views/login.php');
+            header('Location: ' . BASE_URL . '/Login-success');
             exit;
         }
     } catch (Exception $e) {
@@ -116,7 +117,8 @@ function autoCookieLogin($token)
 
         if ($user) {
             $_SESSION['username'] = $user['username'];
-            header('Location: ' . BASE_URL . '/public/index.php');
+            $_SESSION['hasLoggedIn'] = true;
+            header('Location: ' . BASE_URL . '/Index');
             exit;
         }
     } catch (Exception $e) {

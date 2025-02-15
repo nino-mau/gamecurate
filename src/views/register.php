@@ -10,7 +10,7 @@ unset($_SESSION['errors'], $_SESSION['formData']);
 ?>
 
 <main class="register-main container d-flex flex-column justify-content-center align-items-center">
-    <form class="registerForm row bg-light mt-9 w-40 p-3" action="/games-finder/src/php/registration-actions.php" method="post">
+    <form class="registerForm row bg-light mt-9 w-40 p-3" action="/Register-actions" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
                 <span class="input-group-text" aria-hidden="true">@</span>

@@ -23,7 +23,5 @@ if (isset($_COOKIE['remember'])) {
     setcookie('remember', '', time() - 3600, '/');
 }
 
-// Redirect to login page
-// header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/games-finder/public/index.php");
-header('Location: ' . BASE_URL . '/src/views/login.php');
+header('Location: ' . BASE_URL . '/Login');
 exit;
