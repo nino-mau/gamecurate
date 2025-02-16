@@ -5,22 +5,22 @@
         </div>
         <div role="list" class="footer-socials">
             <a href="" class="icons text-white me-4">
-                <img class="svg hvr-float" src="/games-finder/public/assets/img/icons/socials/logo-facebook.svg">
+                <img class="svg hvr-float" src="assets/img/icons/socials/logo-facebook.svg">
             </a>
             <a href="" class="icons text-white me-4">
-                <img class="svg hvr-float" src="/games-finder/public/assets/img/icons/socials/logo-twitter.svg">
+                <img class="svg hvr-float" src="assets/img/icons/socials/logo-twitter.svg">
             </a>
             <a href="" class="icons text-white me-4">
-                <img class="svg hvr-float" src="/games-finder/public/assets/img/icons/socials/logo-github.svg">
+                <img class="svg hvr-float" src="assets/img/icons/socials/logo-github.svg">
             </a>
             <a href="" class="icons text-white me-4">
-                <img class="svg hvr-float" src="/games-finder/public/assets/img/icons/socials/logo-instagram.svg">
+                <img class="svg hvr-float" src="assets/img/icons/socials/logo-instagram.svg">
             </a>
             <a href="" class="icons text-white me-4">
-                <img class="svg hvr-float" src="/games-finder/public/assets/img/icons/socials/logo-linkedin.svg">
+                <img class="svg hvr-float" src="assets/img/icons/socials/logo-linkedin.svg">
             </a>
             <a href="" class="icons text-white me-4">
-                <img class="svg hvr-float" src="/games-finder/public/assets/img/icons/socials/logo-youtube.svg">
+                <img class="svg hvr-float" src="assets/img/icons/socials/logo-youtube.svg">
             </a>
         </div>
     </section>
@@ -28,7 +28,7 @@
         <div class="containerDiv container text-center text-md-start h-100">
             <div class="row h-100">
                 <div class="footer-site-icon col-md-3 col-lg-4 col-xl-3 mx-auto d-flex justify-content-center align-items-center">
-                    <a class="link" href="/games-finder/public/index.php"><img class="svg" src="/games-finder/public/assets/img/icons/site-icon.svg"></a>
+                    <a class="link" href="Index"><img class="svg" src="/assets/img/icons/site-icon.svg"></a>
                 </div>
                 <div class="content-div col-md-2 col-lg-2 col-xl-2 mx-auto d-flex flex-column justify-content-center gap-1 align-items-start">
                     <h6 class="title text-uppercase fw-bold m-0">Used Frameworks</h6>
@@ -41,24 +41,24 @@
                 <div class="content-div col-md-3 col-lg-2 col-xl-2 mx-auto d-flex flex-column justify-content-center gap-1 align-items-start">
                     <h6 class="title text-uppercase fw-bold m-0">Useful links</h6>
                     <hr class="line mb-4 mt-0 d-inline-block" />
-                    <a href="/games-finder/src/views/register.php" class="link">Register</a>
-                    <a href="/games-finder/src/views/login.php" class="link">Login</a>
-                    <a href="/games-finder/src/views/contact.php" class="link">Contact</a>
-                    <a href="/games-finder/src/views/discover.php" class="link">Discover</a>
+                    <a href="/Register" class="link">Register</a>
+                    <a href="/Login" class="link">Login</a>
+                    <a href="/Contact" class="link">Contact</a>
+                    <a href="/Discover" class="link">Discover</a>
                 </div>
                 <div class="content-div col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 d-flex flex-column justify-content-center gap-1 align-items-start">
                     <h6 class="title text-uppercase fw-bold m-0">Contact</h6>
                     <hr class="line mb-4 mt-0 d-inline-block" />
-                    <p class="txt"><img class="svg" src="/games-finder/public/assets/img/icons/contact/home-icon.svg"> 36 Rue de Placeholder, 38240</p>
-                    <p class="txt"><img class="svg" src="/games-finder/public/assets/img/icons/contact/mail-icon.svg"> nino.placeholder@gmail.com</p>
-                    <p class="txt"><img class="svg" src="/games-finder/public/assets/img/icons/contact/call-icon.svg"> + 01 234 567 88</p>
-                    <p class="txt"><img class="svg" src="/games-finder/public/assets/img/icons/contact/print-icon.svg"> + 01 234 567 89</p>
+                    <p class="txt"><img class="svg" src="assets/img/icons/contact/home-icon.svg"> 36 Rue de Placeholder, 38240</p>
+                    <p class="txt"><img class="svg" src="assets/img/icons/contact/mail-icon.svg"> nino.placeholder@gmail.com</p>
+                    <p class="txt"><img class="svg" src="assets/img/icons/contact/call-icon.svg"> + 01 234 567 88</p>
+                    <p class="txt"><img class="svg" src="assets/img/icons/contact/print-icon.svg"> + 01 234 567 89</p>
                 </div>
             </div>
         </div>
     </section>
     <div class="footer-bottom-div p-3 d-flex align-items-center justify-content-center">
-        <p class="m-0">© 2024 Copyright: GamesFinder.com</p>
+        <p class="m-0">© 2024 Copyright: GameCurate.org</p>
     </div>
 </footer>
 </body>

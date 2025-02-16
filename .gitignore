@@ -1,2 +1,8 @@
-# Ignore all files in node_modules directory
+# Ignore node_modules directories
 node_modules
+
+# Ignore vendor directory
+/vendor
+
+# Ignore all log files
+*.log

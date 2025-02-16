@@ -1,4 +1,7 @@
-<?php 
+<?php
+require_once __DIR__ . '/../../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+
 /** -- Handle receiving genre filter data from games-list page -- */
 session_start();
 

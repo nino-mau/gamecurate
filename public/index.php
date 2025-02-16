@@ -1,27 +1,83 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
-?>
+require_once __DIR__ . '/../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
 
-<main class="home-main">
-    <h1 class="home-title text-light">
-        <a class="firstLink text-light animate__animated" href="/games-finder/src/views/games-list.php">Discover</a>
-        <span class="middleText animate__animated">your next</span>
-        <a class="secondLink text-light animate__animated" href="/games-finder/src/views/discover.php" data-replace="favorite game !">
-            <span>favorite game !</span>
-        </a>
-    </h1>
-    <div class="home-video d-flex justify-content-center">
-        <div class="video-wrapper swing-in-top-fwd">
-            <video class="video" autoplay muted loop playsinline>
-                <source src="/games-finder/public/assets/video/home-illustration.mp4">
-            </video>
-        </div>
-    </div>
-    <div class="home-button d-flex justify-content-center">
-        <a href="/games-finder/src/views/discover.php" class="btn">Discover</a>
-    </div>
-</main>
+/** -- HANDLE ROUTING -- */
 
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
-?>
+$request_uri = $_SERVER['REQUEST_URI'];
+$path = parse_url($request_uri, PHP_URL_PATH);
+$path = rtrim($path, '/');
+$path = strtolower($path);
+
+/** - Handle API requests - */
+
+if (strpos($path, '/api/') === 0) {
+    // Remove /api/ part from URL to get endpoint file name
+    $endpoint = str_replace('/api/', '', $path);
+    // Build the backend file path (adjust directory as needed)
+    $endpointFile = __DIR__ . '/../src/php/endpoints/' . $endpoint;
+    if (file_exists($endpointFile)) {
+        require $endpointFile;
+    } else {
+        http_response_code(404);
+        echo json_encode(['error' => 'API endpoint not found']);
+    }
+    exit;
+}
+
+/** - Handle POST requests */
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    switch ($path) {
+        case '/login-actions':
+            require PHP_PATH . '/login-actions.php';
+            exit;
+        case '/register-actions':
+            require PHP_PATH . '/registration-actions.php';
+            exit;
+        default:
+            http_response_code(404);
+            require VIEWS_PATH . '/404.php';
+            exit;
+    }
+}
+
+/** - Handle page requests - */
+
+switch ($path) {
+    case '': // Root URL
+    case '/index':
+        require VIEWS_PATH . '/home.php';
+        break;
+    case '/games-list':
+        require VIEWS_PATH . '/games-list.php';
+        break;
+    case '/login':
+        require VIEWS_PATH . '/login.php';
+        break;
+    case '/login-success':
+        require VIEWS_PATH . '/index.php';
+        break;
+    case '/logout':
+        require VIEWS_PATH . '/logout.php';
+        break;
+    case '/register':
+        require VIEWS_PATH . '/register.php';
+        break;
+    case '/profile':
+        require VIEWS_PATH . '/profile.php';
+        break;
+    case '/register-success':
+        require VIEWS_PATH . '/register-success.php';
+        break;
+    case '/discover':
+        require VIEWS_PATH . '/discover.php';
+        break;
+    case '/contact':
+        require VIEWS_PATH . '/contact.php';
+        break;
+    default:
+        http_response_code(404);
+        require VIEWS_PATH . '/404.php';
+        exit;
+}

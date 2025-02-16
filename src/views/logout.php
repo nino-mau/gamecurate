@@ -1,5 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/games-finder/src/php/db-functions.php';
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+require PHP_PATH . '/db-functions.php';
 
 session_start();
 
@@ -12,18 +14,14 @@ session_destroy();
 
 // Clear the 'remember me' cookie 
 if (isset($_COOKIE['remember'])) {
-   
+
     // Remove token from database
     $dbh = getDatabaseConnection();
     $stmt = $dbh->prepare("UPDATE users SET remember_token = NULL WHERE username = :username");
     $stmt->execute([':username' => $username]);
-    
+
     setcookie('remember', '', time() - 3600, '/');
 }
 
-// Redirect to login page
-// header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/games-finder/public/index.php");
-header("Location: /games-finder/src/views/login.php");
+header('Location: ' . BASE_URL . '/Login');
 exit;
-
-

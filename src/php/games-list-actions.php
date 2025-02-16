@@ -1,59 +1,49 @@
-<?php 
-require_once 'db-functions.php';
-
-session_start();
+<?php
+require_once __DIR__ . '/db-functions.php';
 
 
 /** -- Functions -- */
+function _genreMatchesFilter($genreString, $filter)
+{
+    $cleanedGenre = strtolower(trim($genreString));
 
-function filterByGenres($filter, $gamesDict) {
+    if (str_contains($cleanedGenre, " ")) {
+        $twoGenreArr = explode(" ", $cleanedGenre);
+        return ($twoGenreArr[0] === $filter || $twoGenreArr[1] === $filter);
+    } else {
+        return ($cleanedGenre === $filter);
+    }
+}
+function filterByGenres($filter, $gamesDict)
+{
     $name = $gamesDict[0];
     $genre = $gamesDict[2];
     $review = $gamesDict[4];
     $imgPath = $gamesDict[5];
 
-    // Used only in conditions and not modified
     $genreConst = $gamesDict[2];
     $len = count($genreConst);
 
-    // Iterate in reverse so that the array_splice doesn't re-order index just remove the highest one
-    for($i = $len - 1; $i >= 0; $i--) {
-        // Clean genre str
-        $genreConst[$i] = trim($genreConst[$i]);
-        $genreConst[$i] = strtolower($genreConst[$i]);
-        // To handle str with multiple genre 
-        if (str_contains($genreConst[$i], " ")) {
-
-            // Handle cases where a game has two gender assigned
-            $twoGenreArr = explode(" ", $genreConst[$i]);
-            if ($twoGenreArr[0] !== $filter AND $twoGenreArr[1] !== $filter) {
-                array_splice($genre, $i, 1);
-                array_splice($name, $i, 1);
-                array_splice($review, $i, 1);
-                array_splice($imgPath, $i, 1);
-            }
-        } else {
-            if ($genreConst[$i] !== $filter) {
-                array_splice($genre, $i, 1);
-                array_splice($name, $i, 1);
-                array_splice($review, $i, 1);
-                array_splice($imgPath, $i, 1);
-            }
+    for ($i = $len - 1; $i >= 0; $i--) {
+        if (! _genreMatchesFilter($genreConst[$i], $filter)) {
+            array_splice($genre, $i, 1);
+            array_splice($name, $i, 1);
+            array_splice($review, $i, 1);
+            array_splice($imgPath, $i, 1);
         }
     }
     $filteredGamesDict = [$name, $genre, $review, $imgPath];
+
     return $filteredGamesDict;
 }
-
 // Handle dynamically changing the color of review text to match the score.
-function handleReviewColor($reviewScore) {
+function handleReviewColor($reviewScore)
+{
     if ($reviewScore >= 90) {
         $reviewHtml = "<span class=\"game-review-cl--green\"><i class=\"review-icon ph-fill ph-star\"></i> ";
-    }
-    else if ($reviewScore > 70) {
+    } else if ($reviewScore > 70) {
         $reviewHtml = "<span class=\"game-review-cl--lightgreen\"><i class=\"review-icon ph-fill ph-star\"></i> ";
-    }    
-    else if ($reviewScore >= 50) {
+    } else if ($reviewScore >= 50) {
         $reviewHtml = "<span class=\"game-review-cl--lightgreen\"><i class=\"review-icon ph-fill ph-star\"></i> ";
     } else {
         $reviewHtml = "<span class=\"game-review-cl--red\"><i class=\"review-icon ph-fill ph-star\"></i> ";
@@ -87,13 +77,13 @@ foreach ($gamesList as $dict) {
                 break;
             case "genre":
                 $genreArr[] = $item;
-                break;            
+                break;
             case "price":
                 $priceArr[] = $item;
-                break;            
+                break;
             case "review":
                 $reviewArr[] = $item;
-                break;            
+                break;
             case "image_path":
                 $imagepathArr[] = $item;
                 break;
@@ -104,12 +94,11 @@ foreach ($gamesList as $dict) {
 // Put these arrays back in a dictionnary
 $gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr];
 
-if ($_SESSION['gamesListGenreFilter']) {
-    $filteredGamesDict = filterByGenres($_SESSION['gamesListGenreFilter'], $gamesDict);
+// Get the gamesFilter value from session
+$gamesListFilterValue = $_SESSION['gamesListGenreFilter'] ?? '';
+
+if ($gamesListFilterValue !== 'all' and $gamesListFilterValue) {
+    $filteredGamesDict = filterByGenres($gamesListFilterValue, $gamesDict);
     // Remove from sessions since filter are to be executed after btn press
-    $_SESSION['gamesListGenreFilter'] = '';
+    $gamesListFilterValue = '';
 }
-
-
-
-

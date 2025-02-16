@@ -4,7 +4,7 @@ include INCLUDES_PATH . '/header.php';
 ?>
 
 <?php
-include INCLUDES_PATH . '/work-in-progress.php';
+include INCLUDES_PATH . '/404.php';
 ?>
 
 <?php

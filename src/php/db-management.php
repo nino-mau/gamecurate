@@ -1,11 +1,13 @@
 <?php
-require_once 'db-functions.php';
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+require __DIR__ . '/db-functions.php';
 
 
 /** -- STORE TABLEs FROM DB IN JSON FILEs -- */
 
-$gamesJsonFile = $_SERVER['DOCUMENT_ROOT'] . '/games-finder/data/games.json';
-$usersJsonFile = $_SERVER['DOCUMENT_ROOT'] . '/games-finder/data/users.json';
+$gamesJsonFile = DATA_PATH . '/games.json';
+$usersJsonFile = DATA_PATH . '/users.json';
 
 // Export games table
 dbTableToJson('games', $gamesJsonFile);

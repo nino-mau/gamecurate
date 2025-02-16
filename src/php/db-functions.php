@@ -1,12 +1,14 @@
 <?php
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
 
 // To use to connect to db
-function getDatabaseConnection(){ 
+function getDatabaseConnection()
+{
     $host = 'localhost';
-    $dbname = 'games-finder-db';
+    $dbname = 'gamecurate';
     $user = 'nino';
-    // $password = 'D3c4p3%6P=U'; 
-    $password = 'ddQqJ-9uCyFhGBo';
+    $password = getenv('DB_PASSWORD');
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
@@ -18,7 +20,8 @@ function getDatabaseConnection(){
 }
 
 // Function used to extract table and return them in form of php object
-function getDbTable($tableName) {
+function getDbTable($tableName)
+{
     try {
         $dbh = getDatabaseConnection();
         $stmt = $dbh->prepare("SELECT * FROM $tableName");
@@ -28,11 +31,12 @@ function getDbTable($tableName) {
     } catch (Exception $e) {
         return "Error: " . $e->getMessage();
     }
-} 
+}
 
 // Add registred users to db and handle form verif
-function registerUser($userData){ 
-    
+function registerUser($userData)
+{
+
     $username = $userData['username'];
     $email = $userData['email'];
     $pwd = $userData['pwd'];
@@ -41,17 +45,17 @@ function registerUser($userData){
     $errors = validateRegisterForm($username, $email, $pwd, $confirmPwd);
 
     // Verify if the pwd matches and the form is valid
-    if(empty($errors)) {
+    if (empty($errors)) {
         try {
             $dbh = getDatabaseConnection();
-            
+
             $stmt = $dbh->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
             $stmt->execute([
                 ':username' => $username,
                 ':email' => $email,
                 ':password' => password_hash($pwd, PASSWORD_DEFAULT),
             ]);
-            header('Location: /games-finder/src/views/register-success.php');
+            header('Location: ' . BASE_URL . '/Register-success');
             exit;
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
@@ -60,14 +64,15 @@ function registerUser($userData){
         // Pass errors and form content back to register page
         $_SESSION['errors'] = $errors;
         $_SESSION['formData'] = $userData;
-        header('Location: /games-finder/src/views/register.php');
+        header('Location: ' . BASE_URL . '/Register');
         exit;
     }
 }
 
 // Handle logings 
-function loginUser($userData){
-    
+function loginUser($userData)
+{
+
     $username = $userData['username'];
     $pwd = $userData['pwd'];
     $remember = $userData['remember'];
@@ -81,26 +86,28 @@ function loginUser($userData){
 
         if ($user && password_verify($pwd, $user['password'])) {
             $_SESSION['username'] = $user['username'];
+            $_SESSION['firstLogin'] = true;
             setRememberCoockie($remember, $username);
             session_regenerate_id(true);
-            header('Location: /games-finder/public/index.php');
+            header('Location: ' . BASE_URL . '/Index');
             exit;
         } else {
             $_SESSION['error'] = 'The email address or password was incorrect';
             $_SESSION['loginData'] = $userData;
-            header('Location: /games-finder/src/views/login.php');
+            header('Location: ' . BASE_URL . '/Login-success');
             exit;
         }
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage(); 
+        echo "Error: " . $e->getMessage();
     }
 }
 
 // Handle automatic logins with token stored in cookie
-function autoCookieLogin($token) {
+function autoCookieLogin($token)
+{
     try {
         $dbh = getDatabaseConnection();
-        
+
         $stmt = $dbh->prepare("SELECT username FROM users WHERE remember_token = :token");
         $stmt->execute([
             ':token' => $token
@@ -109,7 +116,8 @@ function autoCookieLogin($token) {
 
         if ($user) {
             $_SESSION['username'] = $user['username'];
-            header('Location: /games-finder/public/index.php');
+            $_SESSION['hasLoggedIn'] = true;
+            header('Location: ' . BASE_URL . '/Index');
             exit;
         }
     } catch (Exception $e) {
@@ -118,7 +126,8 @@ function autoCookieLogin($token) {
 }
 
 // Handle form validation with visual feedback
-function validateRegisterForm($username, $email, $pwd, $cpwd){
+function validateRegisterForm($username, $email, $pwd, $cpwd)
+{
     $errors = [];
 
     // Username validation
@@ -138,16 +147,17 @@ function validateRegisterForm($username, $email, $pwd, $cpwd){
         $errors['pwd'] = 'Password is required';
     } elseif (strlen($pwd) < 8) {
         $errors['pwd'] = 'Password must be at least 8 characters';
-    } 
+    }
     // Password confirm validation 
     if ($cpwd !== $pwd) {
         $errors['confirmPwd'] = 'Does not match the password';
-    } 
+    }
     return $errors;
 }
 
 // Handle creating 'remember me' cookies
-function setRememberCoockie($remember, $username) {
+function setRememberCoockie($remember, $username)
+{
     if ($remember) {
         $token = bin2hex(random_bytes(32));
         $expire = time() + (86400 * 30); // 30 days
@@ -162,15 +172,15 @@ function setRememberCoockie($remember, $username) {
             ]);
             // Set remember cookie
             setcookie('remember', $token, $expire, '/');
-
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();  
+            echo "Error: " . $e->getMessage();
         }
     }
 }
 
 // Convert db table to json and store it in file
-function dbTableToJson($dbTable, $jsonFile) {
+function dbTableToJson($dbTable, $jsonFile)
+{
     try {
         $table = getDbTable($dbTable);
         $r = file_put_contents($jsonFile, json_encode($table, JSON_PRETTY_PRINT));
@@ -181,17 +191,6 @@ function dbTableToJson($dbTable, $jsonFile) {
             echo '<p>Succesfuly exported table to Json file !</p>';
         }
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage(); 
+        echo "Error: " . $e->getMessage();
     }
 }
-
-
-
-
-
-
-
-
-
-
-

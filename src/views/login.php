@@ -1,5 +1,7 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/header.php';
+require_once __DIR__ . '/../../conf/bootstrap.php';
+require LOGS_PATH . '/errors_logging.php';
+include INCLUDES_PATH . '/header.php';
 
 $error = $_SESSION['error'] ?? '';
 $data = $_SESSION['loginData'] ?? [];
@@ -9,7 +11,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
 ?>
 
 <main class="login-main container d-flex flex-column justify-content-center align-items-center">
-    <form class="loginForm row bg-light mt-9 w-40 p-3" action="/games-finder/src/php/login-actions.php" method="post">
+    <form class="loginForm row bg-light mt-9 w-40 p-3" action="/Login-actions" method="post">
         <div class="column">
             <div class="input-group mb-lg-4 mt-lg-1">
                 <span class="input-group-text" aria-hidden="true">@</span>
@@ -58,10 +60,10 @@ unset($_SESSION['error'], $_SESSION['loginData']);
         </div>
     </form>
     <div class="text-center row mt-4 animate__animated animate__fadeInUp anime__duration-2s">
-        <p class="text-light">Don't have an account ? <a class="text-secondary" href="/games-finder/src/views/register.php">Sign in</a></p>
+        <p class="text-light">Don't have an account ? <a class="text-secondary" href="/Register">Sign in</a></p>
     </div>
 </main>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/games-finder/src/includes/footer.php';
+include INCLUDES_PATH . '/footer.php';
 ?>
