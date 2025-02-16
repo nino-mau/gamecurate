@@ -2,7 +2,7 @@
 
 /** -- Global variables -- */
 
-const API_URL = "http://gamecurate.local/api/";
+const API_URL = "https://gamecurate.org/api/";
 
 
 /** -- Functions -- */
