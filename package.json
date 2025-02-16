@@ -1,5 +1,5 @@
 {
-  "name": "games-finder",
+  "name": "gamecurate",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,16 +7,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nino-mau/games-finder.git"
+    "url": "git+https://github.com/nino-mau/gamecurate.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/nino-mau/games-finder/issues"
+    "url": "https://github.com/nino-mau/gamecurate/issues"
   },
-  "homepage": "https://github.com/nino-mau/games-finder#readme",
+  "homepage": "https://github.com/nino-mau/gamecurate#readme",
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.19.0",

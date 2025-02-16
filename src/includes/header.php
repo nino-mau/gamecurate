@@ -21,7 +21,7 @@ if (!$username and $token) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <meta name="GamesFinder" content="Your site description." />
+    <meta name="GameCurate" content="Your site description." />
 
     <!---- Stylesheet ---->
     <link rel="stylesheet" href="assets/css/main.css" media="all">

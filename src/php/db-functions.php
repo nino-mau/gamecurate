@@ -6,10 +6,9 @@ require LOGS_PATH . '/errors_logging.php';
 function getDatabaseConnection()
 {
     $host = 'localhost';
-    $dbname = 'games-finder-db';
+    $dbname = 'gamecurate';
     $user = 'nino';
-    // $password = 'D3c4p3%6P=U'; 
-    $password = 'ddQqJ-9uCyFhGBo';
+    $password = getenv('DB_PASSWORD');
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
