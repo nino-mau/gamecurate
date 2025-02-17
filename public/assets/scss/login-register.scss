@@ -1,0 +1,68 @@
+/** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
+.register-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+    > .registerForm {
+        border-radius: 4%;
+        box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+}
+
+/** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
+.login-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+    > .loginForm {
+        border-radius: 4%;
+        box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+}
+
+/** -- REGISTRATION SUCCESS PAGE -- */
+.registration-success-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+    > .card {
+        height: 36vh;
+        border-radius: 4%;
+        box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        > .card-body {
+            > .successIcon {
+                animation: tada;
+                animation-duration: 2s;
+                font-size: 15rem;
+            }
+            > .title {
+                animation: fadeIn;
+                animation-duration: 1s;
+            }
+            > .text {
+                animation: fadeIn;
+                animation-duration: 1s;
+            }
+            > .btn {
+                animation: fadeIn;
+                animation-duration: 1s;
+                background-color: var(--bs-primary);
+            }
+        }
+    }
+}
