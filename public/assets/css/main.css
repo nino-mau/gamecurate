@@ -150,7 +150,7 @@
   min-height: 132.5vh;
 }
 
-/** -- NAVBAR TO SORT GAMES BY GENRE */
+/** -- NAVBAR TO SORT GAMES BY GENRE -- */
 .games-list-navbar {
   padding: 1rem;
   gap: 1.1rem;
@@ -162,10 +162,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 6rem;
+  width: 5vw;
+  height: 5vw;
   transition: 0.3s ease-in-out;
-  /* transition: scale 0.3s ease-in-out; */
   border-radius: 5%;
 }
 .games-list-navbar > .navbar-btn > .navbar-text {
@@ -188,9 +187,10 @@
   height: 48%;
   color: white;
 }
+
 /** -- DIV CONTAINING THE ENTIRE LIST -- */
 .games-grid > .games-grid-row {
-  width: 78rem;
+  width: 74rem;
 }
 
 /** -- Div containing one game (img, text review) -- */
@@ -250,7 +250,7 @@
 
 /** -- REPRESENT FOOTER ELEMENT -- */
 .footer-main {
-  height: 40vh;
+  height: 41vh;
   bottom: 0;
 }
 
@@ -605,8 +605,16 @@
   padding-bottom: 20vh;
 }
 .login-main > .loginForm {
+  width: 20vw;
+  height: 40vh;
   border-radius: 4%;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.login-main > .loginForm > .column {
+  padding: 1rem;
+}
+.login-main > .loginForm > .column > .input1 {
+  margin-bottom: 2rem;
 }
 
 /** -- REGISTRATION SUCCESS PAGE -- */
@@ -636,25 +644,6 @@
   animation: fadeIn;
   animation-duration: 1s;
   background-color: var(--bs-primary);
-}
-
-/** -- GLOBALS RULES -- */
-html {
-  margin: 0;
-}
-
-body {
-  height: 132.5vh;
-  min-height: 132.5vh;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins" !important;
-}
-
-/** Add shadows to all bootstrap btn */
-.btn {
-  border-radius: 9px;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 /** -- REPRESENT THE MAIN ELEMENT OF HOME PAGE -- */
@@ -843,6 +832,211 @@ body {
     transform: translate(-50%, -50%) scale(4);
     opacity: 0;
   }
+}
+
+@media only screen and (max-width: 1921px) and (min-width: 920px) {
+  /** -- REPRESENT THE MAIN ELEMENT OF HOME PAGE -- */
+  .home-main {
+    height: 95vh;
+  }
+  /** - Represent the title of the home page - */
+  .home-title {
+    font-size: 3rem;
+    display: flex;
+    margin-bottom: 6vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    /** Start text effect */
+    /** Middle text effect */
+    /** End text effect */
+  }
+  .home-title > .firstLink {
+    position: relative;
+    text-decoration: none;
+    margin: 0 0.25em;
+    font-weight: 700;
+    animation: bounceInLeft 2s;
+  }
+  .home-title > .firstLink::before {
+    content: "";
+    background-color: var(--bs-secondary);
+    position: absolute;
+    left: 2px;
+    bottom: 0.4rem;
+    width: 100%;
+    height: 1.5rem;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+  .home-title > .firstLink:hover::before {
+    bottom: 0;
+    height: 100%;
+  }
+  .home-title > .middleText {
+    animation: bounceInDown 2.5s;
+  }
+  .home-title > .secondLink {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    margin: 0 0.25em;
+    overflow: hidden;
+    animation: bounceInRight 3s;
+  }
+  .home-title > .secondLink::before,
+  .home-title > .secondLink::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  .home-title > .secondLink::before {
+    background-color: var(--bs-secondary);
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .home-title > .secondLink::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: var(--bs-secondary);
+  }
+  .home-title > .secondLink:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+  .home-title > .secondLink:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  .home-title > .secondLink span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .home-title > .secondLink:hover span {
+    transform: translate3d(-200%, 0, 0);
+  }
+  /** - Represent the video present on the home page - */
+  .home-video {
+    animation: fadeIn;
+    animation-duration: 3s;
+    margin: 0;
+    margin-bottom: 7.7vh;
+  }
+  .home-video > .video-wrapper {
+    width: 37vw;
+    border-radius: 6rem;
+    padding: 5px;
+    background: linear-gradient(45deg, var(--bs-secondary) 0%, var(--bs-primary) 71%);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    display: inline-block;
+  }
+  .home-video > .video-wrapper > .video {
+    display: block;
+    width: 100%;
+    border-radius: 6rem;
+  }
+  /** - Represent the btn present on the home page - */
+  .home-button {
+    animation: fadeInUpBig;
+    animation-duration: 1.5s;
+  }
+  .home-button > .btn {
+    background-color: var(--bs-secondary);
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .home-button > .btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .home-button > .btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  .home-button > .btn:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    color: var(--bs-secondary);
+  }
+  .home-button > .btn:active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s ease-out;
+    z-index: -1;
+  }
+  .home-button > .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.3s ease;
+  }
+  .home-button > .btn:hover::after {
+    left: 100%;
+    transition: all 0.5s ease;
+  }
+  @keyframes ripple {
+    to {
+      transform: translate(-50%, -50%) scale(4);
+      opacity: 0;
+    }
+  }
+}
+/** -- GLOBALS RULES -- */
+html {
+  margin: 0;
+}
+
+body {
+  height: 132.5vh;
+  min-height: 132.5vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins" !important;
+}
+
+/** Add shadows to all bootstrap btn */
+.btn {
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 /** -- CUSTOM ANIMATIONS CLASSES FROM ANIMISTA.NET -- */

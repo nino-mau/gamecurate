@@ -5,7 +5,7 @@
     min-height: 132.5vh;
 }
 
-/** -- NAVBAR TO SORT GAMES BY GENRE */
+/** -- NAVBAR TO SORT GAMES BY GENRE -- */
 .games-list-navbar {
     padding: 1rem;
     gap: 1.1rem;
@@ -16,10 +16,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 6rem;
-        height: 6rem;
+        width: 5vw;
+        height: 5vw;
         transition: 0.3s ease-in-out;
-        /* transition: scale 0.3s ease-in-out; */
         border-radius: 5%;
         > .navbar-text {
             font-size: 0.8rem;
@@ -42,14 +41,12 @@
             color: white;
         }
     }
-    > .navbar-btn:hover {
-    }
 }
 
 /** -- DIV CONTAINING THE ENTIRE LIST -- */
 .games-grid {
     > .games-grid-row {
-        width: 78rem;
+        width: 74rem;
     }
 }
 

@@ -11,11 +11,11 @@ unset($_SESSION['error'], $_SESSION['loginData']);
 ?>
 
 <main class="login-main container d-flex flex-column justify-content-center align-items-center">
-    <form class="loginForm row bg-light mt-9 w-40 p-3" action="/Login-actions" method="post">
+    <form class="loginForm d-flex flex-column justify-content-evenly bg-light" action="/Login-actions" method="post">
         <div class="column">
-            <div class="input-group mb-lg-4 mt-lg-1">
-                <span class="input-group-text" aria-hidden="true">@</span>
-                <div class="form-floating">
+            <div class="input-group">
+                <span class="input1 input-group-text" aria-hidden="true">@</span>
+                <div class="input1 form-floating">
                     <input type="text"
                         class="form-control <?= ($error) ? 'is-invalid' : '' ?>"
                         id="loginUsername"
@@ -32,7 +32,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="input-group mb-lg-4">
+            <div class="input-group">
                 <div class="form-floating">
                     <input type="password"
                         class="form-control <?= ($error) ? 'is-invalid' : '' ?>"
@@ -50,16 +50,16 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="form-check mb-lg-5">
+            <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="remember" value="remember" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">Remember me</label>
             </div>
-            <div class="mb-lg-1 d-grid ">
+            <div class="d-grid">
                 <button type="submit" class="btn btn-secondary btn-lg">Login</button>
             </div>
         </div>
     </form>
-    <div class="text-center row mt-4 animate__animated animate__fadeInUp anime__duration-2s">
+    <div class="text-center row animate__animated animate__fadeInUp anime__duration-2s">
         <p class="text-light">Don't have an account ? <a class="text-secondary" href="/Register">Sign in</a></p>
     </div>
 </main>
