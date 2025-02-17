@@ -5,7 +5,7 @@ require LOGS_PATH . '/errors_logging.php';
 // To use to connect to db
 function getDatabaseConnection()
 {
-    $host = 'localhost';
+    $host = '127.0.0.1';
     $dbname = 'gamecurate';
     $user = 'nino';
     $password = getenv('DB_PASSWORD');

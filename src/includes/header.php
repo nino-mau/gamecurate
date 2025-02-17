@@ -54,7 +54,7 @@ if (!$username and $token) {
     <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
 
     <!---- Scripts ---->
-    <script src="assets/js/scripts.js" async defer></script>
+    <script src="assets/js/scripts.js" defer></script>
 
     <!---- Social Meta Tags ---->
     <meta property="og:locale" content="en_US" />

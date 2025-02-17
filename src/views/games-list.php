@@ -7,51 +7,51 @@ require INCLUDES_PATH . '/header.php';
 <main class="games-list-main">
     <nav>
         <div class="games-list-navbar d-flex flex-row justify-content-center">
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/menu/grid-icon3.svg">
                 <p class="navbar-text" data-js-filter-txt>All</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/action-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Action</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/adventure-icon4.svg">
                 <p class="navbar-text" data-js-filter-txt>Adventure</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/horror-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Horror</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/immersive-sim-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Imm-sim</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/open-world-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Open-world</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/platformer-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Platformer</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/racing-icon2.svg">
                 <p class="navbar-text" data-js-filter-txt>Racing</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/coop-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Co-op</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/rpg-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>RPG</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/simulation-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Walking-sim</p>
             </div>
-            <div class="navbar-btn hvr-reveal hvr-grow" data-js-navbar-filter-btns>
+            <div class="navbar-btn " data-js-navbar-filter-btns>
                 <img class="navbar-icons" src="assets/img/icons/games-genre/shooter-icon.svg">
                 <p class="navbar-text" data-js-filter-txt>Shooter</p>
             </div>
@@ -88,10 +88,11 @@ require INCLUDES_PATH . '/header.php';
             $reviewHtml = handleReviewColor($review[$i]);
             echo
             <<<HTML
-                <div role="listitem" class="games-grid-containers col">
-                    <img class="game-img shadow rounded hvr-float" src="$imgPath[$i]">
-                    <div class="game-grid-sub-containers d-flex flex-row justify-content-between">
-                        <p class="game-review">$reviewHtml </p>
+                <div role="listitem" class="games-grid-containers col" data-js-games-list-cells-container>
+                    <div class="spinners spinner-border" role="status" data-js-games-list-cells-spinners></div>
+                    <img class="game-img shadow rounded" src="$imgPath[$i]" data-js-games-list-img>
+                    <div class="sub-container d-flex flex-row justify-content-between" data-js-games-list-text>
+                        <p class="game-review">$reviewHtml</p>
                         <p class="game-genre">$genre[$i]</p>
                     </div>
                 </div>            
