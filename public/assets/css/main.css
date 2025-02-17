@@ -267,7 +267,7 @@
 
 /** -- MIDDLE SECTION OF THE FOOTER -- */
 .footer-middle-div {
-  height: 30vh;
+  height: 31vh;
 }
 .footer-middle-div .content-div {
   font-size: 1rem;
@@ -310,7 +310,7 @@
   font-family: 0.8rem;
 }
 
-@media only screen and (max-width: 1921px) and (min-width: 920px) {
+@media only screen and (max-height: 920px) {
   /** -- TOP SECTION OF THE FOOTER -- */
   .footer-top-div {
     height: 6vh;
@@ -510,9 +510,9 @@
   transform: translate(-30%, 0);
 }
 
-@media only screen and (max-width: 1921px) and (min-width: 920px) {
+@media only screen and (max-height: 1040px) {
   .header-navbar {
-    height: 7.7vh;
+    height: 7.6vh;
   }
   .header-navbar > .siteIcon > .svg {
     width: 2.2rem;
@@ -589,14 +589,32 @@
     transform: translate(-30%, 0);
   }
 }
+@media only screen and (max-height: 3000px) and (min-height: 2000px) {
+  .header-navbar {
+    height: 3vh;
+  }
+}
 /** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
 .register-main {
   height: 95vh;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
 }
 .register-main > .registerForm {
+  width: 27rem;
+  height: 38.5rem;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
   border-radius: 4%;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.register-main > .registerForm > .column > .separator {
+  margin-bottom: 2.5rem;
+}
+.register-main > .registerForm > .column .input1, .register-main > .registerForm > .column .input2, .register-main > .registerForm > .column .input3, .register-main > .registerForm > .column .input4, .register-main > .registerForm > .column .rememberCheck,
+.register-main > .registerForm > .column .submitBtn {
+  margin-bottom: 2.2rem;
+}
+.register-main > .outer-text {
+  margin-top: 1rem;
 }
 
 /** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
@@ -605,16 +623,29 @@
   padding-bottom: 20vh;
 }
 .login-main > .loginForm {
-  width: 20vw;
-  height: 40vh;
+  width: 27rem;
+  height: 30rem;
+  padding: 4rem 1.5rem 2rem 1.5rem;
   border-radius: 4%;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-.login-main > .loginForm > .column {
-  padding: 1rem;
+.login-main > .loginForm > .column > .separator {
+  margin-bottom: 2.5rem;
 }
-.login-main > .loginForm > .column > .input1 {
-  margin-bottom: 2rem;
+.login-main > .loginForm > .column .input1 {
+  margin-bottom: 2.2rem;
+}
+.login-main > .loginForm > .column .input2 {
+  margin-bottom: 2.2rem;
+}
+.login-main > .loginForm > .column .rememberCheck {
+  margin-bottom: 2.2rem;
+}
+.login-main > .loginForm > .column .submitBtn {
+  margin-bottom: 2.2rem;
+}
+.login-main > .outer-text {
+  margin-top: 1rem;
 }
 
 /** -- REGISTRATION SUCCESS PAGE -- */
@@ -623,7 +654,8 @@
   padding-bottom: 20vh;
 }
 .registration-success-main > .card {
-  height: 36vh;
+  width: 25rem;
+  height: 30rem;
   border-radius: 4%;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
@@ -639,6 +671,7 @@
 .registration-success-main > .card > .card-body > .text {
   animation: fadeIn;
   animation-duration: 1s;
+  margin-bottom: 2.5rem;
 }
 .registration-success-main > .card > .card-body > .btn {
   animation: fadeIn;
@@ -646,6 +679,79 @@
   background-color: var(--bs-primary);
 }
 
+@media only screen and (max-width: 1921px) and (min-width: 920px) {
+  .register-main {
+    height: 95vh;
+  }
+  .register-main > .registerForm {
+    width: 25rem;
+    height: 33.5rem;
+    border-radius: 4%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  .register-main > .registerForm > .column .input1,
+  .register-main > .registerForm > .column .input2,
+  .register-main > .registerForm > .column .input3,
+  .register-main > .registerForm > .column .input4,
+  .register-main > .registerForm > .column .separator,
+  .register-main > .registerForm > .column .rememberCheck,
+  .register-main > .registerForm > .column .submitBtn {
+    margin-bottom: 1.6rem;
+  }
+  .register-main > .outer-text {
+    margin-top: 1rem;
+  }
+  /** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
+  .login-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+  }
+  .login-main > .loginForm {
+    width: 25rem;
+    height: 25rem;
+    padding: 4rem 1.5rem 2rem 1.5rem;
+    border-radius: 4%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  .login-main > .loginForm > .column .separator, .login-main > .loginForm > .column .input1, .login-main > .loginForm > .column .input2, .login-main > .loginForm > .column .rememberCheck,
+  .login-main > .loginForm > .column .submitBtn {
+    margin-bottom: 1.5rem;
+  }
+  .login-main > .outer-text {
+    margin-top: 1rem;
+  }
+  /** -- REGISTRATION SUCCESS PAGE -- */
+  .registration-success-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+  }
+  .registration-success-main > .card {
+    height: 26.5rem;
+    width: 22rem;
+    border-radius: 4%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  .registration-success-main > .card > .card-body > .successIcon {
+    animation: tada;
+    animation-duration: 2s;
+    font-size: 12rem;
+  }
+  .registration-success-main > .card > .card-body > .title {
+    animation: fadeIn;
+    animation-duration: 1s;
+    font-size: 2.5rem;
+  }
+  .registration-success-main > .card > .card-body > .text {
+    animation: fadeIn;
+    animation-duration: 1s;
+    margin-bottom: 2rem;
+  }
+  .registration-success-main > .card > .card-body > .btn {
+    animation: fadeIn;
+    animation-duration: 1s;
+    background-color: var(--bs-primary);
+  }
+}
 /** -- REPRESENT THE MAIN ELEMENT OF HOME PAGE -- */
 .home-main {
   height: 95vh;
@@ -739,13 +845,13 @@
 /** - Represent the video present on the home page - */
 .home-video {
   margin-top: 6rem;
-  margin-bottom: 7.5rem;
+  margin-bottom: 6rem;
   animation: fadeIn;
   animation-duration: 3s;
 }
 .home-video > .video-wrapper {
-  width: 60rem;
-  border-radius: 6rem;
+  width: 70rem;
+  border-radius: 20rem;
   padding: 5px;
   background: linear-gradient(45deg, var(--bs-secondary) 0%, var(--bs-primary) 71%);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -754,7 +860,7 @@
 .home-video > .video-wrapper > .video {
   display: block;
   width: 100%;
-  border-radius: 6rem;
+  border-radius: 20rem;
 }
 
 /** - Represent the btn present on the home page - */
@@ -834,190 +940,37 @@
   }
 }
 
-@media only screen and (max-width: 1921px) and (min-width: 920px) {
-  /** -- REPRESENT THE MAIN ELEMENT OF HOME PAGE -- */
-  .home-main {
-    height: 95vh;
-  }
-  /** - Represent the title of the home page - */
+/** -- HEIGHT MEDIA QUERIES -- */
+@media only screen and (max-height: 900px) {
   .home-title {
     font-size: 3rem;
-    display: flex;
     margin-bottom: 6vh;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    /** Start text effect */
-    /** Middle text effect */
-    /** End text effect */
-  }
-  .home-title > .firstLink {
-    position: relative;
-    text-decoration: none;
-    margin: 0 0.25em;
-    font-weight: 700;
-    animation: bounceInLeft 2s;
   }
   .home-title > .firstLink::before {
-    content: "";
-    background-color: var(--bs-secondary);
-    position: absolute;
-    left: 2px;
     bottom: 0.4rem;
-    width: 100%;
-    height: 1.5rem;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
   }
-  .home-title > .firstLink:hover::before {
-    bottom: 0;
-    height: 100%;
-  }
-  .home-title > .middleText {
-    animation: bounceInDown 2.5s;
-  }
-  .home-title > .secondLink {
-    position: relative;
-    display: inline-block;
-    font-weight: 700;
-    margin: 0 0.25em;
-    overflow: hidden;
-    animation: bounceInRight 3s;
-  }
-  .home-title > .secondLink::before,
-  .home-title > .secondLink::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    left: 0;
-  }
-  .home-title > .secondLink::before {
-    background-color: var(--bs-secondary);
-    height: 2px;
-    bottom: 0;
-    transform-origin: 100% 50%;
-    transform: scaleX(0);
-    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-  }
-  .home-title > .secondLink::after {
-    content: attr(data-replace);
-    height: 100%;
-    top: 0;
-    transform-origin: 100% 50%;
-    transform: translate3d(200%, 0, 0);
-    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-    color: var(--bs-secondary);
-  }
-  .home-title > .secondLink:hover::after {
-    transform: translate3d(0, 0, 0);
-  }
-  .home-title > .secondLink:hover::before {
-    transform-origin: 0% 50%;
-    transform: scaleX(1);
-  }
-  .home-title > .secondLink span {
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-  }
-  .home-title > .secondLink:hover span {
-    transform: translate3d(-200%, 0, 0);
-  }
-  /** - Represent the video present on the home page - */
   .home-video {
-    animation: fadeIn;
-    animation-duration: 3s;
+    margin: 0;
+    margin-bottom: 7.7vh;
+  }
+  .home-video > .video-wrapper {
+    width: 33.5rem;
+  }
+}
+@media only screen and (max-height: 1160px) and (min-height: 900px) {
+  .home-title {
+    font-size: 3rem;
+    margin-bottom: 6vh;
+  }
+  .home-title > .firstLink::before {
+    bottom: 0.4rem;
+  }
+  .home-video {
     margin: 0;
     margin-bottom: 7.7vh;
   }
   .home-video > .video-wrapper {
     width: 37vw;
-    border-radius: 6rem;
-    padding: 5px;
-    background: linear-gradient(45deg, var(--bs-secondary) 0%, var(--bs-primary) 71%);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    display: inline-block;
-  }
-  .home-video > .video-wrapper > .video {
-    display: block;
-    width: 100%;
-    border-radius: 6rem;
-  }
-  /** - Represent the btn present on the home page - */
-  .home-button {
-    animation: fadeInUpBig;
-    animation-duration: 1.5s;
-  }
-  .home-button > .btn {
-    background-color: var(--bs-secondary);
-    color: #ffffff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 3rem;
-    font-weight: bold;
-    border-radius: 30px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  .home-button > .btn::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: #ffffff;
-    transition: all 0.3s ease;
-    border-radius: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  .home-button > .btn:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.9;
-  }
-  .home-button > .btn:hover {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-5px);
-    color: var(--bs-secondary);
-  }
-  .home-button > .btn:active::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    animation: ripple 0.6s ease-out;
-    z-index: -1;
-  }
-  .home-button > .btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
-    transition: all 0.3s ease;
-  }
-  .home-button > .btn:hover::after {
-    left: 100%;
-    transition: all 0.5s ease;
-  }
-  @keyframes ripple {
-    to {
-      transform: translate(-50%, -50%) scale(4);
-      opacity: 0;
-    }
   }
 }
 /** -- GLOBALS RULES -- */
