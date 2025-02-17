@@ -10,11 +10,15 @@ unset($_SESSION['errors'], $_SESSION['formData']);
 ?>
 
 <main class="register-main container d-flex flex-column justify-content-center align-items-center">
-    <form class="registerForm row bg-light mt-9 w-40 p-3" action="/Register-actions" method="post">
+    <form class="registerForm row bg-light" action="/Register-actions" method="post">
         <div class="column">
-            <div class="input-group mb-lg-4 mt-lg-1">
-                <span class="input-group-text" aria-hidden="true">@</span>
-                <div class="form-floating">
+            <div class="text-center">
+                <h1><strong>Register</strong></h1>
+            </div>
+            <hr class="separator">
+            <div class="input-group">
+                <span class="input1 input-group-text" aria-hidden="true">@</span>
+                <div class="input1 form-floating">
                     <input type="text"
                         class="form-control <?= isset($errors['username']) ? 'is-invalid' : '' ?>"
                         id="registerUsername"
@@ -31,8 +35,8 @@ unset($_SESSION['errors'], $_SESSION['formData']);
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="input-group mb-lg-4">
-                <div class="form-floating">
+            <div class="input-group">
+                <div class="input2 form-floating">
                     <input type="email"
                         class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
                         id="registerEmail"
@@ -49,8 +53,8 @@ unset($_SESSION['errors'], $_SESSION['formData']);
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="input-group mb-lg-4">
-                <div class="form-floating">
+            <div class="input-group">
+                <div class="input3 form-floating">
                     <input type="password"
                         class="form-control <?= isset($errors['pwd']) ? 'is-invalid' : '' ?>"
                         id="registerPassword"
@@ -67,8 +71,8 @@ unset($_SESSION['errors'], $_SESSION['formData']);
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="input-group mb-lg-6">
-                <div class="form-floating">
+            <div class="input-group">
+                <div class="input4 form-floating">
                     <input type="password"
                         class="form-control <?= isset($errors['confirmPwd']) ? 'is-invalid' : '' ?>"
                         id="registerConfirmPassword"
@@ -85,12 +89,12 @@ unset($_SESSION['errors'], $_SESSION['formData']);
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="mb-lg-1 d-grid ">
+            <div class="d-grid submitBtn">
                 <button type="submit" class="btn btn-secondary btn-lg">Register</button>
             </div>
         </div>
     </form>
-    <div class="text-center row mt-4 animate__animated animate__fadeInUp anime__duration-2s">
+    <div class="outer-text text-center row animate__animated animate__fadeInUp anime__duration-2s">
         <p class="text-light">Already have an account ? <a class="text-secondary" href="/Login">Log in</a></p>
     </div>
 </main>
