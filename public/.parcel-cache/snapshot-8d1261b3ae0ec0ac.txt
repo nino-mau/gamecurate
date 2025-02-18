@@ -1,5 +1,0 @@
-4
-47C:\wamp64\www\gamecurate.local\public\.htaccess133843469651198802 0
-42C:\wamp64\www\gamecurate.local\public\dist133843502324811141 1
-47C:\wamp64\www\gamecurate.local\public\index.php133843512427236118 0
-52C:\wamp64\www\gamecurate.local\public\dist\index.php133843502324801125 0
