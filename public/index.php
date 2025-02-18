@@ -1,3 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <meta name="GameCurate" content="Your site description." />
+
+    <!---- Stylesheet ---->
+    <link rel="stylesheet" href="assets/css/main.css" media="all">
+
+    <!---- Line Awesome ---->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <!---- Hover.css ---->
+    <link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
+
+    <!---- Animate.css ---->
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!---- Custome stylesheet ---->
+    <link rel="stylesheet" href="assets/css/custom-style.css" media="all">
+
+    <!---- Ionicons ---->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!---- Phosphor Icons ---->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!---- Bootstrap and Popper.js ---->
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js" defer></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!---- JQuery ---->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!---- Scripts ---->
+    <!-- <script type="module" src="assets/js/scripts.js" defer></script> -->
+
+    <!---- Social Meta Tags ---->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="images/hom-banner-compressed.jpg" />
+
+    <!---- Twitter Meta Tags ---->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="images/hom-banner-compressed.jpg" />
+
+    <!---- Favicons ---->
+    <link rel="icon" href="assets/img/icons/favicon.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/img/icons/favicon.svg" />
+
+    <!---- Search Engine Optimization ---->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="" />
+
+    <!---- 
+</head>
+
 <?php
 require_once __DIR__ . '/../conf/bootstrap.php';
 require LOGS_PATH . '/errors_logging.php';
