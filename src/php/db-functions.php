@@ -94,7 +94,7 @@ function loginUser($userData)
         } else {
             $_SESSION['error'] = 'The email address or password was incorrect';
             $_SESSION['loginData'] = $userData;
-            header('Location: ' . BASE_URL . '/Login-success');
+            header('Location: ' . BASE_URL . '/Login');
             exit;
         }
     } catch (Exception $e) {
