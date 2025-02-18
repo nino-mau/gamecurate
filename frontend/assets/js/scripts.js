@@ -206,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
 =======
 /* global bootstrap */
 
-import * as namespaceName from "./swiper";
 
 /** -- Global variables -- */
 
