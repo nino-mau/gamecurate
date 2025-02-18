@@ -1,6 +1,5 @@
 /* global bootstrap */
 
-import * as namespaceName from "./swiper";
 
 /** -- Global variables -- */
 

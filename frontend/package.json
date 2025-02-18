@@ -12,9 +12,6 @@
     "devDependencies": {
         "@parcel/transformer-raw": "^2.13.3",
         "parcel": "^2.13.3"
-    },
-    "alias": {
-        "swiper": "./frontend/node_modules/swiper"
     }
 }
 
