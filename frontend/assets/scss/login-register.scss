@@ -1,0 +1,208 @@
+/** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
+.register-main {
+    height: 95vh;
+    padding-bottom: 10vh;
+    > .registerForm {
+        width: 27rem;
+        height: 38.5rem;
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        border-radius: 4%;
+        box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        > .column {
+            > .separator {
+                margin-bottom: 2.5rem;
+            }
+            & .input1, .input2, .input3, .input4, .rememberCheck,
+            .submitBtn {
+                margin-bottom: 2.2rem;
+            }
+        }
+    }
+    > .outer-text {
+        margin-top: 1rem;
+    }
+}
+
+/** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
+.login-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+    > .loginForm {
+        width: 27rem;
+        height: 30rem;
+        padding: 4rem 1.5rem 2rem 1.5rem;
+        border-radius: 4%;
+        box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        > .column {
+            > .separator {
+                margin-bottom: 2.5rem;
+            }
+            & .input1 {
+                margin-bottom: 2.2rem;
+            }
+            & .input2 {
+                margin-bottom: 2.2rem;
+            }
+            & .rememberCheck {
+                margin-bottom: 2.2rem;
+            }
+            & .submitBtn {
+                margin-bottom: 2.2rem;
+            }
+        }
+    }
+    > .outer-text {
+        margin-top: 1rem;
+    }
+}
+
+/** -- REGISTRATION SUCCESS PAGE -- */
+.registration-success-main {
+    height: 95vh;
+    padding-bottom: 20vh;
+    > .card {
+        width: 25rem;
+        height: 30rem;
+        border-radius: 4%;
+        box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        > .card-body {
+            > .successIcon {
+                animation: tada;
+                animation-duration: 2s;
+                font-size: 15rem;
+            }
+            > .title {
+                animation: fadeIn;
+                animation-duration: 1s;
+            }
+            > .text {
+                animation: fadeIn;
+                animation-duration: 1s;
+                margin-bottom: 2.5rem;
+            }
+            > .btn {
+                animation: fadeIn;
+                animation-duration: 1s;
+                background-color: var(--bs-primary);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1921px) and (min-width: 920px) {
+    .register-main {
+        height: 95vh;
+        > .registerForm {
+            width: 25rem;
+            height: 33.5rem;
+            border-radius: 4%;
+            box-shadow:
+                rgba(0, 0, 0, 0.07) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px,
+                rgba(0, 0, 0, 0.07) 0px 8px 16px,
+                rgba(0, 0, 0, 0.07) 0px 16px 32px,
+                rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            > .column {
+                & .input1,
+                .input2,
+                .input3,
+                .input4,
+                .separator,
+                .rememberCheck,
+                .submitBtn {
+                    margin-bottom: 1.6rem;
+                }
+            }
+        }
+        > .outer-text {
+            margin-top: 1rem;
+        }
+    }
+
+    /** -- REPRESENT THE MAIN ELEMENT OF THE REGISTER PAGE -- */
+    .login-main {
+        height: 95vh;
+        padding-bottom: 20vh;
+        > .loginForm {
+            width: 25rem;
+            height: 25rem;
+            padding: 4rem 1.5rem 2rem 1.5rem;
+            border-radius: 4%;
+            box-shadow:
+                rgba(0, 0, 0, 0.07) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px,
+                rgba(0, 0, 0, 0.07) 0px 8px 16px,
+                rgba(0, 0, 0, 0.07) 0px 16px 32px,
+                rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            > .column {
+                & .separator, .input1, .input2, .rememberCheck
+                , .submitBtn {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+        > .outer-text {
+            margin-top: 1rem;
+        }
+    }
+
+    /** -- REGISTRATION SUCCESS PAGE -- */
+    .registration-success-main {
+        height: 95vh;
+        padding-bottom: 20vh;
+        > .card {
+            height: 26.5rem;
+            width: 22rem;
+            border-radius: 4%;
+            box-shadow:
+                rgba(0, 0, 0, 0.07) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px,
+                rgba(0, 0, 0, 0.07) 0px 8px 16px,
+                rgba(0, 0, 0, 0.07) 0px 16px 32px,
+                rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            > .card-body {
+                > .successIcon {
+                    animation: tada;
+                    animation-duration: 2s;
+                    font-size: 12rem;
+                }
+                > .title {
+                    animation: fadeIn;
+                    animation-duration: 1s;
+                    font-size: 2.5rem;
+                }
+                > .text {
+                    animation: fadeIn;
+                    animation-duration: 1s;
+                    margin-bottom: 2rem;
+                }
+                > .btn {
+                    animation: fadeIn;
+                    animation-duration: 1s;
+                    background-color: var(--bs-primary);
+                }
+            }
+        }
+    }
+}
