@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:public/assets/js/scripts.js
 /* global bootstrap */
 
@@ -204,6 +205,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 =======
+=======
+>>>>>>> origin/main
 /* global bootstrap */
 
 /** -- Global variables -- */
@@ -363,4 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })();
     gamesFilterBtnListener();
 });
+<<<<<<< HEAD
 >>>>>>> 730beef (Build: Start configuring the project to use parcel):frontend/assets/js/scripts.js
+=======
+>>>>>>> origin/main
