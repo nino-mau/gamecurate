@@ -1,11 +1,13 @@
 /** -- REPRESENT THE MAIN ELEMENT OF HOME PAGE -- */
 .home-main {
     height: 95vh;
-    padding-top: 10vh;
+    // padding-top: 10vh;
+    gap: 10vh;
 }
 /** - Represent the title of the home page - */
 .home-title {
-    font-size: 4rem;
+    // font-size: 4rem;
+    font-size: 5.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,10 +26,10 @@
         content: "";
         background-color: var(--bs-secondary);
         position: absolute;
-        left: 2px;
-        bottom: 0.5rem;
+        left: 4px;
+        bottom: .5rem;
         width: 100%;
-        height: 1.5rem;
+        height: 2.5vh;
         z-index: -1;
         transition: all 0.3s ease-in-out;
     }
@@ -89,13 +91,12 @@
 }
 /** - Represent the video present on the home page - */
 .home-video {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
     animation: fadeIn;
     animation-duration: 3s;
     > .video-wrapper {
-        width: 70rem;
-        border-radius: 20rem;
+        height: 39.8vh;
+        width: 70vh;
+        border-radius: 5rem;
         padding: 5px;
         background: linear-gradient(
             45deg,
@@ -111,7 +112,8 @@
         > .video {
             display: block;
             width: 100%;
-            border-radius: 20rem;
+            height: 100%;
+            border-radius: 5rem;
         }
     }
 }
@@ -124,7 +126,7 @@
         color: #ffffff;
         border: none;
         padding: 15px 30px;
-        font-size: 3rem;
+        font-size: 4.1vh;
         font-weight: bold;
         border-radius: 30px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -200,36 +202,49 @@
 
 /** -- HEIGHT MEDIA QUERIES -- */
 
-@media only screen and (max-height: 900px) {
+// @media only screen and (max-height: 800px) {
+//     .home-title {
+//         font-size: 3rem;
+//         margin-bottom: 6vh;
+//         > .firstLink::before {
+//             bottom: 0.4rem;
+//         }
+//     }
+//     .home-video {
+//         margin: 0;
+//         margin-bottom: 7.7vh;
+//         > .video-wrapper {
+//             width: 33.5rem;
+//         }
+//     }
+// }
+@media only screen and (max-height: 900px) and (min-height: 800px) {
     .home-title {
-        font-size: 3rem;
-        margin-bottom: 6vh;
+    /** Start text effect */
         > .firstLink::before {
-            bottom: 0.4rem;
-        }
-    }
-    .home-video {
-        margin: 0;
-        margin-bottom: 7.7vh;
-        > .video-wrapper {
-            width: 33.5rem;
+            left: 3px;
+            width: 100%;
+            height: 2.1vh;
         }
     }
 }
-
-@media only screen and (max-height: 1160px) and (min-height: 900px) {
+@media only screen and (max-height: 1000px) and (min-height: 900px) {
     .home-title {
-        font-size: 3rem;
-        margin-bottom: 6vh;
+    /** Start text effect */
         > .firstLink::before {
-            bottom: 0.4rem;
+            left: 4px;
+            width: 100%;
+            height: 2.3vh;
         }
     }
-    .home-video {
-        margin: 0;
-        margin-bottom: 7.7vh;
-        > .video-wrapper {
-            width: 37vw;
+}
+@media only screen and (max-height: 1160px) and (min-height: 1000px) {
+    .home-title {
+    /** Start text effect */
+        > .firstLink::before {
+            left: 4px;
+            width: 100%;
+            height: 2.4vh;
         }
     }
 }
