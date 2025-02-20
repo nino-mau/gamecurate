@@ -8,51 +8,51 @@ require INCLUDES_PATH . '/header.php';
     <nav>
         <div class="games-list-navbar d-flex flex-row justify-content-center">
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/menu/grid-icon3.svg">
+                <img class="navbar-icons" data-icon-genre-all>
                 <p class="navbar-text" data-js-filter-txt>All</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/action-icon.svg">
+                <img class="navbar-icons" data-icon-genre-action>
                 <p class="navbar-text" data-js-filter-txt>Action</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/adventure-icon4.svg">
+                <img class="navbar-icons" data-icon-genre-adventure>
                 <p class="navbar-text" data-js-filter-txt>Adventure</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/horror-icon.svg">
+                <img class="navbar-icons" data-icon-genre-horror>
                 <p class="navbar-text" data-js-filter-txt>Horror</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/immersive-sim-icon.svg">
+                <img class="navbar-icons" data-icon-genre-imsim>
                 <p class="navbar-text" data-js-filter-txt>Imm-sim</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/open-world-icon.svg">
+                <img class="navbar-icons" data-icon-genre-openworld>
                 <p class="navbar-text" data-js-filter-txt>Open-world</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/platformer-icon.svg">
+                <img class="navbar-icons" data-icon-genre-platformer>
                 <p class="navbar-text" data-js-filter-txt>Platformer</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/racing-icon2.svg">
+                <img class="navbar-icons" data-icon-genre-racing>
                 <p class="navbar-text" data-js-filter-txt>Racing</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/coop-icon.svg">
+                <img class="navbar-icons" data-icon-genre-coop>
                 <p class="navbar-text" data-js-filter-txt>Co-op</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/rpg-icon.svg">
+                <img class="navbar-icons" data-icon-genre-rpg>
                 <p class="navbar-text" data-js-filter-txt>RPG</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/simulation-icon.svg">
+                <img class="navbar-icons" data-icon-genre-sim>
                 <p class="navbar-text" data-js-filter-txt>Walking-sim</p>
             </div>
             <div class="navbar-btn " data-js-navbar-filter-btns>
-                <img class="navbar-icons" src="assets/img/icons/games-genre/shooter-icon.svg">
+                <img class="navbar-icons" data-icon-genre-shooter>
                 <p class="navbar-text" data-js-filter-txt>Shooter</p>
             </div>
         </div>
@@ -65,12 +65,12 @@ require INCLUDES_PATH . '/header.php';
             $name = $filteredGamesDict[0];
             $genre = $filteredGamesDict[1];
             $review = $filteredGamesDict[2];
-            $imgPath = $filteredGamesDict[3];
+            $imgDataAttribute = $filteredGamesDict[3];
         } else {
             $name = $gamesDict[0];
             $genre = $gamesDict[2];
             $review = $gamesDict[4];
-            $imgPath = $gamesDict[5];
+            $imgDataAttribute = $gamesDict[5];
         }
 
         $displayReview = 'handleReviewColor';
@@ -90,7 +90,7 @@ require INCLUDES_PATH . '/header.php';
             <<<HTML
                 <div role="listitem" class="games-grid-containers col" data-js-games-list-cells-container>
                     <div class="spinners spinner-border" role="status" data-js-games-list-cells-spinners></div>
-                    <img class="game-img shadow rounded" src="$imgPath[$i]" data-js-games-list-img>
+                    <img class="game-img shadow rounded" $imgDataAttribute[$i] data-js-games-list-img>
                     <div class="sub-container d-flex flex-row justify-content-between" data-js-games-list-text>
                         <p class="game-review">$reviewHtml</p>
                         <p class="game-genre">$genre[$i]</p>
