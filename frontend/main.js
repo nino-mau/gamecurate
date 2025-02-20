@@ -1,4 +1,3 @@
-
 // **** IMPORT ASSETS **** //
 
 // ** Custom css **
@@ -12,13 +11,13 @@ import SwiperCss from "url:./node_modules/swiper/swiper-bundle.min.css"; // Swip
 
 // ** Custom js **
 import scriptJs from "./assets/js/scripts.js";
+import swiperScript from "./assets/js/swiper.js";
 
 // ** Librairies **
 import * as bootstrap from "./node_modules/bootstrap"; // Bootstrap
 window.Bootstrap = bootstrap;
 import SwiperJs from "./node_modules/swiper"; // Swiper
 window.Swiper = SwiperJs;
-
 
 // ** Videos **
 import homePageVideo from "url:./assets/video/home-illustration.mp4";
@@ -98,8 +97,8 @@ import registerSuccessIcon from "url:./assets/img/icons/register-success-icon.sv
 import siteIcon from "url:./assets/img/icons/site-icon.svg";
 import starReviewIcon from "url:./assets/img/icons/star-icon.svg";
 
-// Load before dom 
-document.querySelector('[data-icon-favicon]').href = favIcon;
+// Load before dom
+document.querySelector("[data-icon-favicon]").href = favIcon;
 
 // Handle displaying loaders for every games image on the games list
 function handleGamesListLoaders() {
@@ -146,11 +145,15 @@ function handleGamesListLoaders() {
 }
 
 function handleGamesListLoadersV2() {
-    const gamesListCells = document.querySelectorAll("[data-js-games-list-cells-container]");
+    const gamesListCells = document.querySelectorAll(
+        "[data-js-games-list-cells-container]",
+    );
 
     gamesListCells.forEach((cell) => {
         const img = cell.querySelector("[data-js-games-list-img]");
-        const spinner = cell.querySelector("[data-js-games-list-cells-spinners]");
+        const spinner = cell.querySelector(
+            "[data-js-games-list-cells-spinners]",
+        );
         const textElements = cell.querySelectorAll("[data-js-games-list-text]");
 
         if (!img || !spinner) {
@@ -159,39 +162,39 @@ function handleGamesListLoadersV2() {
         }
 
         // Initial state
-        img.style.opacity = '0';
-        textElements.forEach(el => el.style.visibility = 'hidden');
-        spinner.style.display = 'block';
+        img.style.opacity = "0";
+        textElements.forEach((el) => (el.style.visibility = "hidden"));
+        spinner.style.display = "block";
 
         // Create single event handler for cleanup
         const handleLoad = () => {
-            spinner.style.display = 'none';
-            img.style.opacity = '1';
-            textElements.forEach(el => el.style.visibility = 'visible');
-            
+            spinner.style.display = "none";
+            img.style.opacity = "1";
+            textElements.forEach((el) => (el.style.visibility = "visible"));
+
             // Cleanup event listeners
-            img.removeEventListener('load', handleLoad);
-            img.removeEventListener('error', handleError);
+            img.removeEventListener("load", handleLoad);
+            img.removeEventListener("error", handleError);
         };
 
         const handleError = () => {
             console.error("Error loading image:", img.src);
-            spinner.style.display = 'none';
-            img.style.opacity = '0';
+            spinner.style.display = "none";
+            img.style.opacity = "0";
             // Optional: Show error placeholder
-            img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Image not found</text></svg>';
+            img.src =
+                'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Image not found</text></svg>';
         };
 
         // Check if image is already loaded
         if (img.complete) {
             handleLoad();
         } else {
-            img.addEventListener('load', handleLoad);
-            img.addEventListener('error', handleError);
+            img.addEventListener("load", handleLoad);
+            img.addEventListener("error", handleError);
         }
     });
 }
-
 
 // **** ASSIGN ASSETS TO HTML **** //
 
@@ -200,33 +203,38 @@ addEventListener("DOMContentLoaded", () => {
     handleGamesListLoaders();
 
     // *** HEADER ***
-    
+
     // Custom css
-    document.querySelector('[data-link-main-css]').href = mainCss;
-    document.querySelector('[data-link-custom-css]').href = customCss;
+    document.querySelector("[data-link-main-css]").href = mainCss;
+    document.querySelector("[data-link-custom-css]").href = customCss;
 
     // Librairies
-    document.querySelector('[data-link-hover-css]').href = HoverCss;
-    document.querySelector('[data-link-animate-css]').href = AnimateCss;
-    document.querySelector('[data-link-swiper-css]').href = SwiperCss;
+    document.querySelector("[data-link-hover-css]").href = HoverCss;
+    document.querySelector("[data-link-animate-css]").href = AnimateCss;
+    document.querySelector("[data-link-swiper-css]").href = SwiperCss;
 
     // Menu
-    document.querySelector('[data-icon-arrowdown-accountmenu]').src = chevronDownMenuIcon;;
+    document.querySelector("[data-icon-arrowdown-accountmenu]").src =
+        chevronDownMenuIcon;
 
     // General
-    document.querySelector('[data-icon-site]').src = siteIcon;
-    document.querySelector('[data-icon-site-footer]').src = siteIcon;
+    document.querySelector("[data-icon-site]").src = siteIcon;
+    document.querySelector("[data-icon-site-footer]").src = siteIcon;
 
     // User
-    const loggedinAccountIcon = document.querySelector('[data-icon-loggedin-accountmenu]');
-    const loggedoutAccountIcon = document.querySelector('[data-icon-loggedout-accountmenu]');
+    const loggedinAccountIcon = document.querySelector(
+        "[data-icon-loggedin-accountmenu]",
+    );
+    const loggedoutAccountIcon = document.querySelector(
+        "[data-icon-loggedout-accountmenu]",
+    );
     if (loggedinAccountIcon) {
         loggedinAccountIcon.src = userIcon;
     } else if (loggedoutAccountIcon) {
         loggedoutAccountIcon.src = userFilledIcon;
     }
 
-    // *** HANDLE UNIQUE PAGES *** 
+    // *** HANDLE UNIQUE PAGES ***
 
     const path = window.location.pathname;
     const page = path.split("/").pop();
@@ -234,62 +242,84 @@ addEventListener("DOMContentLoaded", () => {
     const pagesAssets = {
         Index: () => {
             // Video
-            const homePageVideoElem = document.querySelector('[data-media-home-video]');
-            document.querySelector('[data-media-home-video-source]').src = homePageVideo;
+            const homePageVideoElem = document.querySelector(
+                "[data-media-home-video]",
+            );
+            document.querySelector("[data-media-home-video-source]").src =
+                homePageVideo;
             homePageVideoElem.load();
         },
         Home: () => {
             // Video
-            const homePageVideoElem = document.querySelector('[data-media-home-video]');
-            document.querySelector('[data-media-home-video-source]').src = homePageVideo;
+            const homePageVideoElem = document.querySelector(
+                "[data-media-home-video]",
+            );
+            document.querySelector("[data-media-home-video-source]").src =
+                homePageVideo;
             homePageVideoElem.load();
         },
         "Games-list": () => {
             // Navbar svg icons
-            document.querySelector('[data-icon-genre-all]').src = allIcon;
-            document.querySelector('[data-icon-genre-action]').src = actionIcon;
-            document.querySelector('[data-icon-genre-adventure]').src = adventureIcon;
-            document.querySelector('[data-icon-genre-horror]').src = horrorIcon;
-            document.querySelector('[data-icon-genre-imsim]').src = imSimIcon;
-            document.querySelector('[data-icon-genre-openworld]').src = openWorldIcon;
-            document.querySelector('[data-icon-genre-platformer]').src = platformerIcon;
-            document.querySelector('[data-icon-genre-racing]').src = racingIcon;
-            document.querySelector('[data-icon-genre-coop]').src = coopIcon;
-            document.querySelector('[data-icon-genre-rpg]').src = rpgIcon;
-            document.querySelector('[data-icon-genre-sim]').src = simulationIcon;
-            document.querySelector('[data-icon-genre-shooter]').src = shooterIcon;
+            document.querySelector("[data-icon-genre-all]").src = allIcon;
+            document.querySelector("[data-icon-genre-action]").src = actionIcon;
+            document.querySelector("[data-icon-genre-adventure]").src =
+                adventureIcon;
+            document.querySelector("[data-icon-genre-horror]").src = horrorIcon;
+            document.querySelector("[data-icon-genre-imsim]").src = imSimIcon;
+            document.querySelector("[data-icon-genre-openworld]").src =
+                openWorldIcon;
+            document.querySelector("[data-icon-genre-platformer]").src =
+                platformerIcon;
+            document.querySelector("[data-icon-genre-racing]").src = racingIcon;
+            document.querySelector("[data-icon-genre-coop]").src = coopIcon;
+            document.querySelector("[data-icon-genre-rpg]").src = rpgIcon;
+            document.querySelector("[data-icon-genre-sim]").src =
+                simulationIcon;
+            document.querySelector("[data-icon-genre-shooter]").src =
+                shooterIcon;
 
-            // Games list icons
-            document.querySelector('[data-img-games-list-witcher3]').src = witcher3Img;
-            document.querySelector('[data-img-games-list-rdr2]').src = rdr2Img;
-            document.querySelector('[data-img-games-list-godofwar]').src = godOfWarImg;
-            document.querySelector('[data-img-games-list-horizonfw]').src = horizonWestImg;
-            document.querySelector('[data-img-games-list-spidermanmiles]').src = milesMoralesImg;
-            document.querySelector('[data-img-games-list-sekiro]').src = sekiroImg;
-            document.querySelector('[data-img-games-list-residentevilvillage]').src = residentEvilVillageImg;
-            document.querySelector('[data-img-games-list-cyberpunk2077]').src = cyberpunk2077Img;
-            document.querySelector('[data-img-games-list-ghostoftsushima]').src = ghostOfTsushimaImg;
-            document.querySelector('[data-img-games-list-deathstranding]').src = deathStrandingImg;
-            document.querySelector('[data-img-games-list-control]').src = controlImg;
-            document.querySelector('[data-img-games-list-doometernal]').src = doomEternalImg;
-            document.querySelector('[data-img-games-list-acnh]').src = animalCrossingHorizonsImg;
-            document.querySelector('[data-img-games-list-oriwowo]').src = oriWillWipsImg;
-            document.querySelector('[data-img-games-list-forzahorizon5]').src = forzaHorizon5Img;
-            document.querySelector('[data-img-games-list-eldenring]').src = eldenRingImg;
-            document.querySelector('[data-img-games-list-darksouls3]').src = darkSouls3Img;
-            document.querySelector('[data-img-games-list-hades]').src = hadesImg;
-            document.querySelector('[data-img-games-list-persona5royal]').src = persona5RoyalImg;
-            document.querySelector('[data-img-games-list-deathloop]').src = deathloopImg;
-            document.querySelector('[data-img-games-list-ittakestwo]').src = itTakesTwoImg;
-            document.querySelector('[data-img-games-list-ratchetclankriftapart]').src = ratchetAndClankRiftImg;
-            document.querySelector('[data-img-games-list-demonssouls]').src = demonsSoulsImg;
-            document.querySelector('[data-img-games-list-discoelysium]').src = discoElysiumImg;
-            document.querySelector('[data-img-games-list-returnal]').src = returnalImg;
-            document.querySelector('[data-img-games-list-kcd2]').src = kcd2Img;
-            document.querySelector('[data-img-games-list-fallout76]').src = fo76Img;
-            document.querySelector('[data-img-games-list-balanwonderworld]').src = balanWonderworldImg;
-            document.querySelector('[data-img-games-list-falloutnewvegas]').src = foNewVegasImg;
-            
+            // Games list images mapping
+            const gamesImageMap = {
+                "data-img-games-list-witcher3": witcher3Img,
+                "data-img-games-list-rdr2": rdr2Img,
+                "data-img-games-list-godofwar": godOfWarImg,
+                "data-img-games-list-horizonfw": horizonWestImg,
+                "data-img-games-list-spidermanmiles": milesMoralesImg,
+                "data-img-games-list-sekiro": sekiroImg,
+                "data-img-games-list-residentevilvillage":
+                    residentEvilVillageImg,
+                "data-img-games-list-cyberpunk2077": cyberpunk2077Img,
+                "data-img-games-list-ghostoftsushima": ghostOfTsushimaImg,
+                "data-img-games-list-deathstranding": deathStrandingImg,
+                "data-img-games-list-control": controlImg,
+                "data-img-games-list-doometernal": doomEternalImg,
+                "data-img-games-list-acnh": animalCrossingHorizonsImg,
+                "data-img-games-list-oriwowo": oriWillWipsImg,
+                "data-img-games-list-forzahorizon5": forzaHorizon5Img,
+                "data-img-games-list-eldenring": eldenRingImg,
+                "data-img-games-list-darksouls3": darkSouls3Img,
+                "data-img-games-list-hades": hadesImg,
+                "data-img-games-list-persona5royal": persona5RoyalImg,
+                "data-img-games-list-deathloop": deathloopImg,
+                "data-img-games-list-ittakestwo": itTakesTwoImg,
+                "data-img-games-list-ratchetclankriftapart":
+                    ratchetAndClankRiftImg,
+                "data-img-games-list-demonssouls": demonsSoulsImg,
+                "data-img-games-list-discoelysium": discoElysiumImg,
+                "data-img-games-list-returnal": returnalImg,
+                "data-img-games-list-kcd2": kcd2Img,
+                "data-img-games-list-fallout76": fo76Img,
+                "data-img-games-list-balanwonderworld": balanWonderworldImg,
+                "data-img-games-list-falloutnewvegas": foNewVegasImg,
+            };
+
+            // Set images safely
+            Object.entries(gamesImageMap).forEach(([selector, imgSrc]) => {
+                const element = document.querySelector(`[${selector}]`);
+                if (element) {
+                    element.src = imgSrc;
+                }
+            });
         },
         Login: () => {
             return false;
@@ -299,42 +329,43 @@ addEventListener("DOMContentLoaded", () => {
         },
         "Register-success": () => {
             // Success svg icon
-            document.querySelector('[data-js-register-success-icon]').src = registerSuccessIcon;
+            document.querySelector("[data-js-register-success-icon]").src =
+                registerSuccessIcon;
         },
         Discover: () => {
-             return false;
+            return false;
         },
         Contact: () => {
-             return false;
+            return false;
         },
         Profile: () => {
-             return false;
+            return false;
         },
         Logout: () => {
-             return false;
+            return false;
         },
         "Login-success": () => {
-             return false;
-        }
+            return false;
+        },
     };
     // Execute the page-specific function (if it exists and is a function)
     if (typeof pagesAssets[page] === "function") {
         pagesAssets[page]();
     }
-    
+
     // *** FOOTER ***
 
     // Svg Contact
-    document.querySelector('[data-icon-address]').src = addressIcon;
-    document.querySelector('[data-icon-mail]').src = mailIcon;
-    document.querySelector('[data-icon-call]').src = callIcon;
-    document.querySelector('[data-icon-print]').src = printIcon;
+    document.querySelector("[data-icon-address]").src = addressIcon;
+    document.querySelector("[data-icon-mail]").src = mailIcon;
+    document.querySelector("[data-icon-call]").src = callIcon;
+    document.querySelector("[data-icon-print]").src = printIcon;
 
     // Svg Socials
-    document.querySelector('[data-icon-facebook]').src = facebookIcon;
-    document.querySelector('[data-icon-twitter]').src = twitterIcon;
-    document.querySelector('[data-icon-github]').src = githubIcon;
-    document.querySelector('[data-icon-insta]').src = instaIcon;
-    document.querySelector('[data-icon-linkedin]').src = linkedinIcon;
-    document.querySelector('[data-icon-youtube]').src = youtubeIcon;
+    document.querySelector("[data-icon-facebook]").src = facebookIcon;
+    document.querySelector("[data-icon-twitter]").src = twitterIcon;
+    document.querySelector("[data-icon-github]").src = githubIcon;
+    document.querySelector("[data-icon-insta]").src = instaIcon;
+    document.querySelector("[data-icon-linkedin]").src = linkedinIcon;
+    document.querySelector("[data-icon-youtube]").src = youtubeIcon;
 });

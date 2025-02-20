@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"dwhei":[function(require,module,exports,__globalThis) {
+})({"5dRxN":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "125fc8868135a82b";
+module.bundle.HMR_BUNDLE_ID = "fb06c3ff6955b56a";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -613,6 +613,8 @@ var _swiperBundleMinCssDefault = parcelHelpers.interopDefault(_swiperBundleMinCs
 // ** Custom js **
 var _scriptsJs = require("./assets/js/scripts.js");
 var _scriptsJsDefault = parcelHelpers.interopDefault(_scriptsJs);
+var _swiperJs = require("./assets/js/swiper.js");
+var _swiperJsDefault = parcelHelpers.interopDefault(_swiperJs);
 // ** Librairies **
 var _bootstrap = require("./node_modules/bootstrap"); // Bootstrap
 var _swiper = require("./node_modules/swiper"); // Swiper
@@ -751,8 +753,8 @@ var _starIconSvg = require("url:./assets/img/icons/star-icon.svg");
 var _starIconSvgDefault = parcelHelpers.interopDefault(_starIconSvg);
 window.Bootstrap = _bootstrap;
 window.Swiper = (0, _swiperDefault.default);
-// Load before dom 
-document.querySelector('[data-icon-favicon]').href = (0, _faviconSvgDefault.default);
+// Load before dom
+document.querySelector("[data-icon-favicon]").href = (0, _faviconSvgDefault.default);
 // Handle displaying loaders for every games image on the games list
 function handleGamesListLoaders() {
     const gamesListCellContainers = document.querySelectorAll("[data-js-games-list-cells-container]");
@@ -795,30 +797,30 @@ function handleGamesListLoadersV2() {
             return;
         }
         // Initial state
-        img.style.opacity = '0';
-        textElements.forEach((el)=>el.style.visibility = 'hidden');
-        spinner.style.display = 'block';
+        img.style.opacity = "0";
+        textElements.forEach((el)=>el.style.visibility = "hidden");
+        spinner.style.display = "block";
         // Create single event handler for cleanup
         const handleLoad = ()=>{
-            spinner.style.display = 'none';
-            img.style.opacity = '1';
-            textElements.forEach((el)=>el.style.visibility = 'visible');
+            spinner.style.display = "none";
+            img.style.opacity = "1";
+            textElements.forEach((el)=>el.style.visibility = "visible");
             // Cleanup event listeners
-            img.removeEventListener('load', handleLoad);
-            img.removeEventListener('error', handleError);
+            img.removeEventListener("load", handleLoad);
+            img.removeEventListener("error", handleError);
         };
         const handleError = ()=>{
             console.error("Error loading image:", img.src);
-            spinner.style.display = 'none';
-            img.style.opacity = '0';
+            spinner.style.display = "none";
+            img.style.opacity = "0";
             // Optional: Show error placeholder
             img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Image not found</text></svg>';
         };
         // Check if image is already loaded
         if (img.complete) handleLoad();
         else {
-            img.addEventListener('load', handleLoad);
-            img.addEventListener('error', handleError);
+            img.addEventListener("load", handleLoad);
+            img.addEventListener("error", handleError);
         }
     });
 }
@@ -828,82 +830,89 @@ addEventListener("DOMContentLoaded", ()=>{
     handleGamesListLoaders();
     // *** HEADER ***
     // Custom css
-    document.querySelector('[data-link-main-css]').href = (0, _mainCssDefault.default);
-    document.querySelector('[data-link-custom-css]').href = (0, _customStyleCssDefault.default);
+    document.querySelector("[data-link-main-css]").href = (0, _mainCssDefault.default);
+    document.querySelector("[data-link-custom-css]").href = (0, _customStyleCssDefault.default);
     // Librairies
-    document.querySelector('[data-link-hover-css]').href = (0, _hoverMinCssDefault.default);
-    document.querySelector('[data-link-animate-css]').href = (0, _animateMinCssDefault.default);
-    document.querySelector('[data-link-swiper-css]').href = (0, _swiperBundleMinCssDefault.default);
+    document.querySelector("[data-link-hover-css]").href = (0, _hoverMinCssDefault.default);
+    document.querySelector("[data-link-animate-css]").href = (0, _animateMinCssDefault.default);
+    document.querySelector("[data-link-swiper-css]").href = (0, _swiperBundleMinCssDefault.default);
     // Menu
-    document.querySelector('[data-icon-arrowdown-accountmenu]').src = (0, _chevronDownIconSvgDefault.default);
+    document.querySelector("[data-icon-arrowdown-accountmenu]").src = (0, _chevronDownIconSvgDefault.default);
     // General
-    document.querySelector('[data-icon-site]').src = (0, _siteIconSvgDefault.default);
-    document.querySelector('[data-icon-site-footer]').src = (0, _siteIconSvgDefault.default);
+    document.querySelector("[data-icon-site]").src = (0, _siteIconSvgDefault.default);
+    document.querySelector("[data-icon-site-footer]").src = (0, _siteIconSvgDefault.default);
     // User
-    const loggedinAccountIcon = document.querySelector('[data-icon-loggedin-accountmenu]');
-    const loggedoutAccountIcon = document.querySelector('[data-icon-loggedout-accountmenu]');
+    const loggedinAccountIcon = document.querySelector("[data-icon-loggedin-accountmenu]");
+    const loggedoutAccountIcon = document.querySelector("[data-icon-loggedout-accountmenu]");
     if (loggedinAccountIcon) loggedinAccountIcon.src = (0, _userAvatarSvgDefault.default);
     else if (loggedoutAccountIcon) loggedoutAccountIcon.src = (0, _userAvatarFilledSvgDefault.default);
-    // *** HANDLE UNIQUE PAGES *** 
+    // *** HANDLE UNIQUE PAGES ***
     const path = window.location.pathname;
     const page = path.split("/").pop();
     const pagesAssets = {
         Index: ()=>{
             // Video
-            const homePageVideoElem = document.querySelector('[data-media-home-video]');
-            document.querySelector('[data-media-home-video-source]').src = (0, _homeIllustrationMp4Default.default);
+            const homePageVideoElem = document.querySelector("[data-media-home-video]");
+            document.querySelector("[data-media-home-video-source]").src = (0, _homeIllustrationMp4Default.default);
             homePageVideoElem.load();
         },
         Home: ()=>{
             // Video
-            const homePageVideoElem = document.querySelector('[data-media-home-video]');
-            document.querySelector('[data-media-home-video-source]').src = (0, _homeIllustrationMp4Default.default);
+            const homePageVideoElem = document.querySelector("[data-media-home-video]");
+            document.querySelector("[data-media-home-video-source]").src = (0, _homeIllustrationMp4Default.default);
             homePageVideoElem.load();
         },
         "Games-list": ()=>{
             // Navbar svg icons
-            document.querySelector('[data-icon-genre-all]').src = (0, _gridIcon3SvgDefault.default);
-            document.querySelector('[data-icon-genre-action]').src = (0, _actionIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-adventure]').src = (0, _adventureIcon4SvgDefault.default);
-            document.querySelector('[data-icon-genre-horror]').src = (0, _horrorIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-imsim]').src = (0, _immersiveSimIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-openworld]').src = (0, _openWorldIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-platformer]').src = (0, _platformerIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-racing]').src = (0, _racingIcon2SvgDefault.default);
-            document.querySelector('[data-icon-genre-coop]').src = (0, _coopIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-rpg]').src = (0, _rpgIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-sim]').src = (0, _simulationIconSvgDefault.default);
-            document.querySelector('[data-icon-genre-shooter]').src = (0, _shooterIconSvgDefault.default);
-            // Games list icons
-            document.querySelector('[data-img-games-list-witcher3]').src = (0, _theWitcher3WildHuntJpegDefault.default);
-            document.querySelector('[data-img-games-list-rdr2]').src = (0, _redDeadRedemption2JpegDefault.default);
-            document.querySelector('[data-img-games-list-godofwar]').src = (0, _godOfWarJpegDefault.default);
-            document.querySelector('[data-img-games-list-horizonfw]').src = (0, _horizonForbiddenWestJpegDefault.default);
-            document.querySelector('[data-img-games-list-spidermanmiles]').src = (0, _spiderManMilesMoralesJpegDefault.default);
-            document.querySelector('[data-img-games-list-sekiro]').src = (0, _sekiroShadowsDieTwiceJpegDefault.default);
-            document.querySelector('[data-img-games-list-residentevilvillage]').src = (0, _residentEvilVillageJpegDefault.default);
-            document.querySelector('[data-img-games-list-cyberpunk2077]').src = (0, _cyberpunk2077JpegDefault.default);
-            document.querySelector('[data-img-games-list-ghostoftsushima]').src = (0, _ghostOfTsushimaJpegDefault.default);
-            document.querySelector('[data-img-games-list-deathstranding]').src = (0, _deathStrandingJpegDefault.default);
-            document.querySelector('[data-img-games-list-control]').src = (0, _controlJpegDefault.default);
-            document.querySelector('[data-img-games-list-doometernal]').src = (0, _doomEternalJpegDefault.default);
-            document.querySelector('[data-img-games-list-acnh]').src = (0, _animalCrossingNewHorizonsJpegDefault.default);
-            document.querySelector('[data-img-games-list-oriwowo]').src = (0, _oriAndTheWillOfTheWispsJpegDefault.default);
-            document.querySelector('[data-img-games-list-forzahorizon5]').src = (0, _forzaHorizon5JpegDefault.default);
-            document.querySelector('[data-img-games-list-eldenring]').src = (0, _eldenRingJpegDefault.default);
-            document.querySelector('[data-img-games-list-darksouls3]').src = (0, _darkSouls3JpegDefault.default);
-            document.querySelector('[data-img-games-list-hades]').src = (0, _hadesJpegDefault.default);
-            document.querySelector('[data-img-games-list-persona5royal]').src = (0, _persona5RoyalJpegDefault.default);
-            document.querySelector('[data-img-games-list-deathloop]').src = (0, _deathloopJpegDefault.default);
-            document.querySelector('[data-img-games-list-ittakestwo]').src = (0, _itTakesTwoJpegDefault.default);
-            document.querySelector('[data-img-games-list-ratchetclankriftapart]').src = (0, _ratchetAndClankRiftApartJpegDefault.default);
-            document.querySelector('[data-img-games-list-demonssouls]').src = (0, _demonsSoulsJpegDefault.default);
-            document.querySelector('[data-img-games-list-discoelysium]').src = (0, _discoElysiumJpegDefault.default);
-            document.querySelector('[data-img-games-list-returnal]').src = (0, _returnalJpegDefault.default);
-            document.querySelector('[data-img-games-list-kcd2]').src = (0, _kingdomComeDeliverance2JpegDefault.default);
-            document.querySelector('[data-img-games-list-fallout76]').src = (0, _fallout76JpegDefault.default);
-            document.querySelector('[data-img-games-list-balanwonderworld]').src = (0, _balanWonderworldJpegDefault.default);
-            document.querySelector('[data-img-games-list-falloutnewvegas]').src = (0, _falloutNewVegasJpegDefault.default);
+            document.querySelector("[data-icon-genre-all]").src = (0, _gridIcon3SvgDefault.default);
+            document.querySelector("[data-icon-genre-action]").src = (0, _actionIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-adventure]").src = (0, _adventureIcon4SvgDefault.default);
+            document.querySelector("[data-icon-genre-horror]").src = (0, _horrorIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-imsim]").src = (0, _immersiveSimIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-openworld]").src = (0, _openWorldIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-platformer]").src = (0, _platformerIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-racing]").src = (0, _racingIcon2SvgDefault.default);
+            document.querySelector("[data-icon-genre-coop]").src = (0, _coopIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-rpg]").src = (0, _rpgIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-sim]").src = (0, _simulationIconSvgDefault.default);
+            document.querySelector("[data-icon-genre-shooter]").src = (0, _shooterIconSvgDefault.default);
+            // Games list images mapping
+            const gamesImageMap = {
+                "data-img-games-list-witcher3": (0, _theWitcher3WildHuntJpegDefault.default),
+                "data-img-games-list-rdr2": (0, _redDeadRedemption2JpegDefault.default),
+                "data-img-games-list-godofwar": (0, _godOfWarJpegDefault.default),
+                "data-img-games-list-horizonfw": (0, _horizonForbiddenWestJpegDefault.default),
+                "data-img-games-list-spidermanmiles": (0, _spiderManMilesMoralesJpegDefault.default),
+                "data-img-games-list-sekiro": (0, _sekiroShadowsDieTwiceJpegDefault.default),
+                "data-img-games-list-residentevilvillage": (0, _residentEvilVillageJpegDefault.default),
+                "data-img-games-list-cyberpunk2077": (0, _cyberpunk2077JpegDefault.default),
+                "data-img-games-list-ghostoftsushima": (0, _ghostOfTsushimaJpegDefault.default),
+                "data-img-games-list-deathstranding": (0, _deathStrandingJpegDefault.default),
+                "data-img-games-list-control": (0, _controlJpegDefault.default),
+                "data-img-games-list-doometernal": (0, _doomEternalJpegDefault.default),
+                "data-img-games-list-acnh": (0, _animalCrossingNewHorizonsJpegDefault.default),
+                "data-img-games-list-oriwowo": (0, _oriAndTheWillOfTheWispsJpegDefault.default),
+                "data-img-games-list-forzahorizon5": (0, _forzaHorizon5JpegDefault.default),
+                "data-img-games-list-eldenring": (0, _eldenRingJpegDefault.default),
+                "data-img-games-list-darksouls3": (0, _darkSouls3JpegDefault.default),
+                "data-img-games-list-hades": (0, _hadesJpegDefault.default),
+                "data-img-games-list-persona5royal": (0, _persona5RoyalJpegDefault.default),
+                "data-img-games-list-deathloop": (0, _deathloopJpegDefault.default),
+                "data-img-games-list-ittakestwo": (0, _itTakesTwoJpegDefault.default),
+                "data-img-games-list-ratchetclankriftapart": (0, _ratchetAndClankRiftApartJpegDefault.default),
+                "data-img-games-list-demonssouls": (0, _demonsSoulsJpegDefault.default),
+                "data-img-games-list-discoelysium": (0, _discoElysiumJpegDefault.default),
+                "data-img-games-list-returnal": (0, _returnalJpegDefault.default),
+                "data-img-games-list-kcd2": (0, _kingdomComeDeliverance2JpegDefault.default),
+                "data-img-games-list-fallout76": (0, _fallout76JpegDefault.default),
+                "data-img-games-list-balanwonderworld": (0, _balanWonderworldJpegDefault.default),
+                "data-img-games-list-falloutnewvegas": (0, _falloutNewVegasJpegDefault.default)
+            };
+            // Set images safely
+            Object.entries(gamesImageMap).forEach(([selector, imgSrc])=>{
+                const element = document.querySelector(`[${selector}]`);
+                if (element) element.src = imgSrc;
+            });
         },
         Login: ()=>{
             return false;
@@ -913,7 +922,7 @@ addEventListener("DOMContentLoaded", ()=>{
         },
         "Register-success": ()=>{
             // Success svg icon
-            document.querySelector('[data-js-register-success-icon]').src = (0, _registerSuccessIconSvgDefault.default);
+            document.querySelector("[data-js-register-success-icon]").src = (0, _registerSuccessIconSvgDefault.default);
         },
         Discover: ()=>{
             return false;
@@ -935,23 +944,23 @@ addEventListener("DOMContentLoaded", ()=>{
     if (typeof pagesAssets[page] === "function") pagesAssets[page]();
     // *** FOOTER ***
     // Svg Contact
-    document.querySelector('[data-icon-address]').src = (0, _homeIconSvgDefault.default);
-    document.querySelector('[data-icon-mail]').src = (0, _mailIconSvgDefault.default);
-    document.querySelector('[data-icon-call]').src = (0, _callIconSvgDefault.default);
-    document.querySelector('[data-icon-print]').src = (0, _printIconSvgDefault.default);
+    document.querySelector("[data-icon-address]").src = (0, _homeIconSvgDefault.default);
+    document.querySelector("[data-icon-mail]").src = (0, _mailIconSvgDefault.default);
+    document.querySelector("[data-icon-call]").src = (0, _callIconSvgDefault.default);
+    document.querySelector("[data-icon-print]").src = (0, _printIconSvgDefault.default);
     // Svg Socials
-    document.querySelector('[data-icon-facebook]').src = (0, _logoFacebookSvgDefault.default);
-    document.querySelector('[data-icon-twitter]').src = (0, _logoTwitterSvgDefault.default);
-    document.querySelector('[data-icon-github]').src = (0, _logoGithubSvgDefault.default);
-    document.querySelector('[data-icon-insta]').src = (0, _logoInstagramSvgDefault.default);
-    document.querySelector('[data-icon-linkedin]').src = (0, _logoLinkedinSvgDefault.default);
-    document.querySelector('[data-icon-youtube]').src = (0, _logoYoutubeSvgDefault.default);
+    document.querySelector("[data-icon-facebook]").src = (0, _logoFacebookSvgDefault.default);
+    document.querySelector("[data-icon-twitter]").src = (0, _logoTwitterSvgDefault.default);
+    document.querySelector("[data-icon-github]").src = (0, _logoGithubSvgDefault.default);
+    document.querySelector("[data-icon-insta]").src = (0, _logoInstagramSvgDefault.default);
+    document.querySelector("[data-icon-linkedin]").src = (0, _logoLinkedinSvgDefault.default);
+    document.querySelector("[data-icon-youtube]").src = (0, _logoYoutubeSvgDefault.default);
 });
 
-},{"url:./assets/video/home-illustration.mp4":"gMdIc","url:./assets/img/games/the-witcher-3-wild-hunt.jpeg":"87I6m","url:./assets/img/games/red-dead-redemption-2.jpeg":"hY95v","url:./assets/img/games/god-of-war.jpeg":"8jS5g","url:./assets/img/games/horizon-forbidden-west.jpeg":"ajHvW","url:./assets/img/games/spider-man-miles-morales.jpeg":"eyScG","url:./assets/img/games/sekiro-shadows-die-twice.jpeg":"jgqPo","url:./assets/img/games/resident-evil-village.jpeg":"8rIn7","url:./assets/img/games/cyberpunk-2077.jpeg":"iQywr","url:./assets/img/games/ghost-of-tsushima.jpeg":"a80Bg","url:./assets/img/games/death-stranding.jpeg":"bIBEJ","url:./assets/img/games/control.jpeg":"4ytK5","url:./assets/img/games/doom-eternal.jpeg":"hnK1b","url:./assets/img/games/final-fantasy-vii-remake.jpeg":"7oJsE","url:./assets/img/games/animal-crossing-new-horizons.jpeg":"5ajnB","url:./assets/img/games/ori-and-the-will-of-the-wisps.jpeg":"gZdFg","url:./assets/img/games/forza-horizon-5.jpeg":"1SvCS","url:./assets/img/games/elden-ring.jpeg":"kMBcF","url:./assets/img/games/dark-souls-3.jpeg":"8vw4u","url:./assets/img/games/hades.jpeg":"4dK5V","url:./assets/img/games/persona-5-royal.jpeg":"jGXox","url:./assets/img/games/deathloop.jpeg":"jQCsc","url:./assets/img/games/it-takes-two.jpeg":"1h83y","url:./assets/img/games/ratchet-and-clank-rift-apart.jpeg":"8Hl2E","url:./assets/img/games/demons-souls.jpeg":"3n1vC","url:./assets/img/games/disco-elysium.jpeg":"7cInS","url:./assets/img/games/returnal.jpeg":"lRUBx","url:./assets/img/games/kingdom-come-deliverance-2.jpeg":"iUWR4","url:./assets/img/games/fallout-76.jpeg":"8s8px","url:./assets/img/games/balan-wonderworld.jpeg":"lmypT","url:./assets/img/games/fallout-new-vegas.jpeg":"i4JpA","url:./assets/img/icons/contact/call-icon.svg":"iYCUB","url:./assets/img/icons/contact/home-icon.svg":"9tGIA","url:./assets/img/icons/contact/mail-icon.svg":"3NrAQ","url:./assets/img/icons/contact/print-icon.svg":"9xhnK","url:./assets/img/icons/games-genre/action-icon.svg":"ljlZk","url:./assets/img/icons/games-genre/adventure-icon4.svg":"jd7as","url:./assets/img/icons/games-genre/coop-icon.svg":"3TIjb","url:./assets/img/icons/games-genre/horror-icon.svg":"dncxo","url:./assets/img/icons/games-genre/immersive-sim-icon.svg":"kPUu8","url:./assets/img/icons/games-genre/open-world-icon.svg":"4WiX7","url:./assets/img/icons/games-genre/platformer-icon.svg":"16qL1","url:./assets/img/icons/games-genre/racing-icon2.svg":"aVOSt","url:./assets/img/icons/games-genre/rpg-icon.svg":"ldtyj","url:./assets/img/icons/games-genre/shooter-icon.svg":"8QX0C","url:./assets/img/icons/games-genre/simulation-icon.svg":"7XxTv","url:./assets/img/icons/menu/bars-icon.svg":"kwR3N","url:./assets/img/icons/menu/chevron-down-icon.svg":"bVLyN","url:./assets/img/icons/menu/grid-fill-icon.svg":"6h55n","url:./assets/img/icons/menu/grid-icon3.svg":"5SWg9","url:./assets/img/icons/socials/logo-facebook.svg":"cmGjd","url:./assets/img/icons/socials/logo-github.svg":"ty3Up","url:./assets/img/icons/socials/logo-instagram.svg":"kLCLP","url:./assets/img/icons/socials/logo-linkedin.svg":"eza5C","url:./assets/img/icons/socials/logo-twitter.svg":"fddXW","url:./assets/img/icons/socials/logo-youtube.svg":"fNsZm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:./assets/img/icons/favicon.svg":"j0nwl","url:./assets/img/icons/site-icon.svg":"9DE15","url:./assets/img/icons/star-icon.svg":"83RH3","url:./assets/img/icons/user/UserAvatar.svg":"1OjTG","url:./assets/img/icons/user/UserAvatarFilled.svg":"4ZL1P","url:./assets/css/main.css":"h0RDm","url:./assets/css/custom-style.css":"fPaBL","url:./node_modules/hover.css/css/hover-min.css":"jh832","url:./node_modules/animate.css/animate.min.css":"3CXrK","url:./node_modules/swiper/swiper-bundle.min.css":"dNRjc","./node_modules/bootstrap":"h36JB","./node_modules/swiper":"iM6UL","./assets/js/scripts.js":"1iIjL","url:./assets/img/icons/register-success-icon.svg":"jaQYy"}],"gMdIc":[function(require,module,exports,__globalThis) {
-module.exports = require("57f171e07df38a36").getBundleURL('1zNV8') + "home-illustration.f0b89fa0.mp4" + "?" + Date.now();
+},{"url:./assets/css/main.css":"ZhEwQ","url:./assets/css/custom-style.css":"cnmb2","url:./node_modules/hover.css/css/hover-min.css":"5I5Hj","url:./node_modules/animate.css/animate.min.css":"4D7pW","url:./node_modules/swiper/swiper-bundle.min.css":"5fO67","./assets/js/scripts.js":"1iIjL","./node_modules/bootstrap":"h36JB","./node_modules/swiper":"iM6UL","url:./assets/video/home-illustration.mp4":"f5zjH","url:./assets/img/games/the-witcher-3-wild-hunt.jpeg":"380nk","url:./assets/img/games/red-dead-redemption-2.jpeg":"5dk98","url:./assets/img/games/god-of-war.jpeg":"4llW0","url:./assets/img/games/horizon-forbidden-west.jpeg":"fVdba","url:./assets/img/games/spider-man-miles-morales.jpeg":"7qvP5","url:./assets/img/games/sekiro-shadows-die-twice.jpeg":"lamMW","url:./assets/img/games/resident-evil-village.jpeg":"5O0OX","url:./assets/img/games/cyberpunk-2077.jpeg":"8Dwk7","url:./assets/img/games/ghost-of-tsushima.jpeg":"1EnvA","url:./assets/img/games/death-stranding.jpeg":"aY7v2","url:./assets/img/games/control.jpeg":"fQ8Ce","url:./assets/img/games/doom-eternal.jpeg":"jKQjc","url:./assets/img/games/final-fantasy-vii-remake.jpeg":"fZ8k2","url:./assets/img/games/animal-crossing-new-horizons.jpeg":"4iOp5","url:./assets/img/games/ori-and-the-will-of-the-wisps.jpeg":"bg9bW","url:./assets/img/games/forza-horizon-5.jpeg":"lASb1","url:./assets/img/games/elden-ring.jpeg":"tNDtm","url:./assets/img/games/dark-souls-3.jpeg":"aSTAq","url:./assets/img/games/hades.jpeg":"1Gr3Z","url:./assets/img/games/persona-5-royal.jpeg":"bY34d","url:./assets/img/games/deathloop.jpeg":"l7fPs","url:./assets/img/games/it-takes-two.jpeg":"6HsDr","url:./assets/img/games/ratchet-and-clank-rift-apart.jpeg":"fn5EP","url:./assets/img/games/demons-souls.jpeg":"lyA0q","url:./assets/img/games/disco-elysium.jpeg":"5qvLp","url:./assets/img/games/returnal.jpeg":"jX5op","url:./assets/img/games/kingdom-come-deliverance-2.jpeg":"dMdMt","url:./assets/img/games/fallout-76.jpeg":"dUf7N","url:./assets/img/games/balan-wonderworld.jpeg":"bduHf","url:./assets/img/games/fallout-new-vegas.jpeg":"4P9Uq","url:./assets/img/icons/contact/call-icon.svg":"2nxqx","url:./assets/img/icons/contact/home-icon.svg":"aVoQL","url:./assets/img/icons/contact/mail-icon.svg":"39DtG","url:./assets/img/icons/contact/print-icon.svg":"jyalb","url:./assets/img/icons/games-genre/action-icon.svg":"eZx2j","url:./assets/img/icons/games-genre/adventure-icon4.svg":"lvVWj","url:./assets/img/icons/games-genre/coop-icon.svg":"SXTHx","url:./assets/img/icons/games-genre/horror-icon.svg":"cXGOj","url:./assets/img/icons/games-genre/immersive-sim-icon.svg":"7dASb","url:./assets/img/icons/games-genre/open-world-icon.svg":"grLCf","url:./assets/img/icons/games-genre/platformer-icon.svg":"4NpIv","url:./assets/img/icons/games-genre/racing-icon2.svg":"bLMfA","url:./assets/img/icons/games-genre/rpg-icon.svg":"hnSvv","url:./assets/img/icons/games-genre/shooter-icon.svg":"b8YGE","url:./assets/img/icons/games-genre/simulation-icon.svg":"ltN31","url:./assets/img/icons/menu/grid-icon3.svg":"jeVxo","url:./assets/img/icons/menu/bars-icon.svg":"ebXab","url:./assets/img/icons/menu/chevron-down-icon.svg":"a0fk7","url:./assets/img/icons/menu/grid-fill-icon.svg":"8Nyl2","url:./assets/img/icons/socials/logo-facebook.svg":"jraW5","url:./assets/img/icons/socials/logo-github.svg":"4bKEv","url:./assets/img/icons/socials/logo-instagram.svg":"1ZFDb","url:./assets/img/icons/socials/logo-linkedin.svg":"gAoDQ","url:./assets/img/icons/socials/logo-twitter.svg":"lkgED","url:./assets/img/icons/socials/logo-youtube.svg":"fjOOY","url:./assets/img/icons/user/UserAvatar.svg":"5Qosn","url:./assets/img/icons/user/UserAvatarFilled.svg":"dnNPb","url:./assets/img/icons/favicon.svg":"aDaS4","url:./assets/img/icons/register-success-icon.svg":"ibvNE","url:./assets/img/icons/site-icon.svg":"dv1So","url:./assets/img/icons/star-icon.svg":"D7zhi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./assets/js/swiper.js":"7Tolx"}],"ZhEwQ":[function(require,module,exports,__globalThis) {
+module.exports = require("b714411b72de2124").getBundleURL('lycSJ') + "main.353504e6.css" + "?" + Date.now();
 
-},{"57f171e07df38a36":"lgJ39"}],"lgJ39":[function(require,module,exports,__globalThis) {
+},{"b714411b72de2124":"lgJ39"}],"lgJ39":[function(require,module,exports,__globalThis) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -986,232 +995,142 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"87I6m":[function(require,module,exports,__globalThis) {
-module.exports = require("b61af35738fbd9e3").getBundleURL('1zNV8') + "the-witcher-3-wild-hunt.9b217ac2.jpeg" + "?" + Date.now();
+},{}],"cnmb2":[function(require,module,exports,__globalThis) {
+module.exports = require("6df0d6c756823762").getBundleURL('lycSJ') + "custom-style.3e7f4a52.css" + "?" + Date.now();
 
-},{"b61af35738fbd9e3":"lgJ39"}],"hY95v":[function(require,module,exports,__globalThis) {
-module.exports = require("a6bd925df521d30d").getBundleURL('1zNV8') + "red-dead-redemption-2.8741699f.jpeg" + "?" + Date.now();
+},{"6df0d6c756823762":"lgJ39"}],"5I5Hj":[function(require,module,exports,__globalThis) {
+module.exports = require("f8f08c77d985ce9c").getBundleURL('lycSJ') + "hover-min.819384c3.css" + "?" + Date.now();
 
-},{"a6bd925df521d30d":"lgJ39"}],"8jS5g":[function(require,module,exports,__globalThis) {
-module.exports = require("d55273baa6f86801").getBundleURL('1zNV8') + "god-of-war.8a81131e.jpeg" + "?" + Date.now();
+},{"f8f08c77d985ce9c":"lgJ39"}],"4D7pW":[function(require,module,exports,__globalThis) {
+module.exports = require("ad6086f6b4075e0f").getBundleURL('lycSJ') + "animate.min.1e0f1c0b.css" + "?" + Date.now();
 
-},{"d55273baa6f86801":"lgJ39"}],"ajHvW":[function(require,module,exports,__globalThis) {
-module.exports = require("9b78d52412b15b47").getBundleURL('1zNV8') + "horizon-forbidden-west.4710f83f.jpeg" + "?" + Date.now();
+},{"ad6086f6b4075e0f":"lgJ39"}],"5fO67":[function(require,module,exports,__globalThis) {
+module.exports = require("ee170e497759792c").getBundleURL('lycSJ') + "swiper-bundle.min.c52218e0.css" + "?" + Date.now();
 
-},{"9b78d52412b15b47":"lgJ39"}],"eyScG":[function(require,module,exports,__globalThis) {
-module.exports = require("959ef5df9f2ebf1e").getBundleURL('1zNV8') + "spider-man-miles-morales.eab8321f.jpeg" + "?" + Date.now();
-
-},{"959ef5df9f2ebf1e":"lgJ39"}],"jgqPo":[function(require,module,exports,__globalThis) {
-module.exports = require("668be1680e6df043").getBundleURL('1zNV8') + "sekiro-shadows-die-twice.e34befe0.jpeg" + "?" + Date.now();
-
-},{"668be1680e6df043":"lgJ39"}],"8rIn7":[function(require,module,exports,__globalThis) {
-module.exports = require("6097c6365fe8ec11").getBundleURL('1zNV8') + "resident-evil-village.9b69f660.jpeg" + "?" + Date.now();
-
-},{"6097c6365fe8ec11":"lgJ39"}],"iQywr":[function(require,module,exports,__globalThis) {
-module.exports = require("4f1dec9830ca83ea").getBundleURL('1zNV8') + "cyberpunk-2077.1aaa6776.jpeg" + "?" + Date.now();
-
-},{"4f1dec9830ca83ea":"lgJ39"}],"a80Bg":[function(require,module,exports,__globalThis) {
-module.exports = require("56011821efe8b4d1").getBundleURL('1zNV8') + "ghost-of-tsushima.c2534981.jpeg" + "?" + Date.now();
-
-},{"56011821efe8b4d1":"lgJ39"}],"bIBEJ":[function(require,module,exports,__globalThis) {
-module.exports = require("122f4b949a57194d").getBundleURL('1zNV8') + "death-stranding.fb180b7d.jpeg" + "?" + Date.now();
-
-},{"122f4b949a57194d":"lgJ39"}],"4ytK5":[function(require,module,exports,__globalThis) {
-module.exports = require("212a859d4a1471ec").getBundleURL('1zNV8') + "control.cea62ef3.jpeg" + "?" + Date.now();
-
-},{"212a859d4a1471ec":"lgJ39"}],"hnK1b":[function(require,module,exports,__globalThis) {
-module.exports = require("dc6c3ac69ace35d5").getBundleURL('1zNV8') + "doom-eternal.c033dc3d.jpeg" + "?" + Date.now();
-
-},{"dc6c3ac69ace35d5":"lgJ39"}],"7oJsE":[function(require,module,exports,__globalThis) {
-module.exports = require("c7cd8bdd731ca8a3").getBundleURL('1zNV8') + "final-fantasy-vii-remake.07ea5050.jpeg" + "?" + Date.now();
-
-},{"c7cd8bdd731ca8a3":"lgJ39"}],"5ajnB":[function(require,module,exports,__globalThis) {
-module.exports = require("6497888932ab9156").getBundleURL('1zNV8') + "animal-crossing-new-horizons.31cacf56.jpeg" + "?" + Date.now();
-
-},{"6497888932ab9156":"lgJ39"}],"gZdFg":[function(require,module,exports,__globalThis) {
-module.exports = require("de0c0dc2f6e4f1f7").getBundleURL('1zNV8') + "ori-and-the-will-of-the-wisps.ea922cd8.jpeg" + "?" + Date.now();
-
-},{"de0c0dc2f6e4f1f7":"lgJ39"}],"1SvCS":[function(require,module,exports,__globalThis) {
-module.exports = require("488c305d43303ae3").getBundleURL('1zNV8') + "forza-horizon-5.f998fa79.jpeg" + "?" + Date.now();
-
-},{"488c305d43303ae3":"lgJ39"}],"kMBcF":[function(require,module,exports,__globalThis) {
-module.exports = require("8c0ce531fa1a362a").getBundleURL('1zNV8') + "elden-ring.ff4b2d95.jpeg" + "?" + Date.now();
-
-},{"8c0ce531fa1a362a":"lgJ39"}],"8vw4u":[function(require,module,exports,__globalThis) {
-module.exports = require("204c3f85070375ca").getBundleURL('1zNV8') + "dark-souls-3.1957766b.jpeg" + "?" + Date.now();
-
-},{"204c3f85070375ca":"lgJ39"}],"4dK5V":[function(require,module,exports,__globalThis) {
-module.exports = require("d341916c1bde5f80").getBundleURL('1zNV8') + "hades.b89cb2f0.jpeg" + "?" + Date.now();
-
-},{"d341916c1bde5f80":"lgJ39"}],"jGXox":[function(require,module,exports,__globalThis) {
-module.exports = require("9c04a85755f94597").getBundleURL('1zNV8') + "persona-5-royal.d1de6154.jpeg" + "?" + Date.now();
-
-},{"9c04a85755f94597":"lgJ39"}],"jQCsc":[function(require,module,exports,__globalThis) {
-module.exports = require("40ce136d417a129d").getBundleURL('1zNV8') + "deathloop.ca7421a0.jpeg" + "?" + Date.now();
-
-},{"40ce136d417a129d":"lgJ39"}],"1h83y":[function(require,module,exports,__globalThis) {
-module.exports = require("f9040527c942c771").getBundleURL('1zNV8') + "it-takes-two.595e1924.jpeg" + "?" + Date.now();
-
-},{"f9040527c942c771":"lgJ39"}],"8Hl2E":[function(require,module,exports,__globalThis) {
-module.exports = require("d3ad2f5409eaa594").getBundleURL('1zNV8') + "ratchet-and-clank-rift-apart.0f6444e7.jpeg" + "?" + Date.now();
-
-},{"d3ad2f5409eaa594":"lgJ39"}],"3n1vC":[function(require,module,exports,__globalThis) {
-module.exports = require("bba73538ef0c4ff6").getBundleURL('1zNV8') + "demons-souls.58202bf7.jpeg" + "?" + Date.now();
-
-},{"bba73538ef0c4ff6":"lgJ39"}],"7cInS":[function(require,module,exports,__globalThis) {
-module.exports = require("8f8c1c2c165cb15").getBundleURL('1zNV8') + "disco-elysium.883bc152.jpeg" + "?" + Date.now();
-
-},{"8f8c1c2c165cb15":"lgJ39"}],"lRUBx":[function(require,module,exports,__globalThis) {
-module.exports = require("a1dc31be529cddd6").getBundleURL('1zNV8') + "returnal.a4dcb33d.jpeg" + "?" + Date.now();
-
-},{"a1dc31be529cddd6":"lgJ39"}],"iUWR4":[function(require,module,exports,__globalThis) {
-module.exports = require("ac2e62bfa822d3d0").getBundleURL('1zNV8') + "kingdom-come-deliverance-2.c7819b4a.jpeg" + "?" + Date.now();
-
-},{"ac2e62bfa822d3d0":"lgJ39"}],"8s8px":[function(require,module,exports,__globalThis) {
-module.exports = require("d22993e31042c4ac").getBundleURL('1zNV8') + "fallout-76.bcf1ba1e.jpeg" + "?" + Date.now();
-
-},{"d22993e31042c4ac":"lgJ39"}],"lmypT":[function(require,module,exports,__globalThis) {
-module.exports = require("866dbfa69b447ea1").getBundleURL('1zNV8') + "balan-wonderworld.8fe1102a.jpeg" + "?" + Date.now();
-
-},{"866dbfa69b447ea1":"lgJ39"}],"i4JpA":[function(require,module,exports,__globalThis) {
-module.exports = require("fa2d81f32a009743").getBundleURL('1zNV8') + "fallout-new-vegas.549d92ec.jpeg" + "?" + Date.now();
-
-},{"fa2d81f32a009743":"lgJ39"}],"iYCUB":[function(require,module,exports,__globalThis) {
-module.exports = require("1eb4493925a2baf6").getBundleURL('1zNV8') + "call-icon.b7e1a931.svg" + "?" + Date.now();
-
-},{"1eb4493925a2baf6":"lgJ39"}],"9tGIA":[function(require,module,exports,__globalThis) {
-module.exports = require("271be7858b92a1c6").getBundleURL('1zNV8') + "home-icon.2831a079.svg" + "?" + Date.now();
-
-},{"271be7858b92a1c6":"lgJ39"}],"3NrAQ":[function(require,module,exports,__globalThis) {
-module.exports = require("d4204ef32093d959").getBundleURL('1zNV8') + "mail-icon.9a8eb0da.svg" + "?" + Date.now();
-
-},{"d4204ef32093d959":"lgJ39"}],"9xhnK":[function(require,module,exports,__globalThis) {
-module.exports = require("c7f085d20cdbb7f1").getBundleURL('1zNV8') + "print-icon.3fd08f67.svg" + "?" + Date.now();
-
-},{"c7f085d20cdbb7f1":"lgJ39"}],"ljlZk":[function(require,module,exports,__globalThis) {
-module.exports = require("11ef180cbc494861").getBundleURL('1zNV8') + "action-icon.f18a647e.svg" + "?" + Date.now();
-
-},{"11ef180cbc494861":"lgJ39"}],"jd7as":[function(require,module,exports,__globalThis) {
-module.exports = require("74b1199abe79646b").getBundleURL('1zNV8') + "adventure-icon4.3e007208.svg" + "?" + Date.now();
-
-},{"74b1199abe79646b":"lgJ39"}],"3TIjb":[function(require,module,exports,__globalThis) {
-module.exports = require("bbad691f67d81d67").getBundleURL('1zNV8') + "coop-icon.71c2842d.svg" + "?" + Date.now();
-
-},{"bbad691f67d81d67":"lgJ39"}],"dncxo":[function(require,module,exports,__globalThis) {
-module.exports = require("1d23facc86997dd3").getBundleURL('1zNV8') + "horror-icon.a6a03861.svg" + "?" + Date.now();
-
-},{"1d23facc86997dd3":"lgJ39"}],"kPUu8":[function(require,module,exports,__globalThis) {
-module.exports = require("b6471050b564fa90").getBundleURL('1zNV8') + "immersive-sim-icon.e728af41.svg" + "?" + Date.now();
-
-},{"b6471050b564fa90":"lgJ39"}],"4WiX7":[function(require,module,exports,__globalThis) {
-module.exports = require("f63719e91e684440").getBundleURL('1zNV8') + "open-world-icon.0d86cc24.svg" + "?" + Date.now();
-
-},{"f63719e91e684440":"lgJ39"}],"16qL1":[function(require,module,exports,__globalThis) {
-module.exports = require("8326130284c26743").getBundleURL('1zNV8') + "platformer-icon.d3660975.svg" + "?" + Date.now();
-
-},{"8326130284c26743":"lgJ39"}],"aVOSt":[function(require,module,exports,__globalThis) {
-module.exports = require("99beaf22fbc3a65c").getBundleURL('1zNV8') + "racing-icon2.05f886be.svg" + "?" + Date.now();
-
-},{"99beaf22fbc3a65c":"lgJ39"}],"ldtyj":[function(require,module,exports,__globalThis) {
-module.exports = require("1d408de3c8ca807f").getBundleURL('1zNV8') + "rpg-icon.3750c22c.svg" + "?" + Date.now();
-
-},{"1d408de3c8ca807f":"lgJ39"}],"8QX0C":[function(require,module,exports,__globalThis) {
-module.exports = require("baa83d2b9b58e432").getBundleURL('1zNV8') + "shooter-icon.cb50bfe0.svg" + "?" + Date.now();
-
-},{"baa83d2b9b58e432":"lgJ39"}],"7XxTv":[function(require,module,exports,__globalThis) {
-module.exports = require("fb2c645eade2f019").getBundleURL('1zNV8') + "simulation-icon.6cbbb2e2.svg" + "?" + Date.now();
-
-},{"fb2c645eade2f019":"lgJ39"}],"kwR3N":[function(require,module,exports,__globalThis) {
-module.exports = require("3851697fbe9c5b").getBundleURL('1zNV8') + "bars-icon.bf96d2b5.svg" + "?" + Date.now();
-
-},{"3851697fbe9c5b":"lgJ39"}],"bVLyN":[function(require,module,exports,__globalThis) {
-module.exports = require("45fc201e20668d55").getBundleURL('1zNV8') + "chevron-down-icon.980079f5.svg" + "?" + Date.now();
-
-},{"45fc201e20668d55":"lgJ39"}],"6h55n":[function(require,module,exports,__globalThis) {
-module.exports = require("228db86277fd6028").getBundleURL('1zNV8') + "grid-fill-icon.27ab98d6.svg" + "?" + Date.now();
-
-},{"228db86277fd6028":"lgJ39"}],"5SWg9":[function(require,module,exports,__globalThis) {
-module.exports = require("461d6081b6ad9b2").getBundleURL('1zNV8') + "grid-icon3.cfe410be.svg" + "?" + Date.now();
-
-},{"461d6081b6ad9b2":"lgJ39"}],"cmGjd":[function(require,module,exports,__globalThis) {
-module.exports = require("91459ef39f6f16c5").getBundleURL('1zNV8') + "logo-facebook.8a1477c9.svg" + "?" + Date.now();
-
-},{"91459ef39f6f16c5":"lgJ39"}],"ty3Up":[function(require,module,exports,__globalThis) {
-module.exports = require("5bea13e7e370a687").getBundleURL('1zNV8') + "logo-github.17ce47d0.svg" + "?" + Date.now();
-
-},{"5bea13e7e370a687":"lgJ39"}],"kLCLP":[function(require,module,exports,__globalThis) {
-module.exports = require("569ef6ff63fb2b9a").getBundleURL('1zNV8') + "logo-instagram.e45fa3a7.svg" + "?" + Date.now();
-
-},{"569ef6ff63fb2b9a":"lgJ39"}],"eza5C":[function(require,module,exports,__globalThis) {
-module.exports = require("ebdbd6b243f5d8bc").getBundleURL('1zNV8') + "logo-linkedin.dffd28e9.svg" + "?" + Date.now();
-
-},{"ebdbd6b243f5d8bc":"lgJ39"}],"fddXW":[function(require,module,exports,__globalThis) {
-module.exports = require("bbdb586ef6d231d0").getBundleURL('1zNV8') + "logo-twitter.5e66b31f.svg" + "?" + Date.now();
-
-},{"bbdb586ef6d231d0":"lgJ39"}],"fNsZm":[function(require,module,exports,__globalThis) {
-module.exports = require("4f6ac290dea2868e").getBundleURL('1zNV8') + "logo-youtube.6b086467.svg" + "?" + Date.now();
-
-},{"4f6ac290dea2868e":"lgJ39"}],"gkKU3":[function(require,module,exports,__globalThis) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
+},{"ee170e497759792c":"lgJ39"}],"1iIjL":[function(require,module,exports,__globalThis) {
+/* global bootstrap */ /** -- Global variables -- */ const API_URL = "http://gamecurate.local/api/";
+/** -- Functions -- */ // Handle dynamic page titling
+function handleDynamicHeadersElements() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+    const pageSettings = {
+        Index: {
+            title: "Home - GameCurate",
+            linkToHighlight: "[data-js-home-link]"
+        },
+        Login: {
+            title: "Logging - GameCurate"
+        },
+        Register: {
+            title: "Resiter - GameCurate"
+        },
+        "Register-success.php": {
+            title: "Succesfuly Registration - GameCurate"
+        },
+        Profile: {
+            title: "Account Profile - GameCurate"
+        },
+        "Games-list": {
+            title: "Games List - GameCurate",
+            linkToHighlight: "[data-js-games-link]"
+        },
+        Contact: {
+            title: "Contact - GameCurate",
+            linkToHighlight: "[data-js-contact-link]"
+        },
+        Discover: {
+            title: "discover - GameCurate",
+            linkToHighlight: "[data-js-discover-link]"
+        }
     };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
+    const settings = pageSettings[page] || {
+        title: "Home - GameCurate",
+        linkToHighlight: "[data-js-home-link]"
+    };
+    document.title = settings.title;
+    if (settings.linkToHighlight) {
+        const linkElement = document.querySelector(settings.linkToHighlight);
+        if (linkElement) linkElement.style.fontWeight = "700";
+    }
+}
+// Handle relaying infos from games filter buttons
+function gamesFilterBtnListener() {
+    const filterButtons = document.querySelectorAll("[data-js-navbar-filter-btns]");
+    filterButtons.forEach((button)=>{
+        button.addEventListener("click", async ()=>{
+            const filterVal = button.querySelector("[data-js-filter-txt]").textContent;
+            const cleanedVal = filterVal.toLowerCase();
+            try {
+                await postData(API_URL + "get_genre_filter.php", cleanedVal);
+                // Reload the page after delay when btn is clicked so that php updates the game list
+                window.location.href = window.location.pathname;
+            } catch (error) {
+                console.error("Error during POST request:", error);
             }
         });
     });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
+}
+// Used to trigger login success modal
+function triggerModal(event) {
+    let e = new Event(event);
+    document.dispatchEvent(e);
+}
+handleDynamicHeadersElements();
+/** -- SERVER REQUESTS -- */ // functions using Fetch API to send or get data from specified php endpoint
+async function getData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const jsonData = await response.json();
+        console.log("Debug:", jsonData); //Debug
+        return jsonData;
+    } catch (error) {
+        console.error("Fetch error:", error);
+        throw error;
+    }
+}
+async function postData(url, data) {
+    try {
+        let response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        let result = await response.json();
+        console.log("Response from PHP:", result);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+/** -- HTML-DOM RELATED CODE -- */ document.addEventListener("DOMContentLoaded", function() {
+    console.log("-- DOM content loaded --");
+    // Trigger modal on specific event
+    document.addEventListener("openLoginSuccessModal", ()=>{
+        var myModal = new Bootstrap.Modal(document.querySelector("[data-js-login-success-modal]"));
+        myModal.show();
     });
-};
+    // Display username in account menu
+    (async ()=>{
+        const userData = await getData(API_URL + "get_username.php");
+        if (userData.username) {
+            // Show username in account menu
+            const cUsername = userData.username.toUpperCase();
+            const accountMenuTitle = document.querySelector("[data-js-account-menu-title]");
+            accountMenuTitle.textContent = cUsername + " :";
+            if (userData.firstLogin) {
+                // Trigger login success modal and show username
+                var myModal = new Bootstrap.Modal(document.querySelector("[data-js-login-success-modal]"));
+                myModal.show();
+                document.querySelector("[data-js-login-success-modal-text]").textContent = "Welcome " + cUsername + " ! You succesfuly logged in to your account.";
+            }
+        }
+    })();
+    gamesFilterBtnListener();
+});
 
-},{}],"j0nwl":[function(require,module,exports,__globalThis) {
-module.exports = require("b7116dc853baba23").getBundleURL('1zNV8') + "favicon.d9abd795.svg" + "?" + Date.now();
-
-},{"b7116dc853baba23":"lgJ39"}],"9DE15":[function(require,module,exports,__globalThis) {
-module.exports = require("c766237b041af272").getBundleURL('1zNV8') + "site-icon.c2c82a1b.svg" + "?" + Date.now();
-
-},{"c766237b041af272":"lgJ39"}],"83RH3":[function(require,module,exports,__globalThis) {
-module.exports = require("f66684f09a80a670").getBundleURL('1zNV8') + "star-icon.a27cfedc.svg" + "?" + Date.now();
-
-},{"f66684f09a80a670":"lgJ39"}],"1OjTG":[function(require,module,exports,__globalThis) {
-module.exports = require("e7685ec09b088cca").getBundleURL('1zNV8') + "UserAvatar.2cacbff1.svg" + "?" + Date.now();
-
-},{"e7685ec09b088cca":"lgJ39"}],"4ZL1P":[function(require,module,exports,__globalThis) {
-module.exports = require("1e8518106748dc06").getBundleURL('1zNV8') + "UserAvatarFilled.3dac4a76.svg" + "?" + Date.now();
-
-},{"1e8518106748dc06":"lgJ39"}],"h0RDm":[function(require,module,exports,__globalThis) {
-module.exports = require("1499fe5359997382").getBundleURL('1zNV8') + "main.a8705a27.css" + "?" + Date.now();
-
-},{"1499fe5359997382":"lgJ39"}],"fPaBL":[function(require,module,exports,__globalThis) {
-module.exports = require("5f2e715f300a00af").getBundleURL('1zNV8') + "custom-style.ca15e6d4.css" + "?" + Date.now();
-
-},{"5f2e715f300a00af":"lgJ39"}],"jh832":[function(require,module,exports,__globalThis) {
-module.exports = require("7cf500cbe00ae264").getBundleURL('1zNV8') + "hover-min.6698d18f.css" + "?" + Date.now();
-
-},{"7cf500cbe00ae264":"lgJ39"}],"3CXrK":[function(require,module,exports,__globalThis) {
-module.exports = require("2ff4f2a5c8efca55").getBundleURL('1zNV8') + "animate.min.470f6a44.css" + "?" + Date.now();
-
-},{"2ff4f2a5c8efca55":"lgJ39"}],"dNRjc":[function(require,module,exports,__globalThis) {
-module.exports = require("48f7b7f3943c0a0b").getBundleURL('1zNV8') + "swiper-bundle.min.e43a68ca.css" + "?" + Date.now();
-
-},{"48f7b7f3943c0a0b":"lgJ39"}],"h36JB":[function(require,module,exports,__globalThis) {
+},{}],"h36JB":[function(require,module,exports,__globalThis) {
 /*!
   * Bootstrap v5.3.3 (https://getbootstrap.com/)
   * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -4929,7 +4848,37 @@ var modifierPhases = [
     afterWrite
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cap3W":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"cap3W":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "applyStyles", ()=>(0, _applyStylesJsDefault.default));
@@ -10344,132 +10293,211 @@ function getRotateFix(swiper) {
     };
 }
 
-},{"./ssr-window.esm.mjs":"th8PY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1iIjL":[function(require,module,exports,__globalThis) {
-/* global bootstrap */ /** -- Global variables -- */ const API_URL = "http://gamecurate.local/api/";
-/** -- Functions -- */ // Handle dynamic page titling
-function handleDynamicHeadersElements() {
-    const path = window.location.pathname;
-    const page = path.split("/").pop();
-    const pageSettings = {
-        Index: {
-            title: "Home - GameCurate",
-            linkToHighlight: "[data-js-home-link]"
-        },
-        Login: {
-            title: "Logging - GameCurate"
-        },
-        Register: {
-            title: "Resiter - GameCurate"
-        },
-        "Register-success.php": {
-            title: "Succesfuly Registration - GameCurate"
-        },
-        Profile: {
-            title: "Account Profile - GameCurate"
-        },
-        "Games-list": {
-            title: "Games List - GameCurate",
-            linkToHighlight: "[data-js-games-link]"
-        },
-        Contact: {
-            title: "Contact - GameCurate",
-            linkToHighlight: "[data-js-contact-link]"
-        },
-        Discover: {
-            title: "discover - GameCurate",
-            linkToHighlight: "[data-js-discover-link]"
+},{"./ssr-window.esm.mjs":"th8PY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"f5zjH":[function(require,module,exports,__globalThis) {
+module.exports = require("8626ece96b29a942").getBundleURL('lycSJ') + "home-illustration.687f4d84.mp4" + "?" + Date.now();
+
+},{"8626ece96b29a942":"lgJ39"}],"380nk":[function(require,module,exports,__globalThis) {
+module.exports = require("3746c506fd8acb22").getBundleURL('lycSJ') + "the-witcher-3-wild-hunt.960a9978.jpeg" + "?" + Date.now();
+
+},{"3746c506fd8acb22":"lgJ39"}],"5dk98":[function(require,module,exports,__globalThis) {
+module.exports = require("433cdb6efd25e406").getBundleURL('lycSJ') + "red-dead-redemption-2.da13b181.jpeg" + "?" + Date.now();
+
+},{"433cdb6efd25e406":"lgJ39"}],"4llW0":[function(require,module,exports,__globalThis) {
+module.exports = require("a748df64947cfd7e").getBundleURL('lycSJ') + "god-of-war.9779d572.jpeg" + "?" + Date.now();
+
+},{"a748df64947cfd7e":"lgJ39"}],"fVdba":[function(require,module,exports,__globalThis) {
+module.exports = require("ff3edb154a66018b").getBundleURL('lycSJ') + "horizon-forbidden-west.672b2578.jpeg" + "?" + Date.now();
+
+},{"ff3edb154a66018b":"lgJ39"}],"7qvP5":[function(require,module,exports,__globalThis) {
+module.exports = require("e07a5cfa11defc73").getBundleURL('lycSJ') + "spider-man-miles-morales.a2408fef.jpeg" + "?" + Date.now();
+
+},{"e07a5cfa11defc73":"lgJ39"}],"lamMW":[function(require,module,exports,__globalThis) {
+module.exports = require("79355def9d7f4e42").getBundleURL('lycSJ') + "sekiro-shadows-die-twice.69df9ec2.jpeg" + "?" + Date.now();
+
+},{"79355def9d7f4e42":"lgJ39"}],"5O0OX":[function(require,module,exports,__globalThis) {
+module.exports = require("cfed594d20f98b51").getBundleURL('lycSJ') + "resident-evil-village.0c81dc87.jpeg" + "?" + Date.now();
+
+},{"cfed594d20f98b51":"lgJ39"}],"8Dwk7":[function(require,module,exports,__globalThis) {
+module.exports = require("10a7803d4c439856").getBundleURL('lycSJ') + "cyberpunk-2077.704b64e4.jpeg" + "?" + Date.now();
+
+},{"10a7803d4c439856":"lgJ39"}],"1EnvA":[function(require,module,exports,__globalThis) {
+module.exports = require("20809860177cf403").getBundleURL('lycSJ') + "ghost-of-tsushima.a3ce3d50.jpeg" + "?" + Date.now();
+
+},{"20809860177cf403":"lgJ39"}],"aY7v2":[function(require,module,exports,__globalThis) {
+module.exports = require("c532aef41e10249b").getBundleURL('lycSJ') + "death-stranding.3c96dc69.jpeg" + "?" + Date.now();
+
+},{"c532aef41e10249b":"lgJ39"}],"fQ8Ce":[function(require,module,exports,__globalThis) {
+module.exports = require("fac9f65cf9e2007").getBundleURL('lycSJ') + "control.afc43c0b.jpeg" + "?" + Date.now();
+
+},{"fac9f65cf9e2007":"lgJ39"}],"jKQjc":[function(require,module,exports,__globalThis) {
+module.exports = require("e76dde48e7207551").getBundleURL('lycSJ') + "doom-eternal.0eb19206.jpeg" + "?" + Date.now();
+
+},{"e76dde48e7207551":"lgJ39"}],"fZ8k2":[function(require,module,exports,__globalThis) {
+module.exports = require("22608b357e96af7d").getBundleURL('lycSJ') + "final-fantasy-vii-remake.a81015d2.jpeg" + "?" + Date.now();
+
+},{"22608b357e96af7d":"lgJ39"}],"4iOp5":[function(require,module,exports,__globalThis) {
+module.exports = require("4205893b88e07103").getBundleURL('lycSJ') + "animal-crossing-new-horizons.156c1634.jpeg" + "?" + Date.now();
+
+},{"4205893b88e07103":"lgJ39"}],"bg9bW":[function(require,module,exports,__globalThis) {
+module.exports = require("8921570de23352ad").getBundleURL('lycSJ') + "ori-and-the-will-of-the-wisps.ef1cf861.jpeg" + "?" + Date.now();
+
+},{"8921570de23352ad":"lgJ39"}],"lASb1":[function(require,module,exports,__globalThis) {
+module.exports = require("6b2819f7bc816401").getBundleURL('lycSJ') + "forza-horizon-5.3a0e1f87.jpeg" + "?" + Date.now();
+
+},{"6b2819f7bc816401":"lgJ39"}],"tNDtm":[function(require,module,exports,__globalThis) {
+module.exports = require("4b352276f0aca90c").getBundleURL('lycSJ') + "elden-ring.995b8185.jpeg" + "?" + Date.now();
+
+},{"4b352276f0aca90c":"lgJ39"}],"aSTAq":[function(require,module,exports,__globalThis) {
+module.exports = require("f81f08e58d09aa53").getBundleURL('lycSJ') + "dark-souls-3.4981cacb.jpeg" + "?" + Date.now();
+
+},{"f81f08e58d09aa53":"lgJ39"}],"1Gr3Z":[function(require,module,exports,__globalThis) {
+module.exports = require("d49dc8ec81b0762d").getBundleURL('lycSJ') + "hades.fe0081f9.jpeg" + "?" + Date.now();
+
+},{"d49dc8ec81b0762d":"lgJ39"}],"bY34d":[function(require,module,exports,__globalThis) {
+module.exports = require("bfcf3c320823ce6d").getBundleURL('lycSJ') + "persona-5-royal.6589c067.jpeg" + "?" + Date.now();
+
+},{"bfcf3c320823ce6d":"lgJ39"}],"l7fPs":[function(require,module,exports,__globalThis) {
+module.exports = require("94f33f4d3cdddc79").getBundleURL('lycSJ') + "deathloop.b16e936a.jpeg" + "?" + Date.now();
+
+},{"94f33f4d3cdddc79":"lgJ39"}],"6HsDr":[function(require,module,exports,__globalThis) {
+module.exports = require("fd607b7d603dda12").getBundleURL('lycSJ') + "it-takes-two.8e20068c.jpeg" + "?" + Date.now();
+
+},{"fd607b7d603dda12":"lgJ39"}],"fn5EP":[function(require,module,exports,__globalThis) {
+module.exports = require("75943c331ec09baa").getBundleURL('lycSJ') + "ratchet-and-clank-rift-apart.3f03597e.jpeg" + "?" + Date.now();
+
+},{"75943c331ec09baa":"lgJ39"}],"lyA0q":[function(require,module,exports,__globalThis) {
+module.exports = require("de661b513aac4c5d").getBundleURL('lycSJ') + "demons-souls.2aaa95d0.jpeg" + "?" + Date.now();
+
+},{"de661b513aac4c5d":"lgJ39"}],"5qvLp":[function(require,module,exports,__globalThis) {
+module.exports = require("67a98106d3539334").getBundleURL('lycSJ') + "disco-elysium.18fc478d.jpeg" + "?" + Date.now();
+
+},{"67a98106d3539334":"lgJ39"}],"jX5op":[function(require,module,exports,__globalThis) {
+module.exports = require("8a901f8c1692588f").getBundleURL('lycSJ') + "returnal.72e43d4a.jpeg" + "?" + Date.now();
+
+},{"8a901f8c1692588f":"lgJ39"}],"dMdMt":[function(require,module,exports,__globalThis) {
+module.exports = require("28000a19dbbaca8a").getBundleURL('lycSJ') + "kingdom-come-deliverance-2.ea86e7db.jpeg" + "?" + Date.now();
+
+},{"28000a19dbbaca8a":"lgJ39"}],"dUf7N":[function(require,module,exports,__globalThis) {
+module.exports = require("d57ebf8e2bb4ed1f").getBundleURL('lycSJ') + "fallout-76.53e7295d.jpeg" + "?" + Date.now();
+
+},{"d57ebf8e2bb4ed1f":"lgJ39"}],"bduHf":[function(require,module,exports,__globalThis) {
+module.exports = require("bbfb138bc582550a").getBundleURL('lycSJ') + "balan-wonderworld.76272431.jpeg" + "?" + Date.now();
+
+},{"bbfb138bc582550a":"lgJ39"}],"4P9Uq":[function(require,module,exports,__globalThis) {
+module.exports = require("395499b0359045fe").getBundleURL('lycSJ') + "fallout-new-vegas.725dcff1.jpeg" + "?" + Date.now();
+
+},{"395499b0359045fe":"lgJ39"}],"2nxqx":[function(require,module,exports,__globalThis) {
+module.exports = require("59321c39a22ce07e").getBundleURL('lycSJ') + "call-icon.0138d0e3.svg" + "?" + Date.now();
+
+},{"59321c39a22ce07e":"lgJ39"}],"aVoQL":[function(require,module,exports,__globalThis) {
+module.exports = require("57bab29b235b0e9d").getBundleURL('lycSJ') + "home-icon.ddbb570f.svg" + "?" + Date.now();
+
+},{"57bab29b235b0e9d":"lgJ39"}],"39DtG":[function(require,module,exports,__globalThis) {
+module.exports = require("acd2190a4b4d9c72").getBundleURL('lycSJ') + "mail-icon.e42ad46c.svg" + "?" + Date.now();
+
+},{"acd2190a4b4d9c72":"lgJ39"}],"jyalb":[function(require,module,exports,__globalThis) {
+module.exports = require("9ab97b30c333ad33").getBundleURL('lycSJ') + "print-icon.af0fa1f8.svg" + "?" + Date.now();
+
+},{"9ab97b30c333ad33":"lgJ39"}],"eZx2j":[function(require,module,exports,__globalThis) {
+module.exports = require("bb433e86520d10eb").getBundleURL('lycSJ') + "action-icon.0d7a4fe9.svg" + "?" + Date.now();
+
+},{"bb433e86520d10eb":"lgJ39"}],"lvVWj":[function(require,module,exports,__globalThis) {
+module.exports = require("d8c9cd44492958d5").getBundleURL('lycSJ') + "adventure-icon4.ca1c78c0.svg" + "?" + Date.now();
+
+},{"d8c9cd44492958d5":"lgJ39"}],"SXTHx":[function(require,module,exports,__globalThis) {
+module.exports = require("f81879ac2d0d3d1e").getBundleURL('lycSJ') + "coop-icon.f696b99e.svg" + "?" + Date.now();
+
+},{"f81879ac2d0d3d1e":"lgJ39"}],"cXGOj":[function(require,module,exports,__globalThis) {
+module.exports = require("4bfe22880a508fe").getBundleURL('lycSJ') + "horror-icon.d485c011.svg" + "?" + Date.now();
+
+},{"4bfe22880a508fe":"lgJ39"}],"7dASb":[function(require,module,exports,__globalThis) {
+module.exports = require("2fbf0c2a11455b34").getBundleURL('lycSJ') + "immersive-sim-icon.8e896578.svg" + "?" + Date.now();
+
+},{"2fbf0c2a11455b34":"lgJ39"}],"grLCf":[function(require,module,exports,__globalThis) {
+module.exports = require("cd8c2937abb27070").getBundleURL('lycSJ') + "open-world-icon.ab0c86d1.svg" + "?" + Date.now();
+
+},{"cd8c2937abb27070":"lgJ39"}],"4NpIv":[function(require,module,exports,__globalThis) {
+module.exports = require("607849ece5aede28").getBundleURL('lycSJ') + "platformer-icon.da981cd7.svg" + "?" + Date.now();
+
+},{"607849ece5aede28":"lgJ39"}],"bLMfA":[function(require,module,exports,__globalThis) {
+module.exports = require("f170391714c0332d").getBundleURL('lycSJ') + "racing-icon2.561c2b62.svg" + "?" + Date.now();
+
+},{"f170391714c0332d":"lgJ39"}],"hnSvv":[function(require,module,exports,__globalThis) {
+module.exports = require("80235984c2605654").getBundleURL('lycSJ') + "rpg-icon.98068181.svg" + "?" + Date.now();
+
+},{"80235984c2605654":"lgJ39"}],"b8YGE":[function(require,module,exports,__globalThis) {
+module.exports = require("9e729f1710734bae").getBundleURL('lycSJ') + "shooter-icon.54a80f0b.svg" + "?" + Date.now();
+
+},{"9e729f1710734bae":"lgJ39"}],"ltN31":[function(require,module,exports,__globalThis) {
+module.exports = require("cad8a7fe63b7f6e7").getBundleURL('lycSJ') + "simulation-icon.9ba4a39e.svg" + "?" + Date.now();
+
+},{"cad8a7fe63b7f6e7":"lgJ39"}],"jeVxo":[function(require,module,exports,__globalThis) {
+module.exports = require("a87092b101190456").getBundleURL('lycSJ') + "grid-icon3.3e585685.svg" + "?" + Date.now();
+
+},{"a87092b101190456":"lgJ39"}],"ebXab":[function(require,module,exports,__globalThis) {
+module.exports = require("6e2160ebe3dd9105").getBundleURL('lycSJ') + "bars-icon.d1ac8544.svg" + "?" + Date.now();
+
+},{"6e2160ebe3dd9105":"lgJ39"}],"a0fk7":[function(require,module,exports,__globalThis) {
+module.exports = require("d70ab8aa2b0c01ca").getBundleURL('lycSJ') + "chevron-down-icon.ec4b39f8.svg" + "?" + Date.now();
+
+},{"d70ab8aa2b0c01ca":"lgJ39"}],"8Nyl2":[function(require,module,exports,__globalThis) {
+module.exports = require("12577a2436fc61df").getBundleURL('lycSJ') + "grid-fill-icon.102e7d1f.svg" + "?" + Date.now();
+
+},{"12577a2436fc61df":"lgJ39"}],"jraW5":[function(require,module,exports,__globalThis) {
+module.exports = require("1e24fc990e57e3e6").getBundleURL('lycSJ') + "logo-facebook.26ab0dc5.svg" + "?" + Date.now();
+
+},{"1e24fc990e57e3e6":"lgJ39"}],"4bKEv":[function(require,module,exports,__globalThis) {
+module.exports = require("9e68d86b2a9512c1").getBundleURL('lycSJ') + "logo-github.23b9fa5c.svg" + "?" + Date.now();
+
+},{"9e68d86b2a9512c1":"lgJ39"}],"1ZFDb":[function(require,module,exports,__globalThis) {
+module.exports = require("6dbd5e4e0a75829").getBundleURL('lycSJ') + "logo-instagram.a11e32be.svg" + "?" + Date.now();
+
+},{"6dbd5e4e0a75829":"lgJ39"}],"gAoDQ":[function(require,module,exports,__globalThis) {
+module.exports = require("c0478fd6bafe9f44").getBundleURL('lycSJ') + "logo-linkedin.110b6c70.svg" + "?" + Date.now();
+
+},{"c0478fd6bafe9f44":"lgJ39"}],"lkgED":[function(require,module,exports,__globalThis) {
+module.exports = require("41f18bcd14f67c1a").getBundleURL('lycSJ') + "logo-twitter.7fd6803c.svg" + "?" + Date.now();
+
+},{"41f18bcd14f67c1a":"lgJ39"}],"fjOOY":[function(require,module,exports,__globalThis) {
+module.exports = require("1c62ec37b274d519").getBundleURL('lycSJ') + "logo-youtube.cc3b3e8b.svg" + "?" + Date.now();
+
+},{"1c62ec37b274d519":"lgJ39"}],"5Qosn":[function(require,module,exports,__globalThis) {
+module.exports = require("64781e4c421b5e14").getBundleURL('lycSJ') + "UserAvatar.1d34ca65.svg" + "?" + Date.now();
+
+},{"64781e4c421b5e14":"lgJ39"}],"dnNPb":[function(require,module,exports,__globalThis) {
+module.exports = require("7a9b283f10eba0").getBundleURL('lycSJ') + "UserAvatarFilled.7d87a28c.svg" + "?" + Date.now();
+
+},{"7a9b283f10eba0":"lgJ39"}],"aDaS4":[function(require,module,exports,__globalThis) {
+module.exports = require("3dd0fbbf9335dfaf").getBundleURL('lycSJ') + "favicon.f7521927.svg" + "?" + Date.now();
+
+},{"3dd0fbbf9335dfaf":"lgJ39"}],"ibvNE":[function(require,module,exports,__globalThis) {
+module.exports = require("afadaccd53475b81").getBundleURL('lycSJ') + "register-success-icon.0f54bf45.svg" + "?" + Date.now();
+
+},{"afadaccd53475b81":"lgJ39"}],"dv1So":[function(require,module,exports,__globalThis) {
+module.exports = require("ba9743cd4686398a").getBundleURL('lycSJ') + "site-icon.6aa95e56.svg" + "?" + Date.now();
+
+},{"ba9743cd4686398a":"lgJ39"}],"D7zhi":[function(require,module,exports,__globalThis) {
+module.exports = require("c575345332b8aa4b").getBundleURL('lycSJ') + "star-icon.4cb7f874.svg" + "?" + Date.now();
+
+},{"c575345332b8aa4b":"lgJ39"}],"7Tolx":[function(require,module,exports,__globalThis) {
+// module.js
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _swiper = require("swiper");
+var _swiperDefault = parcelHelpers.interopDefault(_swiper);
+addEventListener("DOMContentLoaded", ()=>{
+    const swiper = new (0, _swiperDefault.default)(".games-list-navbar-swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        slidesPerView: 10,
+        centeredSlidesBounds: true,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
         }
-    };
-    const settings = pageSettings[page] || {
-        title: "Home - GameCurate",
-        linkToHighlight: "[data-js-home-link]"
-    };
-    document.title = settings.title;
-    if (settings.linkToHighlight) {
-        const linkElement = document.querySelector(settings.linkToHighlight);
-        if (linkElement) linkElement.style.fontWeight = "700";
-    }
-}
-// Handle relaying infos from games filter buttons
-function gamesFilterBtnListener() {
-    const filterButtons = document.querySelectorAll("[data-js-navbar-filter-btns]");
-    filterButtons.forEach((button)=>{
-        button.addEventListener("click", async ()=>{
-            const filterVal = button.querySelector("[data-js-filter-txt]").textContent;
-            const cleanedVal = filterVal.toLowerCase();
-            try {
-                await postData(API_URL + "get_genre_filter.php", cleanedVal);
-                // Reload the page after delay when btn is clicked so that php updates the game list
-                window.location.href = window.location.pathname;
-            } catch (error) {
-                console.error("Error during POST request:", error);
-            }
-        });
     });
-}
-// Used to trigger login success modal
-function triggerModal(event) {
-    let e = new Event(event);
-    document.dispatchEvent(e);
-}
-handleDynamicHeadersElements();
-/** -- SERVER REQUESTS -- */ // functions using Fetch API to send or get data from specified php endpoint
-async function getData(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const jsonData = await response.json();
-        console.log("Debug:", jsonData); //Debug
-        return jsonData;
-    } catch (error) {
-        console.error("Fetch error:", error);
-        throw error;
-    }
-}
-async function postData(url, data) {
-    try {
-        let response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-        let result = await response.json();
-        console.log("Response from PHP:", result);
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
-/** -- HTML-DOM RELATED CODE -- */ document.addEventListener("DOMContentLoaded", function() {
-    console.log("-- DOM content loaded --");
-    // Trigger modal on specific event
-    document.addEventListener("openLoginSuccessModal", ()=>{
-        var myModal = new Bootstrap.Modal(document.querySelector("[data-js-login-success-modal]"));
-        myModal.show();
-    });
-    // Display username in account menu
-    (async ()=>{
-        const userData = await getData(API_URL + "get_username.php");
-        if (userData.username) {
-            // Show username in account menu
-            const cUsername = userData.username.toUpperCase();
-            const accountMenuTitle = document.querySelector("[data-js-account-menu-title]");
-            accountMenuTitle.textContent = cUsername + " :";
-            if (userData.firstLogin) {
-                // Trigger login success modal and show username
-                var myModal = new Bootstrap.Modal(document.querySelector("[data-js-login-success-modal]"));
-                myModal.show();
-                document.querySelector("[data-js-login-success-modal-text]").textContent = "Welcome " + cUsername + " ! You succesfuly logged in to your account.";
-            }
-        }
-    })();
-    gamesFilterBtnListener();
 });
 
-},{}],"jaQYy":[function(require,module,exports,__globalThis) {
-module.exports = require("69b9d0b49ea1efb8").getBundleURL('1zNV8') + "register-success-icon.8f25560b.svg" + "?" + Date.now();
-
-},{"69b9d0b49ea1efb8":"lgJ39"}]},["dwhei","adjPd"], "adjPd", "parcelRequire94c2")
+},{"swiper":"iM6UL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5dRxN","adjPd"], "adjPd", "parcelRequire94c2")
 
 //# sourceMappingURL=main.js.map

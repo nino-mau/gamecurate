@@ -2,7 +2,9 @@
 require_once __DIR__ . '/db-functions.php';
 
 
-/** -- Functions -- */
+// *** Functions ***
+
+// Function used exclusively in filterByGenre, return clean string of the genre to filter 
 function _genreMatchesFilter($genreString, $filter)
 {
     $cleanedGenre = strtolower(trim($genreString));
@@ -14,6 +16,8 @@ function _genreMatchesFilter($genreString, $filter)
         return ($cleanedGenre === $filter);
     }
 }
+
+// Function used to filter t
 function filterByGenres($filter, $gamesDict)
 {
     $name = $gamesDict[0];
@@ -36,6 +40,7 @@ function filterByGenres($filter, $gamesDict)
 
     return $filteredGamesDict;
 }
+
 // Handle dynamically changing the color of review text to match the score.
 function handleReviewColor($reviewScore)
 {
@@ -96,9 +101,11 @@ $gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imgDataAttr
 
 // Get the gamesFilter value from session
 $gamesListFilterValue = $_SESSION['gamesListGenreFilter'] ?? '';
+$gamesFilterText = ucfirst($gamesListFilterValue);
 
 if ($gamesListFilterValue !== 'all' and $gamesListFilterValue) {
     $filteredGamesDict = filterByGenres($gamesListFilterValue, $gamesDict);
     // Remove from sessions since filter are to be executed after btn press
+    $gamesFilterText = ucfirst($gamesListFilterValue);;
     $gamesListFilterValue = '';
 }

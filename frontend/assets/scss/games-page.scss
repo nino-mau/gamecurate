@@ -2,7 +2,7 @@
 .games-list-main {
     padding-top: 10vh;
     flex: 1 0 auto;
-    min-height: 132.5vh;
+    min-height: 132.5vh; 
 }
 
 /** -- NAVBAR TO SORT GAMES BY GENRE -- */
@@ -10,7 +10,7 @@
     padding: 1rem;
     gap: 1.1rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     > .navbar-btn {
         display: flex;
         flex-direction: column;
@@ -30,8 +30,10 @@
             font-weight: 500;
         }
         > .navbar-icons {
-            width: 35%;
-            height: 35%;
+            // width: 35%;
+            // height: 35%;
+            width: 48%;
+            height: 48%;
             transition: 0.2s ease-in-out;
             color: white;
         }
@@ -46,7 +48,7 @@
 /** -- DIV CONTAINING THE ENTIRE LIST -- */
 .games-grid {
     > .games-grid-row {
-        width: 74rem;
+        width: 65vw;
     }
 }
 
@@ -103,4 +105,10 @@
             }
         }
     }
+}
+
+.games-list-genre-title {
+    color: white;
+    align-self: start;
+    margin-bottom: 1rem;
 }

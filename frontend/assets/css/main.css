@@ -156,7 +156,7 @@
   padding: 1rem;
   gap: 1.1rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .games-list-navbar > .navbar-btn {
   display: flex;
@@ -178,8 +178,8 @@
   font-weight: 500;
 }
 .games-list-navbar > .navbar-btn > .navbar-icons {
-  width: 35%;
-  height: 35%;
+  width: 48%;
+  height: 48%;
   transition: 0.2s ease-in-out;
   color: white;
 }
@@ -191,7 +191,7 @@
 
 /** -- DIV CONTAINING THE ENTIRE LIST -- */
 .games-grid > .games-grid-row {
-  width: 74rem;
+  width: 65vw;
 }
 
 /** -- Div containing one game (img, text review) -- */
@@ -247,6 +247,12 @@
 }
 .games-grid-containers > .sub-container > .game-review > .game-review-cl--red {
   color: red;
+}
+
+.games-list-genre-title {
+  color: white;
+  align-self: start;
+  margin-bottom: 1rem;
 }
 
 /** -- REPRESENT FOOTER ELEMENT -- */

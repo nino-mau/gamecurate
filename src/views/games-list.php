@@ -4,60 +4,61 @@ require LOGS_PATH . '/errors_logging.php';
 require INCLUDES_PATH . '/header.php';
 ?>
 
-<main class="games-list-main">
+<main class="games-list-main d-flex flex-column align-items-center justify-content-start">
     <nav>
         <div class="games-list-navbar d-flex flex-row justify-content-center">
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-all>
                 <p class="navbar-text" data-js-filter-txt>All</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-action>
                 <p class="navbar-text" data-js-filter-txt>Action</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-adventure>
                 <p class="navbar-text" data-js-filter-txt>Adventure</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-horror>
                 <p class="navbar-text" data-js-filter-txt>Horror</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-imsim>
                 <p class="navbar-text" data-js-filter-txt>Imm-sim</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-openworld>
                 <p class="navbar-text" data-js-filter-txt>Open-world</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-platformer>
                 <p class="navbar-text" data-js-filter-txt>Platformer</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-racing>
                 <p class="navbar-text" data-js-filter-txt>Racing</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-coop>
                 <p class="navbar-text" data-js-filter-txt>Co-op</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-rpg>
                 <p class="navbar-text" data-js-filter-txt>RPG</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-sim>
-                <p class="navbar-text" data-js-filter-txt>Walking-sim</p>
+                <p class="navbar-text" data-js-filter-txt>Sim</p>
             </div>
-            <div class="navbar-btn " data-js-navbar-filter-btns>
+            <div class="navbar-btn hvr-reveal" data-js-navbar-filter-btns>
                 <img class="navbar-icons" data-icon-genre-shooter>
                 <p class="navbar-text" data-js-filter-txt>Shooter</p>
             </div>
         </div>
     </nav>
     <div class="games-grid text-center g-2 d-flex flex-column justify-content-center align-items-center">
+        <!-- <h2 class="games-list-genre-title">Genre</h2> -->
         <?php
         require PHP_PATH . '/games-list-actions.php';
 
@@ -72,6 +73,8 @@ require INCLUDES_PATH . '/header.php';
             $review = $gamesDict[4];
             $imgDataAttribute = $gamesDict[5];
         }
+
+        echo "<h2 class='games-list-genre-title'>$gamesFilterText</h2>";
 
         $displayReview = 'handleReviewColor';
         $gamesAmount = count($name);
