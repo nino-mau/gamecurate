@@ -32,7 +32,7 @@ if (!$username and $token) {
     </div>
     <nav class="header-navbar navbar navbar-expand-lg justify-content-center bg-primary custom-navbar" role="navigation">
         <a class="siteIcon d-flex align-items-center" href="/Index" aria-label="GameCurate - go to home page">
-            <img class="svg" src="assets/img/icons/site-icon.svg">
+            <img class="svg" data-icon-site>
         </a>
         <ul class="nav">
             <li class="list-item">
@@ -51,17 +51,6 @@ if (!$username and $token) {
         <form class="search-bar col-12 col-lg-auto mb-3 mb-lg-0" role="search">
             <input type="search" class="input form-control form-control-dark text-bg-dark text-light" placeholder="Search..." aria-label="Search">
         </form>
-        <!-- <div class="searchBar">
-            <form class="form d-flex flex-row align-items-center justify-content-center">
-                <input type="search"
-                    class="form-control input"
-                    placeholder="Search..."
-                    aria-label="Search">
-                <button class="btn button hvr-grow-rotate" type="submit">
-                    <img src="assets/img/icons/search-icon-fa.svg" class="icon hvr-icon">
-                </button>
-            </form>
-        </div> -->
         <div class="accountDropdownContainer dropdown-center">
             <?php if (empty($username)): ?>
                 <a tabindex="0"
@@ -72,8 +61,8 @@ if (!$username and $token) {
                     role="button"
                     aria-label="Open authentification dropdown"
                     aria-expanded="false">
-                    <img class="svg" src="assets/img/icons/user/UserAvatar.svg" aria-label="Logged-out state icon">
-                    <img class="chevron-down-svg" src="assets/img/icons/menu/chevron-down-icon.svg">
+                    <img class="svg" aria-label="Logged-out state icon" data-icon-loggedin-accountmenu>
+                    <img class="chevron-down-svg" data-icon-arrowdown-accountmenu>
                 </a>
                 <div class="account-dropdown-menu p-2 dropdown-menu ">
                     <div class="d-grid gap-2">
@@ -89,8 +78,8 @@ if (!$username and $token) {
                     role="button"
                     aria-label="Open account dropdown"
                     aria-expanded="false">
-                    <img class="svg" src="assets/img/icons/user/UserAvatarFilled.svg" aria-label="Logged-in state icon">
-                    <img class="chevron-down-svg" src="assets/img/icons/menu/chevron-down-icon.svg">
+                    <img class="svg" aria-label="Logged-in state icon" data-icon-loggedout-accountmenu>
+                    <img class="chevron-down-svg" data-icon-arrowdown-accountmenu>
                 </a>
                 <div class="account-dropdown-menu p-2 dropdown-menu ">
                     <div class="d-grid gap-2">

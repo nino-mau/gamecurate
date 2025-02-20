@@ -1,6 +1,5 @@
 /* global bootstrap */
 
-
 /** -- Global variables -- */
 
 const API_URL = "http://gamecurate.local/api/";
@@ -75,50 +74,6 @@ function gamesFilterBtnListener() {
     });
 }
 
-// Handle displaying loaders for every games image on the games list
-function handleGamesListLoaders() {
-    const gamesListCellContainers = document.querySelectorAll(
-        "[data-js-games-list-cells-container]",
-    );
-
-    gamesListCellContainers.forEach((cell) => {
-        const img = cell.querySelector("[data-js-games-list-img]");
-        const spinner = cell.querySelector(
-            "[data-js-games-list-cells-spinners]",
-        );
-        const textElements = cell.querySelectorAll("[data-js-games-list-text]");
-
-        if (img && spinner) {
-            // Set initial states
-            img.style.opacity = "0";
-            img.style.transition = "opacity 0.3s ease-in-out";
-
-            // Handle both load and error events
-            const handleLoad = () => {
-                spinner.style.display = "none";
-                img.style.opacity = "1";
-                textElements.forEach((el) => (el.style.visibility = "visible"));
-            };
-
-            const handleError = () => {
-                spinner.style.display = "none";
-                img.style.opacity = "0";
-                console.error("Error loading image:", img.src);
-            };
-
-            // Check if image is already loaded
-            if (img.complete) {
-                handleLoad();
-            } else {
-                img.addEventListener("load", handleLoad);
-                img.addEventListener("error", handleError);
-            }
-        } else {
-            console.warn("Image or spinner not found in cell:", cell);
-        }
-    });
-}
-
 // Used to trigger login success modal
 function triggerModal(event) {
     let e = new Event(event);
@@ -166,13 +121,9 @@ async function postData(url, data) {
 document.addEventListener("DOMContentLoaded", function () {
     console.log("-- DOM content loaded --");
 
-    /** - Handle loaders - */
-
-    handleGamesListLoaders();
-
     // Trigger modal on specific event
     document.addEventListener("openLoginSuccessModal", () => {
-        var myModal = new bootstrap.Modal(
+        var myModal = new Bootstrap.Modal(
             document.querySelector("[data-js-login-success-modal]"),
         );
         myModal.show();
@@ -191,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (userData.firstLogin) {
                 // Trigger login success modal and show username
-                var myModal = new bootstrap.Modal(
+                var myModal = new Bootstrap.Modal(
                     document.querySelector("[data-js-login-success-modal]"),
                 );
                 myModal.show();

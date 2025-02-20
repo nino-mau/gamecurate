@@ -31,7 +31,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                     <label for="loginUsername">Username</label>
                 </div>
                 <?php if ($error): ?>
-                    <div class="invalid-feedback" style="display: block;">
+                    <div class="invalid-feedback" style="display: block; position: relative; top: -20px;">
                         <p aria-invalid="true" class="m-0"><?= $error ?></p>
                     </div>
                 <?php endif; ?>
@@ -39,7 +39,7 @@ unset($_SESSION['error'], $_SESSION['loginData']);
             <div class="input-group">
                 <div class="input2 form-floating">
                     <input type="password"
-                        class="form-control <?= ($error) ? 'is-invalid' : '' ?>"
+                        class="form-control"
                         id="loginPassword"
                         name="loginPassword"
                         value="<?= htmlspecialchars($data['pwd'] ?? '') ?>"
@@ -48,11 +48,6 @@ unset($_SESSION['error'], $_SESSION['loginData']);
                         required>
                     <label for="loginPassword">Password</label>
                 </div>
-                <?php if ($error): ?>
-                    <div class="invalid-feedback" style="display: block;">
-                        <p aria-invalid="true" class="m-0"><?= $error ?></p>
-                    </div>
-                <?php endif; ?>
             </div>
             <div class="rememberCheck form-check">
                 <input class="form-check-input" type="checkbox" name="remember" value="remember" id="flexCheckDefault">

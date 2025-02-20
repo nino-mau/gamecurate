@@ -63,7 +63,7 @@ $descArr = [];
 $genreArr = [];
 $priceArr = [];
 $reviewArr = [];
-$imagepathArr = [];
+$imgDataAttributeArr = [];
 
 // Store table infos in arrays representing columns 
 foreach ($gamesList as $dict) {
@@ -84,15 +84,15 @@ foreach ($gamesList as $dict) {
             case "review":
                 $reviewArr[] = $item;
                 break;
-            case "image_path":
-                $imagepathArr[] = $item;
+            case "image_data_attribute":
+                $imgDataAttributeArr[] = $item;
                 break;
         }
     }
 }
 
 // Put these arrays back in a dictionnary
-$gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imagepathArr];
+$gamesDict = [$nameArr, $descArr, $genreArr, $priceArr, $reviewArr, $imgDataAttributeArr];
 
 // Get the gamesFilter value from session
 $gamesListFilterValue = $_SESSION['gamesListGenreFilter'] ?? '';

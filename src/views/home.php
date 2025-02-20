@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../conf/bootstrap.php';
 include INCLUDES_PATH . '/header.php';
 ?>
 
-<main class="home-main">
+<main class="home-main d-flex flex-column justify-content-center">
     <h1 class="home-title text-light">
         <a class="firstLink text-light animate__animated" href="/Games-list">Discover</a>
         <span class="middleText animate__animated">your next</span>
@@ -13,8 +13,8 @@ include INCLUDES_PATH . '/header.php';
     </h1>
     <div class="home-video d-flex justify-content-center">
         <div class="video-wrapper swing-in-top-fwd">
-            <video class="video" autoplay muted loop playsinline aria-hidden>
-                <source src="assets/video/home-illustration.mp4">
+            <video class="video" autoplay muted loop playsinline aria-hidden data-media-home-video>
+                <source data-media-home-video-source>
             </video>
         </div>
     </div>
