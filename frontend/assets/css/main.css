@@ -1,5 +1,6 @@
 /** -- IMPORT CSS MODULES -- */
 /* @import url(custom-bootstrap.css); */
+@import 'custom-bootstrap.css';
 /** ---- STORE FONTS ---- */
 /** ---- POPPINS FONT ---- */
 @font-face {
@@ -731,7 +732,7 @@
     border-radius: 4%;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   }
-  .registration-success-main > .card > .card-body > .successIcon {
+  .registration-success-main > .card > .card-body > .svg {
     animation: tada;
     animation-duration: 2s;
     font-size: 12rem;
@@ -755,12 +756,12 @@
 /** -- REPRESENT THE MAIN ELEMENT OF HOME PAGE -- */
 .home-main {
   height: 95vh;
-  padding-top: 10vh;
+  gap: 10vh;
 }
 
 /** - Represent the title of the home page - */
 .home-title {
-  font-size: 4rem;
+  font-size: 5.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -781,10 +782,10 @@
   content: "";
   background-color: var(--bs-secondary);
   position: absolute;
-  left: 2px;
+  left: 4px;
   bottom: 0.5rem;
   width: 100%;
-  height: 1.5rem;
+  height: 2.5vh;
   z-index: -1;
   transition: all 0.3s ease-in-out;
 }
@@ -844,14 +845,13 @@
 
 /** - Represent the video present on the home page - */
 .home-video {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
   animation: fadeIn;
   animation-duration: 3s;
 }
 .home-video > .video-wrapper {
-  width: 70rem;
-  border-radius: 20rem;
+  height: 39.8vh;
+  width: 70vh;
+  border-radius: 5rem;
   padding: 5px;
   background: linear-gradient(45deg, var(--bs-secondary) 0%, var(--bs-primary) 71%);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -860,7 +860,8 @@
 .home-video > .video-wrapper > .video {
   display: block;
   width: 100%;
-  border-radius: 20rem;
+  height: 100%;
+  border-radius: 5rem;
 }
 
 /** - Represent the btn present on the home page - */
@@ -873,7 +874,7 @@
   color: #ffffff;
   border: none;
   padding: 15px 30px;
-  font-size: 3rem;
+  font-size: 4.1vh;
   font-weight: bold;
   border-radius: 30px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -941,36 +942,34 @@
 }
 
 /** -- HEIGHT MEDIA QUERIES -- */
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 900px) and (min-height: 800px) {
   .home-title {
-    font-size: 3rem;
-    margin-bottom: 6vh;
+    /** Start text effect */
   }
   .home-title > .firstLink::before {
-    bottom: 0.4rem;
-  }
-  .home-video {
-    margin: 0;
-    margin-bottom: 7.7vh;
-  }
-  .home-video > .video-wrapper {
-    width: 33.5rem;
+    left: 3px;
+    width: 100%;
+    height: 2.1vh;
   }
 }
-@media only screen and (max-height: 1160px) and (min-height: 900px) {
+@media only screen and (max-height: 1000px) and (min-height: 900px) {
   .home-title {
-    font-size: 3rem;
-    margin-bottom: 6vh;
+    /** Start text effect */
   }
   .home-title > .firstLink::before {
-    bottom: 0.4rem;
+    left: 4px;
+    width: 100%;
+    height: 2.3vh;
   }
-  .home-video {
-    margin: 0;
-    margin-bottom: 7.7vh;
+}
+@media only screen and (max-height: 1160px) and (min-height: 1000px) {
+  .home-title {
+    /** Start text effect */
   }
-  .home-video > .video-wrapper {
-    width: 37vw;
+  .home-title > .firstLink::before {
+    left: 4px;
+    width: 100%;
+    height: 2.4vh;
   }
 }
 /** -- GLOBALS RULES -- */
